@@ -1,0 +1,27 @@
+C:\Users\piat\Dropbox\Deuxième année\Programmation - M. Ressouche\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+C:\Users\piat\Dropbox\Deuxième année\Programmation - M. Ressouche\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+C:\Users\piat\Dropbox\Deuxième année\Programmation - M. Ressouche\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+C:\Users\piat\Dropbox\Deuxième année\Programmation - M. Ressouche\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+C:\Users\piat\Dropbox\Deuxième année\Programmation - M. Ressouche\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+C:\Users\piat\Dropbox\Deuxième année\Programmation - M. Ressouche\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+C:\Users\piat\Dropbox\Deuxième année\Programmation - M. Ressouche\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+F:\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+F:\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+F:\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+F:\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+F:\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+F:\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+F:\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+F:\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Florent\Desktop\Travail\Tp programmation\TP 2014\Vt\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+C:\Users\Florent\Desktop\Travail\Tp programmation\TP 2014\Vt\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+C:\Users\Florent\Desktop\Travail\Tp programmation\TP 2014\Vt\ppeGsbCSharp\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+C:\Users\Florent\Desktop\Travail\Tp programmation\TP 2014\Vt\ppeGsbCSharp\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+C:\Users\Florent\Desktop\Travail\Tp programmation\TP 2014\Vt\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Florent\Desktop\Travail\Tp programmation\TP 2014\Vt\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+C:\Users\Florent\Desktop\Travail\Tp programmation\TP 2014\Vt\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+C:\Users\Florent\Desktop\Travail\Tp programmation\TP 2014\Vt\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+\\Morgane\sio2$\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+\\Morgane\sio2$\PPE GSB\ppeGsbCSharp\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+F:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+F:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
