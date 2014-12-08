@@ -2,28 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
 
 
 namespace ppeGsbCSharp
 {
     class daoClient
     {
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
-
-
-        private void Initialize()
-        {
-            SqlConnection myConnection = new SqlConnection("user id=piat;" +
-                                       "password=btssio;server=172.17.21.10;" +
-                                       "Trusted_Connection=yes;" +
-                                       "database=gbsTeamA; " +
-                                       "connection timeout=15");
+        public static void modifierClient(String unNom, String unCode, String uneRaison, String uneAdresse, String unType, String unTel, String unMail, DateTime uneDate){
+            daoFactory.Initialize();
         }
-
-
     }
 }
