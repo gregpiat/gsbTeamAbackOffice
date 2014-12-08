@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGsb));
             this.tabMenuPrincipal = new System.Windows.Forms.TabControl();
             this.tabAccueil = new System.Windows.Forms.TabPage();
@@ -72,7 +71,8 @@
             this.gpbAgendaClient = new System.Windows.Forms.GroupBox();
             this.gpbRdvClient = new System.Windows.Forms.GroupBox();
             this.gbAjouterVisite = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateRdvClient = new System.Windows.Forms.DateTimePicker();
+            this.cbxVisiteurAjoutRdvClient = new System.Windows.Forms.ComboBox();
             this.lblVisiteurRdv = new System.Windows.Forms.Label();
             this.btnAjouterRdv = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
@@ -115,6 +115,8 @@
             this.LblDateCommade = new System.Windows.Forms.Label();
             this.tabCommandesAjouter = new System.Windows.Forms.TabPage();
             this.GrbCommandeAjout = new System.Windows.Forms.GroupBox();
+            this.lblClientAjoutCommande = new System.Windows.Forms.Label();
+            this.cbxClientAjoutCommande = new System.Windows.Forms.ComboBox();
             this.CbxProduitCommande = new System.Windows.Forms.ComboBox();
             this.BtnAjoutCommande = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -122,8 +124,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxtQuantiteCommande = new System.Windows.Forms.TextBox();
             this.txtNumeroCommande = new System.Windows.Forms.TextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.dateRdvClient = new System.Windows.Forms.DateTimePicker();
+            this.gdvColonneDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvColonneVisiteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -519,6 +521,7 @@
             this.tabClients.TabIndex = 2;
             this.tabClients.Text = "Prospects / Clients";
             this.tabClients.UseVisualStyleBackColor = true;
+            this.tabClients.Click += new System.EventHandler(this.tabClients_Click);
             // 
             // btnSupprimerClient
             // 
@@ -563,7 +566,7 @@
             // gbAjouterVisite
             // 
             this.gbAjouterVisite.Controls.Add(this.dateRdvClient);
-            this.gbAjouterVisite.Controls.Add(this.comboBox1);
+            this.gbAjouterVisite.Controls.Add(this.cbxVisiteurAjoutRdvClient);
             this.gbAjouterVisite.Controls.Add(this.lblVisiteurRdv);
             this.gbAjouterVisite.Controls.Add(this.btnAjouterRdv);
             this.gbAjouterVisite.Controls.Add(this.lblDate);
@@ -574,13 +577,20 @@
             this.gbAjouterVisite.TabStop = false;
             this.gbAjouterVisite.Text = "Ajouter visite";
             // 
-            // comboBox1
+            // dateRdvClient
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(124, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 4;
+            this.dateRdvClient.Location = new System.Drawing.Point(124, 29);
+            this.dateRdvClient.Name = "dateRdvClient";
+            this.dateRdvClient.Size = new System.Drawing.Size(200, 20);
+            this.dateRdvClient.TabIndex = 5;
+            // 
+            // cbxVisiteurAjoutRdvClient
+            // 
+            this.cbxVisiteurAjoutRdvClient.FormattingEnabled = true;
+            this.cbxVisiteurAjoutRdvClient.Location = new System.Drawing.Point(124, 53);
+            this.cbxVisiteurAjoutRdvClient.Name = "cbxVisiteurAjoutRdvClient";
+            this.cbxVisiteurAjoutRdvClient.Size = new System.Drawing.Size(200, 21);
+            this.cbxVisiteurAjoutRdvClient.TabIndex = 4;
             // 
             // lblVisiteurRdv
             // 
@@ -621,7 +631,10 @@
             // dgvAgendaClient
             // 
             this.dgvAgendaClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAgendaClient.Location = new System.Drawing.Point(15, 19);
+            this.dgvAgendaClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gdvColonneDate,
+            this.gdvColonneVisiteur});
+            this.dgvAgendaClient.Location = new System.Drawing.Point(12, 16);
             this.dgvAgendaClient.Name = "dgvAgendaClient";
             this.dgvAgendaClient.Size = new System.Drawing.Size(465, 255);
             this.dgvAgendaClient.TabIndex = 21;
@@ -972,6 +985,8 @@
             // 
             // GrbCommandeAjout
             // 
+            this.GrbCommandeAjout.Controls.Add(this.lblClientAjoutCommande);
+            this.GrbCommandeAjout.Controls.Add(this.cbxClientAjoutCommande);
             this.GrbCommandeAjout.Controls.Add(this.CbxProduitCommande);
             this.GrbCommandeAjout.Controls.Add(this.BtnAjoutCommande);
             this.GrbCommandeAjout.Controls.Add(this.label2);
@@ -986,17 +1001,34 @@
             this.GrbCommandeAjout.TabStop = false;
             this.GrbCommandeAjout.Text = "Ajout Commande";
             // 
+            // lblClientAjoutCommande
+            // 
+            this.lblClientAjoutCommande.AutoSize = true;
+            this.lblClientAjoutCommande.Location = new System.Drawing.Point(21, 57);
+            this.lblClientAjoutCommande.Name = "lblClientAjoutCommande";
+            this.lblClientAjoutCommande.Size = new System.Drawing.Size(39, 13);
+            this.lblClientAjoutCommande.TabIndex = 16;
+            this.lblClientAjoutCommande.Text = "Client :";
+            // 
+            // cbxClientAjoutCommande
+            // 
+            this.cbxClientAjoutCommande.FormattingEnabled = true;
+            this.cbxClientAjoutCommande.Location = new System.Drawing.Point(86, 54);
+            this.cbxClientAjoutCommande.Name = "cbxClientAjoutCommande";
+            this.cbxClientAjoutCommande.Size = new System.Drawing.Size(121, 21);
+            this.cbxClientAjoutCommande.TabIndex = 15;
+            // 
             // CbxProduitCommande
             // 
             this.CbxProduitCommande.FormattingEnabled = true;
-            this.CbxProduitCommande.Location = new System.Drawing.Point(86, 40);
+            this.CbxProduitCommande.Location = new System.Drawing.Point(86, 81);
             this.CbxProduitCommande.Name = "CbxProduitCommande";
             this.CbxProduitCommande.Size = new System.Drawing.Size(121, 21);
             this.CbxProduitCommande.TabIndex = 14;
             // 
             // BtnAjoutCommande
             // 
-            this.BtnAjoutCommande.Location = new System.Drawing.Point(86, 116);
+            this.BtnAjoutCommande.Location = new System.Drawing.Point(86, 134);
             this.BtnAjoutCommande.Name = "BtnAjoutCommande";
             this.BtnAjoutCommande.Size = new System.Drawing.Size(121, 23);
             this.BtnAjoutCommande.TabIndex = 13;
@@ -1006,7 +1038,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 70);
+            this.label2.Location = new System.Drawing.Point(21, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 12;
@@ -1015,7 +1047,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 44);
+            this.label3.Location = new System.Drawing.Point(21, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 11;
@@ -1024,7 +1056,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 15);
+            this.label5.Location = new System.Drawing.Point(21, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 9;
@@ -1033,30 +1065,27 @@
             // 
             // TxtQuantiteCommande
             // 
-            this.TxtQuantiteCommande.Location = new System.Drawing.Point(86, 67);
+            this.TxtQuantiteCommande.Location = new System.Drawing.Point(86, 108);
             this.TxtQuantiteCommande.Name = "TxtQuantiteCommande";
-            this.TxtQuantiteCommande.Size = new System.Drawing.Size(59, 20);
+            this.TxtQuantiteCommande.Size = new System.Drawing.Size(121, 20);
             this.TxtQuantiteCommande.TabIndex = 4;
             // 
             // txtNumeroCommande
             // 
-            this.txtNumeroCommande.Location = new System.Drawing.Point(86, 15);
+            this.txtNumeroCommande.Location = new System.Drawing.Point(86, 28);
             this.txtNumeroCommande.Name = "txtNumeroCommande";
-            this.txtNumeroCommande.Size = new System.Drawing.Size(59, 20);
+            this.txtNumeroCommande.Size = new System.Drawing.Size(121, 20);
             this.txtNumeroCommande.TabIndex = 0;
             // 
-            // imageList1
+            // gdvColonneDate
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.gdvColonneDate.HeaderText = "Date";
+            this.gdvColonneDate.Name = "gdvColonneDate";
             // 
-            // dateRdvClient
+            // gdvColonneVisiteur
             // 
-            this.dateRdvClient.Location = new System.Drawing.Point(124, 29);
-            this.dateRdvClient.Name = "dateRdvClient";
-            this.dateRdvClient.Size = new System.Drawing.Size(200, 20);
-            this.dateRdvClient.TabIndex = 5;
+            this.gdvColonneVisiteur.HeaderText = "Visiteur";
+            this.gdvColonneVisiteur.Name = "gdvColonneVisiteur";
             // 
             // FormGsb
             // 
@@ -1112,7 +1141,6 @@
         private System.Windows.Forms.TabPage tabProduitsConsulter;
         private System.Windows.Forms.TabPage tabProduitsAjouter;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ComboBox cbxRaisonClient;
         private System.Windows.Forms.TextBox txbDateClient;
         private System.Windows.Forms.Label lblDateClient;
@@ -1157,7 +1185,7 @@
         private System.Windows.Forms.Label lblVisiteurRdv;
         private System.Windows.Forms.Button btnSupprimerClient;
         private System.Windows.Forms.Button btnModifierClient;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxVisiteurAjoutRdvClient;
         private System.Windows.Forms.Button btnAjouterClient;
         private System.Windows.Forms.Button BtnModifierEtatCommande;
         private System.Windows.Forms.ComboBox CbxEtatCommande;
@@ -1195,6 +1223,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox GrbSelectionCommande;
         private System.Windows.Forms.DateTimePicker dateRdvClient;
+        private System.Windows.Forms.ComboBox cbxClientAjoutCommande;
+        private System.Windows.Forms.Label lblClientAjoutCommande;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gdvColonneDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gdvColonneVisiteur;
     }
 }
 

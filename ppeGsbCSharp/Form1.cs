@@ -25,5 +25,17 @@ namespace ppeGsbCSharp
         {
 
         }
+
+        private void tabClients_Click(object sender, EventArgs e)
+        {
+            if (cbxNomClient.Text == null)
+            {
+                dgvAgendaClient.Enabled = false;
+                gpbAgendaClient.Enabled = false;
+                rtbRdvClient.Enabled = false;
+                dateRdvClient.Enabled = false;
+                cbxVisiteurAjoutRdvClient.Enabled = false;
+            }
+        }
     }
 }
