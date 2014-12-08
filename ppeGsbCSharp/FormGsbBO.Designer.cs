@@ -78,6 +78,8 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.rtbRdvClient = new System.Windows.Forms.RichTextBox();
             this.dgvAgendaClient = new System.Windows.Forms.DataGridView();
+            this.gdvColonneDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvColonneVisiteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbsClient = new System.Windows.Forms.GroupBox();
             this.cbxNomClient = new System.Windows.Forms.ComboBox();
             this.txbCodeClient = new System.Windows.Forms.TextBox();
@@ -124,8 +126,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxtQuantiteCommande = new System.Windows.Forms.TextBox();
             this.txtNumeroCommande = new System.Windows.Forms.TextBox();
-            this.gdvColonneDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvColonneVisiteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -639,6 +639,16 @@
             this.dgvAgendaClient.Size = new System.Drawing.Size(465, 255);
             this.dgvAgendaClient.TabIndex = 21;
             // 
+            // gdvColonneDate
+            // 
+            this.gdvColonneDate.HeaderText = "Date";
+            this.gdvColonneDate.Name = "gdvColonneDate";
+            // 
+            // gdvColonneVisiteur
+            // 
+            this.gdvColonneVisiteur.HeaderText = "Visiteur";
+            this.gdvColonneVisiteur.Name = "gdvColonneVisiteur";
+            // 
             // gbsClient
             // 
             this.gbsClient.Controls.Add(this.cbxNomClient);
@@ -1077,16 +1087,6 @@
             this.txtNumeroCommande.Size = new System.Drawing.Size(121, 20);
             this.txtNumeroCommande.TabIndex = 0;
             // 
-            // gdvColonneDate
-            // 
-            this.gdvColonneDate.HeaderText = "Date";
-            this.gdvColonneDate.Name = "gdvColonneDate";
-            // 
-            // gdvColonneVisiteur
-            // 
-            this.gdvColonneVisiteur.HeaderText = "Visiteur";
-            this.gdvColonneVisiteur.Name = "gdvColonneVisiteur";
-            // 
             // FormGsb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1097,6 +1097,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormGsb";
             this.Text = "Application GSB";
+            this.Load += new System.EventHandler(this.FormGsb_Load);
             this.tabMenuPrincipal.ResumeLayout(false);
             this.tabAccueil.ResumeLayout(false);
             this.tabAccueil.PerformLayout();

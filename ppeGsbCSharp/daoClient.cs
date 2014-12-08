@@ -10,6 +10,12 @@ namespace ppeGsbCSharp
     {
         public static void modifierClient(String unNom, String unCode, String uneRaison, String uneAdresse, String unType, String unTel, String unMail, DateTime uneDate){
             daoFactory.Initialize();
+
+            
+        }
+        public static Client recupererLesClients()
+        {
+
         }
     }
 }

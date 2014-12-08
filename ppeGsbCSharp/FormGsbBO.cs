@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace ppeGsbCSharp
 {
     public partial class FormGsb : Form
     {
+        List<Client> lesClients;
         public FormGsb()
         {
             InitializeComponent();
@@ -36,6 +38,11 @@ namespace ppeGsbCSharp
                 dateRdvClient.Enabled = false;
                 cbxVisiteurAjoutRdvClient.Enabled = false;
             }
+        }
+
+        private void FormGsb_Load(object sender, EventArgs e)
+        {
+            lesClients = new List<Client>();
         }
     }
 }
