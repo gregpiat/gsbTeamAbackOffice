@@ -8,80 +8,98 @@ namespace ppeGsbCSharp
 {
     class Client
     {
+        private int id;
         private String nom;
-        private String code;
-        private String raison;
+        private String prenom;
+        private String raisonSociale;
+        private String ville;
         private String adresse;
-        private String type;
-        private String tel;
-        private String mail;
-        private DateTime date;
+        private String cp;
+        private String email;
+        private int idTypeProfessionnel;
+
+
         private ArrayList lesRdv;
 
 
-        public Client(String unNom, String unCode, String uneRaison, String uneAdresse, String unType, String unTel, String unMail, DateTime uneDate)
+
+
+        public Client(int unId, String unNom, String unPrenom, String uneRaisonSociale, String uneVille, String uneAdresse, 
+                                                                    String unCp, String unEmail, int unIdTypeProfessionnel)
         {
+            id = unId;
             nom = unNom;
-            code = unCode;
-            raison = uneRaison;
+            prenom = unPrenom;
+            raisonSociale = uneRaisonSociale;
+            ville = uneVille;
             adresse = uneAdresse;
-            type = unType;
-            tel = unTel;
-            mail = unMail;
-            date = uneDate;
+            cp = unCp;
+            email = unEmail;
+            idTypeProfessionnel = unIdTypeProfessionnel;
             lesRdv = new ArrayList();
         }
 
 
         #region Getters et setters
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         public String Nom
         {
             get { return nom; }
             set { nom = value; }
         }
-        public String Code
+
+        public String Prenom
         {
-            get { return code; }
-            set { code = value; }
+            get { return prenom; }
+            set { prenom = value; }
         }
-        public String Raison
+
+        public String RaisonSociale
         {
-            get { return raison; }
-            set { raison = value; }
+            get { return raisonSociale; }
+            set { raisonSociale = value; }
         }
+
+        public String Ville
+        {
+            get { return ville; }
+            set { ville = value; }
+        }
+
         public String Adresse
         {
             get { return adresse; }
             set { adresse = value; }
         }
-        public String Type
+
+        public String Cp
         {
-            get { return type; }
-            set { type = value; }
+            get { return cp; }
+            set { cp = value; }
         }
-        public String Tel
+
+        public String Email
         {
-            get { return tel; }
-            set { tel = value; }
+            get { return email; }
+            set { email = value; }
         }
-        public String Mail
+
+        public int IdTypeProfessionnel
         {
-            get { return mail; }
-            set { mail = value; }
+            get { return idTypeProfessionnel; }
+            set { idTypeProfessionnel = value; }
         }
-        public DateTime Date
-        {
-            get { return date; }
-            set { date = value; }
-        }
+
         public ArrayList LesRdv
         {
             get { return lesRdv; }
             set { lesRdv = value; }
         }
         #endregion
-
-
-
     }
 }

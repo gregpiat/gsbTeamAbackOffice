@@ -30,19 +30,71 @@ namespace ppeGsbCSharp
 
         private void tabClients_Click(object sender, EventArgs e)
         {
-            if (cbxNomClient.Text == null)
-            {
-                dgvAgendaClient.Enabled = false;
-                gpbAgendaClient.Enabled = false;
-                rtbRdvClient.Enabled = false;
-                dateRdvClient.Enabled = false;
-                cbxVisiteurAjoutRdvClient.Enabled = false;
-            }
+            
         }
 
         private void FormGsb_Load(object sender, EventArgs e)
         {
+
+            chargerLesClients();
+            daoClient monDaoClient = new daoClient();
+            //MessageBox.Show((monDaoClient.trouverNomProfessionParId(1)));
+            //MessageBox.Show((monDaoClient.trouverIdProfessionnelParNomProfession("Cadre").ToString()));
+
+            #region Ajout des types de clients à la collection de la combobox cbxRaisonClient
+            cbxRaisonClient.Items.Add("Médecin");
+            cbxRaisonClient.Items.Add("Chômeur");
+            cbxRaisonClient.Items.Add("Chirurgien");
+            #endregion
+        }
+
+        private void cbxNomClient_TextChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lesClients.Count(); i++)
+            {
+                daoClient monDaoClientTXB = new daoClient();
+                if (lesClients[i].Nom.ToString() == cbxNomClient.Text)
+                {
+                    Client leClient = lesClients[i];
+                    txbPrenomClient.Text = leClient.Nom.ToString();
+                    txbCodeClient.Text = leClient.Id.ToString();
+                    cbxRaisonClient.Text = leClient.RaisonSociale.ToString();
+                    txbAdresseClient.Text = leClient.Adresse.ToString();
+                    txbCpClient.Text = leClient.Cp.ToString();
+                    txbVilleClient.Text = leClient.Ville.ToString();
+                    txbTypeClient.Text = monDaoClientTXB.trouverNomProfessionParId(leClient.IdTypeProfessionnel);
+                    txbMailClient.Text = leClient.Email.ToString();
+                    /////////////////////////////////////
+                    //////////////////////////////////////
+                    ////////////////////////////////////
+                }
+            }
+        }
+
+        private void btnModifierClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void chargerLesClients()
+        {
+            #region Création de la liste lesClients contenant les clients de la base de données
             lesClients = new List<Client>();
+            daoClient monDaoClient = new daoClient();
+            lesClients = monDaoClient.recupererLesClients();
+            #endregion
+
+            #region Ajout du nom des clients à la collection de la combobox Client
+            for (int i = 0; i < lesClients.Count(); i++)
+            {
+                cbxNomClient.Items.Add(lesClients[i].Nom.ToString());
+            }
+            #endregion
+        }
+
+        private void btnAjouterRdv_Click(object sender, EventArgs e)
+        {
+            dgvAgendaClient.Rows.Add(dateRdvClient.Text, cbxVisiteurAjoutRdvClient.Text);
         }
     }
 }
