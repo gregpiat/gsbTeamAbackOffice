@@ -96,5 +96,28 @@ namespace ppeGsbCSharp
         {
             dgvAgendaClient.Rows.Add(dateRdvClient.Text, cbxVisiteurAjoutRdvClient.Text);
         }
+
+        private void btnAjouterClient_Click(object sender, EventArgs e)
+        {
+            if(cbxNomClient.Text != "" 
+                && txbPrenomClient.Text != "" 
+                && txbCodeClient.Text != "" 
+                && cbxRaisonClient.Text != "" 
+                && cbxRaisonClient.Text != "" 
+                && txbAdresseClient.Text != "" 
+                && txbCpClient.Text != "" 
+                && txbVilleClient.Text != ""
+                && txbTypeClient.Text != "" 
+                && txbMailClient.Text != "")
+            {
+                // FINIR L'AJOUT
+                //daoClient.ajouterClient(cbxNomClient.Text, cbxCodeClient.Text, txbCode);
+                MessageBox.Show("Création effectuée avec succés");
+            }
+            else
+            {
+                MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
+            }
+        }
     }
 }

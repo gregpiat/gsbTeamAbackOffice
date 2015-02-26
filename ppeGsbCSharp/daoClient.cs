@@ -58,17 +58,20 @@ namespace ppeGsbCSharp
                                                 ") where id ="+unId+";";
         }
 
-        public void ajouterClient(String unNom, String unCode, String uneRaison, String uneAdresse, 
-                                            String unType, String unTel, String unMail, DateTime uneDate)
+        // MODIFIER LA STRUTURE DE LA BASE POUR AJOUTER LES CHAMPS MANQUANTS
+        public static void ajouterClient(String unCode, String unNom, String unPrenom, String uneRaison,
+            String uneAdresse, String unCp, String uneVille, String unType, String unMail, DateTime uneDate)
         {
-            String requete = "INSERT INTO client(nom, code, raison, adresse, type, tel, mail, date) VALUES(nom ="+ unNom +
-                                                ", code =" + unCode +
-                                                ", raison=" + uneRaison +
-                                                "adresse=" + uneAdresse +
-                                                ", type =" + unType +
-                                                ", tel =" + unTel +
-                                                ", mail =" + unMail +
-                                                ",date =" + uneDate +
+            String requete = "INSERT INTO client(code, nom, prenom, raison, adresse, cp, ville, type, mail, dateInscription) VALUES(code ="+ unCode +
+                                                ", nom =" + unNom +
+                                                ", prenom=" + unPrenom +
+                                                "raison=" + uneRaison +
+                                                ", adresse =" + uneAdresse +
+                                                ", cp =" + unCp +
+                                                ", ville =" + uneVille +
+                                                ",type =" + unType +
+                                                ",mail =" + unMail +
+                                                ",dateInscription =" + uneDate +
                                                 ");";
         }
 
@@ -77,10 +80,12 @@ namespace ppeGsbCSharp
             String requete = "DELETE FROM client WHERE id =" + unId + ";";
         }
 
-        public void modifierClient(String unNom, String uneAdresse, String unTel, String unMail, String uneRaison,
-                                                                            String unCode, String unType)
+        public void modifierClient(String unCode, String unNom, String unPrenom, String uneRaison,
+            String uneAdresse, String unCp, String uneVille, String unType, String unMail)
         {
-            
+            String requete = "UPDATE client SET nom = " + unNom + ", prenom = "+ unPrenom +", raison = "+ uneRaison +
+                ",adresse ="+ uneAdresse +", cp = "+ unCp +", ville ="+ uneVille +", type ="+ unType +
+                ", mail = "+ unMail +" WHERE id=" + unCode + ";";
         }
 
         public String trouverNomProfessionParId(int unId)

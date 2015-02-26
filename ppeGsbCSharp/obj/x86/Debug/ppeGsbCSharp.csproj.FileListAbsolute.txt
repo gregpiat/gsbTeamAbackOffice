@@ -32,3 +32,9 @@ F:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Prop
 F:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
 E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
 E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
+E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
