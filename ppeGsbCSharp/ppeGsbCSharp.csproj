@@ -49,6 +49,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="daoClient.cs" />
     <Compile Include="daoFactory.cs" />
+    <Compile Include="daoVisiteur.cs" />
     <Compile Include="FormGsbBO.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -13,6 +13,8 @@ namespace ppeGsbCSharp
     public partial class FormGsb : Form
     {
         List<Client> lesClients;
+        List<Visiteur> lesVisiteurs;
+
         public FormGsb()
         {
             InitializeComponent();
@@ -41,11 +43,22 @@ namespace ppeGsbCSharp
             //MessageBox.Show((monDaoClient.trouverNomProfessionParId(1)));
             //MessageBox.Show((monDaoClient.trouverIdProfessionnelParNomProfession("Cadre").ToString()));
 
+
+            chargerLesVisiteurs();
+            daoVisiteur monDaoVisiteur = new daoVisiteur();
+
+
+
             #region Ajout des types de clients à la collection de la combobox cbxRaisonClient
             cbxRaisonClient.Items.Add("Médecin");
             cbxRaisonClient.Items.Add("Chômeur");
             cbxRaisonClient.Items.Add("Chirurgien");
             #endregion
+
+            #region Ajout des visiteurs à la ComboBox Visiteur
+
+            #endregion
+
         }
 
         private void cbxNomClient_TextChanged(object sender, EventArgs e)
@@ -57,7 +70,7 @@ namespace ppeGsbCSharp
                 if (lesClients[i].Nom.ToString() == cbxNomClient.Text)
                 {
                     Client leClient = lesClients[i];
-                    txbPrenomClient.Text = leClient.Nom.ToString();
+                    txbPrenomClient.Text = leClient.Prenom.ToString();
                     txbCodeClient.Text = leClient.Id.ToString();
                     cbxRaisonClient.Text = leClient.RaisonSociale.ToString();
                     txbAdresseClient.Text = leClient.Adresse.ToString();
@@ -89,6 +102,22 @@ namespace ppeGsbCSharp
             for (int i = 0; i < lesClients.Count(); i++)
             {
                 cbxNomClient.Items.Add(lesClients[i].Nom.ToString());
+            }
+            #endregion
+        }
+
+        public void chargerLesVisiteurs()
+        {
+            #region Création de la liste lesClients contenant les clients de la base de données
+            lesVisiteurs = new List<Visiteur>();
+            //daoVisiteur monDaoVisiteur = new daoVisiteur();
+            //lesVisiteurs = monDaoVisiteur.recupererLesVisiteurs();
+            #endregion
+
+            #region Ajout du nom des clients à la collection de la combobox Client
+            for (int i = 0; i < lesVisiteurs.Count(); i++)
+            {
+                cbxVisiteurAjoutRdvClient.Items.Add(lesVisiteurs[i].Nom.ToString());
             }
             #endregion
         }

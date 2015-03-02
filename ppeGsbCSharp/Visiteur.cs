@@ -17,5 +17,24 @@ namespace ppeGsbCSharp
             nom = unNom;
             prenom = unPrenom;
         }
+
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public String Nom
+        {
+            get { return nom; }
+            set { nom = value; }
+        }
+        public String Prenom
+        {
+            get { return prenom; }
+            set { prenom = value; }
+        }
+
+
     }
 }

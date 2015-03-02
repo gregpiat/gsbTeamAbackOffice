@@ -16,6 +16,7 @@ namespace ppeGsbCSharp
         private String adresse;
         private String cp;
         private String email;
+        //private String tel;
         private int idTypeProfessionnel;
 
 
@@ -35,6 +36,7 @@ namespace ppeGsbCSharp
             adresse = uneAdresse;
             cp = unCp;
             email = unEmail;
+            //tel = unTel;
             idTypeProfessionnel = unIdTypeProfessionnel;
             lesRdv = new ArrayList();
         }

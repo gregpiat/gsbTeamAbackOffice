@@ -44,6 +44,8 @@ namespace ppeGsbCSharp
 
             return tousLesClients;
         }
+
+
         public void modifierClient(int unId, String unNom, String unCode, String uneRaison, String uneAdresse, 
                                             String unType, String unTel, String unMail, DateTime uneDate){
 
