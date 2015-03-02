@@ -32,7 +32,6 @@
             this.tabMenuPrincipal = new System.Windows.Forms.TabControl();
             this.tabAccueil = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnConnexion = new System.Windows.Forms.Button();
             this.lblExplicationsAppplication = new System.Windows.Forms.Label();
             this.tabProduits = new System.Windows.Forms.TabPage();
             this.tabMenuProduits = new System.Windows.Forms.TabControl();
@@ -78,8 +77,6 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.rtbRdvClient = new System.Windows.Forms.RichTextBox();
             this.dgvAgendaClient = new System.Windows.Forms.DataGridView();
-            this.gdvColonneDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvColonneVisiteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbsClient = new System.Windows.Forms.GroupBox();
             this.txbPrenomClient = new System.Windows.Forms.TextBox();
             this.lblPrenomClient = new System.Windows.Forms.Label();
@@ -128,6 +125,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxtQuantiteCommande = new System.Windows.Forms.TextBox();
             this.txtNumeroCommande = new System.Windows.Forms.TextBox();
+            this.dgvColonneDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColonneVisiteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCompteRendu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -164,7 +164,6 @@
             // tabAccueil
             // 
             this.tabAccueil.Controls.Add(this.richTextBox1);
-            this.tabAccueil.Controls.Add(this.btnConnexion);
             this.tabAccueil.Controls.Add(this.lblExplicationsAppplication);
             this.tabAccueil.Location = new System.Drawing.Point(4, 22);
             this.tabAccueil.Name = "tabAccueil";
@@ -176,20 +175,11 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(213, 74);
+            this.richTextBox1.Location = new System.Drawing.Point(6, 6);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(267, 143);
+            this.richTextBox1.Size = new System.Drawing.Size(833, 443);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "Bonjour et bienvenue sur l\'application GSB !\n ";
-            // 
-            // btnConnexion
-            // 
-            this.btnConnexion.Location = new System.Drawing.Point(6, 142);
-            this.btnConnexion.Name = "btnConnexion";
-            this.btnConnexion.Size = new System.Drawing.Size(96, 28);
-            this.btnConnexion.TabIndex = 1;
-            this.btnConnexion.Text = "Me connecter";
-            this.btnConnexion.UseVisualStyleBackColor = true;
             // 
             // lblExplicationsAppplication
             // 
@@ -636,22 +626,13 @@
             // 
             this.dgvAgendaClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgendaClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.gdvColonneDate,
-            this.gdvColonneVisiteur});
+            this.dgvColonneDate,
+            this.dgvColonneVisiteur,
+            this.dgvCompteRendu});
             this.dgvAgendaClient.Location = new System.Drawing.Point(12, 16);
             this.dgvAgendaClient.Name = "dgvAgendaClient";
             this.dgvAgendaClient.Size = new System.Drawing.Size(465, 255);
             this.dgvAgendaClient.TabIndex = 21;
-            // 
-            // gdvColonneDate
-            // 
-            this.gdvColonneDate.HeaderText = "Date";
-            this.gdvColonneDate.Name = "gdvColonneDate";
-            // 
-            // gdvColonneVisiteur
-            // 
-            this.gdvColonneVisiteur.HeaderText = "Visiteur";
-            this.gdvColonneVisiteur.Name = "gdvColonneVisiteur";
             // 
             // gbsClient
             // 
@@ -1111,6 +1092,21 @@
             this.txtNumeroCommande.Size = new System.Drawing.Size(121, 20);
             this.txtNumeroCommande.TabIndex = 0;
             // 
+            // dgvColonneDate
+            // 
+            this.dgvColonneDate.HeaderText = "Date";
+            this.dgvColonneDate.Name = "dgvColonneDate";
+            // 
+            // dgvColonneVisiteur
+            // 
+            this.dgvColonneVisiteur.HeaderText = "Visiteur";
+            this.dgvColonneVisiteur.Name = "dgvColonneVisiteur";
+            // 
+            // dgvCompteRendu
+            // 
+            this.dgvCompteRendu.HeaderText = "Compte rendu";
+            this.dgvCompteRendu.Name = "dgvCompteRendu";
+            // 
             // FormGsb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1160,7 +1156,6 @@
         private System.Windows.Forms.TabPage tabProduits;
         private System.Windows.Forms.TabPage tabClients;
         private System.Windows.Forms.TabPage tabCommandes;
-        private System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.Label lblExplicationsAppplication;
         private System.Windows.Forms.TabControl tabMenuProduits;
         private System.Windows.Forms.TabPage tabProduitsConsulter;
@@ -1246,14 +1241,15 @@
         private System.Windows.Forms.DateTimePicker dateRdvClient;
         private System.Windows.Forms.ComboBox cbxClientAjoutCommande;
         private System.Windows.Forms.Label lblClientAjoutCommande;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gdvColonneDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gdvColonneVisiteur;
         private System.Windows.Forms.TextBox txbCpClient;
         private System.Windows.Forms.Label lblCpClient;
         private System.Windows.Forms.TextBox txbVilleClient;
         private System.Windows.Forms.Label txbVille;
         private System.Windows.Forms.Label lblPrenomClient;
         private System.Windows.Forms.TextBox txbPrenomClient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColonneDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColonneVisiteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCompteRendu;
     }
 }
 

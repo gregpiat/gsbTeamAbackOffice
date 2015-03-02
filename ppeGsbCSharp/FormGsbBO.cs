@@ -50,6 +50,7 @@ namespace ppeGsbCSharp
 
         private void cbxNomClient_TextChanged(object sender, EventArgs e)
         {
+
             for (int i = 0; i < lesClients.Count(); i++)
             {
                 daoClient monDaoClientTXB = new daoClient();
@@ -64,9 +65,9 @@ namespace ppeGsbCSharp
                     txbVilleClient.Text = leClient.Ville.ToString();
                     txbTypeClient.Text = monDaoClientTXB.trouverNomProfessionParId(leClient.IdTypeProfessionnel);
                     txbMailClient.Text = leClient.Email.ToString();
-                    /////////////////////////////////////
-                    //////////////////////////////////////
-                    ////////////////////////////////////
+                        /////////////////////////////////////
+                       /////////////////////////////////////
+                      /////////////////////////////////////
                 }
             }
         }
@@ -94,7 +95,7 @@ namespace ppeGsbCSharp
 
         private void btnAjouterRdv_Click(object sender, EventArgs e)
         {
-            dgvAgendaClient.Rows.Add(dateRdvClient.Text, cbxVisiteurAjoutRdvClient.Text);
+            dgvAgendaClient.Rows.Add(dateRdvClient.Text, cbxVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
         }
 
         private void btnAjouterClient_Click(object sender, EventArgs e)

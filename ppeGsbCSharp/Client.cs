@@ -39,6 +39,10 @@ namespace ppeGsbCSharp
             lesRdv = new ArrayList();
         }
 
+        public void ajouterRdv(Rdv unRdv){
+            lesRdv.Add(unRdv);
+        }
+
 
         #region Getters et setters
         public int Id

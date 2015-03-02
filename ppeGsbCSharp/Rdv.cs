@@ -7,14 +7,13 @@ namespace ppeGsbCSharp
 {
     class Rdv
     {
-        int id;
         Client client;
         DateTime date;
 
-        public Rdv(int unId, Client unClient, DateTime uneDate){
-            id = unId;
+        public Rdv(Client unClient, DateTime uneDate){
             client = unClient;
             date = uneDate;
         }
+
     }
 }
