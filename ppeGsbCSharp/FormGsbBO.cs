@@ -37,6 +37,12 @@ namespace ppeGsbCSharp
 
         private void FormGsb_Load(object sender, EventArgs e)
         {
+            Visiteur visiteur1 = new Visiteur(1, "Aubel", "François");
+            Visiteur visiteur2 = new Visiteur(2, "Aurel", "Thomas");
+            List<Visiteur> lesVisiteurs = new List<Visiteur>();
+            lesVisiteurs.Add(visiteur1);
+            lesVisiteurs.Add(visiteur2);
+            cbxVisiteurAjoutRdvClient.Items.Add(lesVisiteurs[0].Nom.ToString());
 
             chargerLesClients();
             daoClient monDaoClient = new daoClient();
@@ -124,7 +130,7 @@ namespace ppeGsbCSharp
 
         private void btnAjouterRdv_Click(object sender, EventArgs e)
         {
-            dgvAgendaClient.Rows.Add(dateRdvClient.Text, cbxVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+            dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text +":"+ txbMinutesRdv.Text, cbxVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
         }
 
         private void btnAjouterClient_Click(object sender, EventArgs e)

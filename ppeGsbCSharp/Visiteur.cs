@@ -34,7 +34,5 @@ namespace ppeGsbCSharp
             get { return prenom; }
             set { prenom = value; }
         }
-
-
     }
 }

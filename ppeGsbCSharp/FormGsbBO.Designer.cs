@@ -126,8 +126,13 @@
             this.TxtQuantiteCommande = new System.Windows.Forms.TextBox();
             this.txtNumeroCommande = new System.Windows.Forms.TextBox();
             this.dgvColonneDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvHeure = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColonneVisiteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCompteRendu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHeureRdv = new System.Windows.Forms.Label();
+            this.txbHeuresRDV = new System.Windows.Forms.TextBox();
+            this.txbMinutesRdv = new System.Windows.Forms.TextBox();
+            this.lblSeparateurHeures = new System.Windows.Forms.Label();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -558,6 +563,10 @@
             // 
             // gbAjouterVisite
             // 
+            this.gbAjouterVisite.Controls.Add(this.lblSeparateurHeures);
+            this.gbAjouterVisite.Controls.Add(this.txbMinutesRdv);
+            this.gbAjouterVisite.Controls.Add(this.txbHeuresRDV);
+            this.gbAjouterVisite.Controls.Add(this.lblHeureRdv);
             this.gbAjouterVisite.Controls.Add(this.dateRdvClient);
             this.gbAjouterVisite.Controls.Add(this.cbxVisiteurAjoutRdvClient);
             this.gbAjouterVisite.Controls.Add(this.lblVisiteurRdv);
@@ -572,7 +581,7 @@
             // 
             // dateRdvClient
             // 
-            this.dateRdvClient.Location = new System.Drawing.Point(124, 29);
+            this.dateRdvClient.Location = new System.Drawing.Point(87, 19);
             this.dateRdvClient.Name = "dateRdvClient";
             this.dateRdvClient.Size = new System.Drawing.Size(200, 20);
             this.dateRdvClient.TabIndex = 5;
@@ -580,7 +589,7 @@
             // cbxVisiteurAjoutRdvClient
             // 
             this.cbxVisiteurAjoutRdvClient.FormattingEnabled = true;
-            this.cbxVisiteurAjoutRdvClient.Location = new System.Drawing.Point(124, 53);
+            this.cbxVisiteurAjoutRdvClient.Location = new System.Drawing.Point(87, 48);
             this.cbxVisiteurAjoutRdvClient.Name = "cbxVisiteurAjoutRdvClient";
             this.cbxVisiteurAjoutRdvClient.Size = new System.Drawing.Size(200, 21);
             this.cbxVisiteurAjoutRdvClient.TabIndex = 4;
@@ -588,7 +597,7 @@
             // lblVisiteurRdv
             // 
             this.lblVisiteurRdv.AutoSize = true;
-            this.lblVisiteurRdv.Location = new System.Drawing.Point(37, 59);
+            this.lblVisiteurRdv.Location = new System.Drawing.Point(15, 51);
             this.lblVisiteurRdv.Name = "lblVisiteurRdv";
             this.lblVisiteurRdv.Size = new System.Drawing.Size(47, 13);
             this.lblVisiteurRdv.TabIndex = 3;
@@ -597,7 +606,7 @@
             // 
             // btnAjouterRdv
             // 
-            this.btnAjouterRdv.Location = new System.Drawing.Point(367, 40);
+            this.btnAjouterRdv.Location = new System.Drawing.Point(358, 51);
             this.btnAjouterRdv.Name = "btnAjouterRdv";
             this.btnAjouterRdv.Size = new System.Drawing.Size(75, 23);
             this.btnAjouterRdv.TabIndex = 2;
@@ -608,7 +617,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(37, 29);
+            this.lblDate.Location = new System.Drawing.Point(15, 21);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(36, 13);
             this.lblDate.TabIndex = 1;
@@ -620,13 +629,14 @@
             this.rtbRdvClient.Name = "rtbRdvClient";
             this.rtbRdvClient.Size = new System.Drawing.Size(462, 59);
             this.rtbRdvClient.TabIndex = 22;
-            this.rtbRdvClient.Text = "";
+            this.rtbRdvClient.Text = "Entrez le contenu du compte-rendu ici ...";
             // 
             // dgvAgendaClient
             // 
             this.dgvAgendaClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgendaClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvColonneDate,
+            this.dgvHeure,
             this.dgvColonneVisiteur,
             this.dgvCompteRendu});
             this.dgvAgendaClient.Location = new System.Drawing.Point(12, 16);
@@ -1097,6 +1107,11 @@
             this.dgvColonneDate.HeaderText = "Date";
             this.dgvColonneDate.Name = "dgvColonneDate";
             // 
+            // dgvHeure
+            // 
+            this.dgvHeure.HeaderText = "Heure";
+            this.dgvHeure.Name = "dgvHeure";
+            // 
             // dgvColonneVisiteur
             // 
             this.dgvColonneVisiteur.HeaderText = "Visiteur";
@@ -1106,6 +1121,38 @@
             // 
             this.dgvCompteRendu.HeaderText = "Compte rendu";
             this.dgvCompteRendu.Name = "dgvCompteRendu";
+            // 
+            // lblHeureRdv
+            // 
+            this.lblHeureRdv.AutoSize = true;
+            this.lblHeureRdv.Location = new System.Drawing.Point(307, 22);
+            this.lblHeureRdv.Name = "lblHeureRdv";
+            this.lblHeureRdv.Size = new System.Drawing.Size(42, 13);
+            this.lblHeureRdv.TabIndex = 6;
+            this.lblHeureRdv.Text = "Heure :";
+            // 
+            // txbHeuresRDV
+            // 
+            this.txbHeuresRDV.Location = new System.Drawing.Point(351, 18);
+            this.txbHeuresRDV.Name = "txbHeuresRDV";
+            this.txbHeuresRDV.Size = new System.Drawing.Size(34, 20);
+            this.txbHeuresRDV.TabIndex = 7;
+            // 
+            // txbMinutesRdv
+            // 
+            this.txbMinutesRdv.Location = new System.Drawing.Point(405, 18);
+            this.txbMinutesRdv.Name = "txbMinutesRdv";
+            this.txbMinutesRdv.Size = new System.Drawing.Size(34, 20);
+            this.txbMinutesRdv.TabIndex = 8;
+            // 
+            // lblSeparateurHeures
+            // 
+            this.lblSeparateurHeures.AutoSize = true;
+            this.lblSeparateurHeures.Location = new System.Drawing.Point(391, 22);
+            this.lblSeparateurHeures.Name = "lblSeparateurHeures";
+            this.lblSeparateurHeures.Size = new System.Drawing.Size(10, 13);
+            this.lblSeparateurHeures.TabIndex = 9;
+            this.lblSeparateurHeures.Text = ":";
             // 
             // FormGsb
             // 
@@ -1248,8 +1295,13 @@
         private System.Windows.Forms.Label lblPrenomClient;
         private System.Windows.Forms.TextBox txbPrenomClient;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColonneDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvHeure;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColonneVisiteur;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCompteRendu;
+        private System.Windows.Forms.Label lblSeparateurHeures;
+        private System.Windows.Forms.TextBox txbMinutesRdv;
+        private System.Windows.Forms.TextBox txbHeuresRDV;
+        private System.Windows.Forms.Label lblHeureRdv;
     }
 }
 
