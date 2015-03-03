@@ -42,7 +42,12 @@ namespace ppeGsbCSharp
             List<Visiteur> lesVisiteurs = new List<Visiteur>();
             lesVisiteurs.Add(visiteur1);
             lesVisiteurs.Add(visiteur2);
-            cbxVisiteurAjoutRdvClient.Items.Add(lesVisiteurs[0].Nom.ToString());
+            int i = 0;
+            for (i = 0; i < lesVisiteurs.Count(); ++i)
+            {
+                cbxVisiteurAjoutRdvClient.Items.Add(lesVisiteurs[i].Nom.ToString());
+            }
+                
 
             chargerLesClients();
             daoClient monDaoClient = new daoClient();
@@ -115,22 +120,23 @@ namespace ppeGsbCSharp
         public void chargerLesVisiteurs()
         {
             #region Création de la liste lesClients contenant les clients de la base de données
-            lesVisiteurs = new List<Visiteur>();
-            //daoVisiteur monDaoVisiteur = new daoVisiteur();
-            //lesVisiteurs = monDaoVisiteur.recupererLesVisiteurs();
-            #endregion
+            cbxVisiteurAjoutRdvClient.Items.Add("M. Ressouche");
+            cbxVisiteurAjoutRdvClient.Items.Add("Mme Accary-Barbier");
+            cbxVisiteurAjoutRdvClient.Items.Add("Mme Revy");
+            cbxVisiteurAjoutRdvClient.Items.Add("M. Mycek");
 
-            #region Ajout du nom des clients à la collection de la combobox Client
-            for (int i = 0; i < lesVisiteurs.Count(); i++)
-            {
-                cbxVisiteurAjoutRdvClient.Items.Add(lesVisiteurs[i].Nom.ToString());
-            }
+
             #endregion
         }
 
         private void btnAjouterRdv_Click(object sender, EventArgs e)
         {
-            dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text +":"+ txbMinutesRdv.Text, cbxVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+            if(cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && cbxVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != ""){
+                dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, cbxVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+            }
+            else{
+                MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
+            }
         }
 
         private void btnAjouterClient_Click(object sender, EventArgs e)
@@ -147,7 +153,14 @@ namespace ppeGsbCSharp
                 && txbMailClient.Text != "")
             {
                 // FINIR L'AJOUT
-                //daoClient.ajouterClient(cbxNomClient.Text, cbxCodeClient.Text, txbCode);
+                try
+                {
+                    daoClient.ajouterClient(int.Parse(txbCodeClient.Text), cbxNomClient.Text, txbPrenomClient.Text, cbxRaisonClient.Text, txbAdresseClient.Text, txbCpClient.Text, txbVilleClient.Text, 1, txbMailClient.Text);  
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Erreur lors de la création du client" + ex.ToString());
+                }
                 MessageBox.Show("Création effectuée avec succés");
             }
             else

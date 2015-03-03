@@ -61,25 +61,49 @@ namespace ppeGsbCSharp
         }
 
         // MODIFIER LA STRUTURE DE LA BASE POUR AJOUTER LES CHAMPS MANQUANTS
-        public static void ajouterClient(String unCode, String unNom, String unPrenom, String uneRaison,
-            String uneAdresse, String unCp, String uneVille, String unType, String unMail, DateTime uneDate)
+        public static void ajouterClient(int unId, String unNom, String unPrenom, String uneRaison,
+            String uneAdresse, String unCp, String uneVille, int unType, String unMail)
         {
-            String requete = "INSERT INTO client(code, nom, prenom, raison, adresse, cp, ville, type, mail, dateInscription) VALUES(code ="+ unCode +
-                                                ", nom =" + unNom +
-                                                ", prenom=" + unPrenom +
-                                                "raison=" + uneRaison +
-                                                ", adresse =" + uneAdresse +
-                                                ", cp =" + unCp +
-                                                ", ville =" + uneVille +
-                                                ",type =" + unType +
-                                                ",mail =" + unMail +
-                                                ",dateInscription =" + uneDate +
-                                                ");";
+
+
+
+            try
+            { 
+                unNom = "\'" + unNom + "\'";
+                unPrenom = "\'" + unPrenom + "\'";
+                uneRaison = "\'" + uneRaison + "\'";
+                uneVille = "\'" + uneVille + "\'";
+                uneAdresse = "\'" + uneAdresse + "\'";
+                unMail = "\'" + unMail + "\'";
+                unCp = "\'" + unCp + "\'";
+
+                String requete = "INSERT INTO dbo.personneClient(dbo.idClient, dbo.personneClient.nom, dbo.personneClient.prenom, dbo.personneClient.raisonSocial, dbo.personneClient.ville, dbo.personneClient.adresse, dbo.personneClient.cp, dbo.personneClient.email, dbo.personneClient.idTypeProfessionel) VALUES("
+                    + unId + ", "
+                    + unNom + ", "
+                    + unPrenom + ", " 
+                    + uneRaison + ", " 
+                    + uneVille + ", "
+                    + uneAdresse + ", "
+                    + unCp + ", " 
+                    + unMail + ", " 
+                    + unType +");";
+
+                daoFactory monDaoFactory1 = new daoFactory();
+                monDaoFactory1.OuvrirConnexion();
+                SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory1.connexionBDD);
+                maSqlCommand.ExecuteReader();
+            }
+            catch(SqlException exe)
+            {
+                MessageBox.Show("Erreur rencontrée : " + exe.ToString());
+            }
+
+
         }
 
         public static void supprimerClient(int unId)
         {
-            String requete = "DELETE FROM client WHERE id =" + unId + ";";
+            String requete = "DELETE FROM client WHERE nom =" + unId + ";";
         }
 
         public void modifierClient(String unCode, String unNom, String unPrenom, String uneRaison,
