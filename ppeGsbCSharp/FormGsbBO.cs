@@ -37,6 +37,10 @@ namespace ppeGsbCSharp
 
         private void FormGsb_Load(object sender, EventArgs e)
         {
+
+            txbCodeClient.Enabled = false;
+
+
             Visiteur visiteur1 = new Visiteur(1, "Aubel", "François");
             Visiteur visiteur2 = new Visiteur(2, "Aurel", "Thomas");
             List<Visiteur> lesVisiteurs = new List<Visiteur>();
@@ -98,7 +102,32 @@ namespace ppeGsbCSharp
 
         private void btnModifierClient_Click(object sender, EventArgs e)
         {
-
+            if (cbxNomClient.Text != ""
+            && txbPrenomClient.Text != ""
+            && txbCodeClient.Text != ""
+            && cbxRaisonClient.Text != ""
+            && cbxRaisonClient.Text != ""
+            && txbAdresseClient.Text != ""
+            && txbCpClient.Text != ""
+            && txbVilleClient.Text != ""
+            && txbTypeClient.Text != ""
+            && txbMailClient.Text != "")
+            {
+                // FINIR L'AJOUT
+                try
+                {
+                    daoClient.modifierClient(int.Parse(txbCodeClient.Text), cbxNomClient.Text, txbPrenomClient.Text, cbxRaisonClient.Text, txbAdresseClient.Text, txbCpClient.Text, txbVilleClient.Text, 1, txbMailClient.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors de la création du client" + ex.ToString());
+                }
+                MessageBox.Show("Modification effectuée avec succés");
+            }
+            else
+            {
+                MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
+            }
         }
 
         public void chargerLesClients()
