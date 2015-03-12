@@ -49,9 +49,6 @@ namespace ppeGsbCSharp
         public static void modifierClient(int unId, String unNom, String unPrenom, String uneRaison,
             String uneAdresse, String unCp, String uneVille, int unType, String unMail)
         {
-
-
-
             try
             {
                 unNom = "\'" + unNom + "\'";
@@ -81,8 +78,6 @@ namespace ppeGsbCSharp
             {
                 MessageBox.Show("Erreur rencontrée : " + exe.ToString());
             }
-
-
         }
 
 
@@ -90,8 +85,6 @@ namespace ppeGsbCSharp
         public static void ajouterClient(int unId, String unNom, String unPrenom, String uneRaison,
             String uneAdresse, String unCp, String uneVille, int unType, String unMail)
         {
-
-
 
             try
             { 
@@ -127,18 +120,27 @@ namespace ppeGsbCSharp
 
         }
 
-        public static void supprimerClient(int unId)
+        // Demande de plusieurs informations pour plus de sécurité (ne pas pouvoir supprimer uniquement avec l'ID)
+        public static void supprimerClient(int unId, String unNom, String unPrenom)
         {
-            String requete = "DELETE FROM client WHERE nom =" + unId + ";";
+            try
+            {
+                unNom = "\'" + unNom + "\'";
+                unPrenom = "\'" + unPrenom + "\'";
+
+                String requete = "DELETE FROM dbo.personneClient WHERE idClient = " + unId + " AND nom = " + unNom + " AND prenom = " + unPrenom + ";";
+
+                daoFactory monDaoFactory1 = new daoFactory();
+                monDaoFactory1.OuvrirConnexion();
+                SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory1.connexionBDD);
+                maSqlCommand.ExecuteReader();
+            }
+            catch (SqlException exe)
+            {
+                MessageBox.Show("Erreur rencontrée : " + exe.ToString());
+            }
         }
 
-        public void modifierClient(String unCode, String unNom, String unPrenom, String uneRaison,
-            String uneAdresse, String unCp, String uneVille, String unType, String unMail)
-        {
-            String requete = "UPDATE client SET nom = " + unNom + ", prenom = "+ unPrenom +", raison = "+ uneRaison +
-                ",adresse ="+ uneAdresse +", cp = "+ unCp +", ville ="+ uneVille +", type ="+ unType +
-                ", mail = "+ unMail +" WHERE id=" + unCode + ";";
-        }
 
         public String trouverNomProfessionParId(int unId)
         {

@@ -197,5 +197,29 @@ namespace ppeGsbCSharp
                 MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
             }
         }
+
+        private void btnSupprimerClient_Click(object sender, EventArgs e)
+        {
+            if (cbxNomClient.Text != ""
+            && txbPrenomClient.Text != ""
+            && txbCodeClient.Text != "")
+            {
+                // FINIR LA SUPPRESSION
+                try
+                {
+                    daoClient.supprimerClient(int.Parse(txbCodeClient.Text), cbxNomClient.Text, txbPrenomClient.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors de la création du client" + ex.ToString());
+                }
+                MessageBox.Show("Suppression effectuée avec succés");
+            }
+            else
+            {
+                MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
+            }
+
+        }
     }
 }
