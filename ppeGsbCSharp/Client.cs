@@ -20,7 +20,7 @@ namespace ppeGsbCSharp
         private int idTypeProfessionnel;
 
 
-        private ArrayList lesRdv;
+        private ArrayList lesVisites;
 
 
 
@@ -38,11 +38,11 @@ namespace ppeGsbCSharp
             email = unEmail;
             //tel = unTel;
             idTypeProfessionnel = unIdTypeProfessionnel;
-            lesRdv = new ArrayList();
+            lesVisites = new ArrayList();
         }
 
-        public void ajouterRdv(Visite unRdv){
-            lesRdv.Add(unRdv);
+        public void ajouterVisite(Visite uneVisite){
+            lesVisites.Add(uneVisite);
         }
 
 
@@ -101,10 +101,10 @@ namespace ppeGsbCSharp
             set { idTypeProfessionnel = value; }
         }
 
-        public ArrayList LesRdv
+        public ArrayList LesVisites
         {
-            get { return lesRdv; }
-            set { lesRdv = value; }
+            get { return LesVisites; }
+            set { LesVisites = value; }
         }
         #endregion
     }

@@ -141,6 +141,14 @@ namespace ppeGsbCSharp
             if (cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && txbVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != "")
             {
                 dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+
+
+                Client monClient = trouverClient(int.Parse(txbCodeClient.Text));
+                Visite maVisite = new Visite(monClient, dateRdvClient.Text, txbHeuresRDV.Text, rtbRdvClient.Text);
+                monClient.ajouterVisite(maVisite);
+                monClient.LesVisites.Add(maVisite);
+                MessageBox.Show(monClient.Nom);
+                MessageBox.Show(monClient.LesVisites[0].Date);
             }
             else
             {
@@ -177,6 +185,20 @@ namespace ppeGsbCSharp
                 MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
             }
 
+        }
+
+        private Client trouverClient(int unId)
+        {
+            Client clientVide = new Client(-1, "vide", "vide", "vide", "vide", "vide", "vide", "vide", 0);
+            for (int i = 0; i < lesClients.Count(); ++i)
+            {
+                if (lesClients[i].Id == unId)
+                {
+                    Client monClient = new Client(unId, lesClients[i].Nom, lesClients[i].Prenom, lesClients[i].RaisonSociale, lesClients[i].Ville, lesClients[i].Adresse, lesClients[i].Cp, lesClients[i].Email, lesClients[i].IdTypeProfessionnel);
+                    return monClient;
+                }
+            }
+            return clientVide;
         }
 
 

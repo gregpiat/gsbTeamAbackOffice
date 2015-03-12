@@ -79,17 +79,9 @@ namespace ppeGsbCSharp
             }
             catch (SqlException ex)
             {
-                switch (ex.Number)
-                {
-                    case 0:
-                        MessageBox.Show("Impossible de se connecter au serveur. Veuillez contacter l'administrateur");
-                        break;
 
-                    case 1045:
-                        MessageBox.Show("Le couple nom d'utilisateur/mot de passe est invalide");
-                        break;
-                }
-                return false;
+                    MessageBox.Show("Erreur : " + ex.ToString());
+                    return false;
             }
            
         }
