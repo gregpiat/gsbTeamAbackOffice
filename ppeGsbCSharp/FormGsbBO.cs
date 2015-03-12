@@ -13,6 +13,8 @@ namespace ppeGsbCSharp
     public partial class FormGsb : Form
     {
         List<Client> lesClients;
+        // dans public partial class FormGsb : Form
+        List<Produit> lesProduits;
 
         public FormGsb()
         {
@@ -31,14 +33,17 @@ namespace ppeGsbCSharp
 
         private void tabClients_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void FormGsb_Load(object sender, EventArgs e)
         {
 
-            txbCodeClient.Enabled = true;
-                
+            txbCodeClient.Enabled = false;
+
+            // dans private void FormGsb_Load(object sender, EventArgs e)
+            //chargerLesProduits();
+            daoProduit monDaoProduit = new daoProduit();
 
             chargerLesClients();
             daoClient monDaoClient = new daoClient();
@@ -78,9 +83,9 @@ namespace ppeGsbCSharp
                     txbVilleClient.Text = leClient.Ville.ToString();
                     txbTypeClient.Text = monDaoClientTXB.trouverNomProfessionParId(leClient.IdTypeProfessionnel);
                     txbMailClient.Text = leClient.Email.ToString();
-                        /////////////////////////////////////
-                       /////////////////////////////////////
-                      /////////////////////////////////////
+                    /////////////////////////////////////
+                    /////////////////////////////////////
+                    /////////////////////////////////////
                 }
             }
         }
@@ -137,7 +142,8 @@ namespace ppeGsbCSharp
             {
                 dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
             }
-            else{
+            else
+            {
                 MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
             }
         }
@@ -172,5 +178,45 @@ namespace ppeGsbCSharp
             }
 
         }
+
+
+//        public void chargerLesProduits()
+//        {
+//            // Création de la liste lesProduits contenant les produits de la bdd
+//            lesProduits = new List<Produit>();
+//            daoProduit monDaoProduit = new daoProduit();
+//            lesProduits = monDaoProduit.recupererLesProduits();
+//
+//            // Ajout du nom des produits à la collection de la combobox Produit
+//            for (int i = 0; i < lesProduits.Count(); i++)
+//            {
+//                try
+//                {
+//  cbxNomProduit.Items.Add(lesProduits[i].getNom().ToString());
+//
+//                }
+//                catch (Exception ex2)
+//                {
+//                    MessageBox.Show("Erreur : " + ex2.ToString());
+//                }
+//              
+//            }
+//        }
+
+//        public void cbxNomProduit_TextChanged(object sender, EventArgs e)
+//        {
+//            for (int i = 0; i < lesProduits.Count(); i++)
+//            {
+//                daoProduit monDaoProduitTxb = new daoProduit();
+//                if (lesProduits[i].getNom().ToString() == cbxNomProduit.Text)
+//                {
+//                    Produit leProduit = lesProduits[i];
+//                    txbNumProduit.Text = leProduit.getNum().ToString();
+//                    txbPrixProduit.Text = leProduit.getPrixHT().ToString();
+//                    lsbEffets.Text = leProduit.getEffets().ToString();
+//                    lsbInteraction.Text = leProduit.getInteractions().ToString();
+//                    lsbContreIndication.Text = leProduit.getIndications().ToString();
+//                }
+//            }
     }
 }
