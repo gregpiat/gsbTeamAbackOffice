@@ -13,7 +13,6 @@ namespace ppeGsbCSharp
     public partial class FormGsb : Form
     {
         List<Client> lesClients;
-        List<Visiteur> lesVisiteurs;
 
         public FormGsb()
         {
@@ -38,19 +37,7 @@ namespace ppeGsbCSharp
         private void FormGsb_Load(object sender, EventArgs e)
         {
 
-            txbCodeClient.Enabled = false;
-
-
-            Visiteur visiteur1 = new Visiteur(1, "Aubel", "François");
-            Visiteur visiteur2 = new Visiteur(2, "Aurel", "Thomas");
-            List<Visiteur> lesVisiteurs = new List<Visiteur>();
-            lesVisiteurs.Add(visiteur1);
-            lesVisiteurs.Add(visiteur2);
-            int i = 0;
-            for (i = 0; i < lesVisiteurs.Count(); ++i)
-            {
-                cbxVisiteurAjoutRdvClient.Items.Add(lesVisiteurs[i].Nom.ToString());
-            }
+            txbCodeClient.Enabled = true;
                 
 
             chargerLesClients();
@@ -58,8 +45,6 @@ namespace ppeGsbCSharp
             //MessageBox.Show((monDaoClient.trouverNomProfessionParId(1)));
             //MessageBox.Show((monDaoClient.trouverIdProfessionnelParNomProfession("Cadre").ToString()));
 
-
-            chargerLesVisiteurs();
             daoVisiteur monDaoVisiteur = new daoVisiteur();
 
 
@@ -146,22 +131,11 @@ namespace ppeGsbCSharp
             #endregion
         }
 
-        public void chargerLesVisiteurs()
-        {
-            #region Création de la liste lesClients contenant les clients de la base de données
-            cbxVisiteurAjoutRdvClient.Items.Add("M. Ressouche");
-            cbxVisiteurAjoutRdvClient.Items.Add("Mme Accary-Barbier");
-            cbxVisiteurAjoutRdvClient.Items.Add("Mme Revy");
-            cbxVisiteurAjoutRdvClient.Items.Add("M. Mycek");
-
-
-            #endregion
-        }
-
         private void btnAjouterRdv_Click(object sender, EventArgs e)
         {
-            if(cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && cbxVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != ""){
-                dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, cbxVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+            if (cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && txbVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != "")
+            {
+                dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
             }
             else{
                 MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
@@ -170,32 +144,9 @@ namespace ppeGsbCSharp
 
         private void btnAjouterClient_Click(object sender, EventArgs e)
         {
-            if(cbxNomClient.Text != "" 
-                && txbPrenomClient.Text != "" 
-                && txbCodeClient.Text != "" 
-                && cbxRaisonClient.Text != "" 
-                && cbxRaisonClient.Text != "" 
-                && txbAdresseClient.Text != "" 
-                && txbCpClient.Text != "" 
-                && txbVilleClient.Text != ""
-                && txbTypeClient.Text != "" 
-                && txbMailClient.Text != "")
-            {
-                // FINIR L'AJOUT
-                try
-                {
-                    daoClient.ajouterClient(int.Parse(txbCodeClient.Text), cbxNomClient.Text, txbPrenomClient.Text, cbxRaisonClient.Text, txbAdresseClient.Text, txbCpClient.Text, txbVilleClient.Text, 1, txbMailClient.Text);  
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Erreur lors de la création du client" + ex.ToString());
-                }
-                MessageBox.Show("Création effectuée avec succés");
-            }
-            else
-            {
-                MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
-            }
+
+            Form instanceFormCreerClient = new formCreerClient();
+            instanceFormCreerClient.ShowDialog();
         }
 
         private void btnSupprimerClient_Click(object sender, EventArgs e)

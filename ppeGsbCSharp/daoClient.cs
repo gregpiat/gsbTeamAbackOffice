@@ -16,10 +16,10 @@ namespace ppeGsbCSharp
         {
             List<Client> tousLesClients = new List<Client>();
             
-            daoFactory monDaoFactory1 = new daoFactory();
-            monDaoFactory1.OuvrirConnexion();
+            daoFactory monDaoFactory = new daoFactory();
+            monDaoFactory.OuvrirConnexion();
 
-            SqlCommand maSqlCommand = new SqlCommand("SELECT * FROM dbo.personneClient;", monDaoFactory1.connexionBDD);
+            SqlCommand maSqlCommand = new SqlCommand("SELECT * FROM dbo.personneClient;", monDaoFactory.connexionBDD);
             SqlDataReader recupClientsDR = maSqlCommand.ExecuteReader();
             if (recupClientsDR.HasRows)
             {
@@ -69,9 +69,9 @@ namespace ppeGsbCSharp
                     ", dbo.personneClient.idTypeProfessionel =" + unType +
                     " WHERE dbo.personneClient.idClient =" + unId + ";";
 
-                daoFactory monDaoFactory1 = new daoFactory();
-                monDaoFactory1.OuvrirConnexion();
-                SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory1.connexionBDD);
+                daoFactory monDaoFactory = new daoFactory();
+                monDaoFactory.OuvrirConnexion();
+                SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory.connexionBDD);
                 maSqlCommand.ExecuteReader();
             }
             catch (SqlException exe)
@@ -85,7 +85,6 @@ namespace ppeGsbCSharp
         public static void ajouterClient(int unId, String unNom, String unPrenom, String uneRaison,
             String uneAdresse, String unCp, String uneVille, int unType, String unMail)
         {
-
             try
             { 
                 unNom = "\'" + unNom + "\'";
@@ -107,9 +106,9 @@ namespace ppeGsbCSharp
                     + unMail + ", " 
                     + unType +");";
 
-                daoFactory monDaoFactory1 = new daoFactory();
-                monDaoFactory1.OuvrirConnexion();
-                SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory1.connexionBDD);
+                daoFactory monDaoFactory = new daoFactory();
+                monDaoFactory.OuvrirConnexion();
+                SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory.connexionBDD);
                 maSqlCommand.ExecuteReader();
             }
             catch(SqlException exe)
@@ -130,9 +129,9 @@ namespace ppeGsbCSharp
 
                 String requete = "DELETE FROM dbo.personneClient WHERE idClient = " + unId + " AND nom = " + unNom + " AND prenom = " + unPrenom + ";";
 
-                daoFactory monDaoFactory1 = new daoFactory();
-                monDaoFactory1.OuvrirConnexion();
-                SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory1.connexionBDD);
+                daoFactory monDaoFactory = new daoFactory();
+                monDaoFactory.OuvrirConnexion();
+                SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory.connexionBDD);
                 maSqlCommand.ExecuteReader();
             }
             catch (SqlException exe)
@@ -146,10 +145,10 @@ namespace ppeGsbCSharp
         {
             String resultat = "";
 
-            daoFactory monDaoFactory1 = new daoFactory();
-            monDaoFactory1.OuvrirConnexion();
+            daoFactory monDaoFactory = new daoFactory();
+            monDaoFactory.OuvrirConnexion();
 
-            SqlCommand maSqlCommand = new SqlCommand("SELECT nom FROM dbo.typeProfessionnel WHERE idTypeProf ="+unId+";", monDaoFactory1.connexionBDD);
+            SqlCommand maSqlCommand = new SqlCommand("SELECT nom FROM dbo.typeProfessionnel WHERE idTypeProf ="+unId+";", monDaoFactory.connexionBDD);
             SqlDataReader recupClientsDR = maSqlCommand.ExecuteReader();
             if (recupClientsDR.HasRows)
             {

@@ -41,7 +41,7 @@ namespace ppeGsbCSharp
             lesRdv = new ArrayList();
         }
 
-        public void ajouterRdv(Rdv unRdv){
+        public void ajouterRdv(Visite unRdv){
             lesRdv.Add(unRdv);
         }
 

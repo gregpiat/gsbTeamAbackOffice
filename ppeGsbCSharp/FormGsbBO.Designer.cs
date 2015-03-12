@@ -75,7 +75,6 @@
             this.txbHeuresRDV = new System.Windows.Forms.TextBox();
             this.lblHeureRdv = new System.Windows.Forms.Label();
             this.dateRdvClient = new System.Windows.Forms.DateTimePicker();
-            this.cbxVisiteurAjoutRdvClient = new System.Windows.Forms.ComboBox();
             this.lblVisiteurRdv = new System.Windows.Forms.Label();
             this.btnAjouterRdv = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
@@ -86,6 +85,8 @@
             this.dgvColonneVisiteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCompteRendu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbsClient = new System.Windows.Forms.GroupBox();
+            this.txbTelephoneClient = new System.Windows.Forms.TextBox();
+            this.lblTelephoneClient = new System.Windows.Forms.Label();
             this.txbPrenomClient = new System.Windows.Forms.TextBox();
             this.lblPrenomClient = new System.Windows.Forms.Label();
             this.txbVilleClient = new System.Windows.Forms.TextBox();
@@ -133,8 +134,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxtQuantiteCommande = new System.Windows.Forms.TextBox();
             this.txtNumeroCommande = new System.Windows.Forms.TextBox();
-            this.lblTelephoneClient = new System.Windows.Forms.Label();
-            this.txbTelephoneClient = new System.Windows.Forms.TextBox();
+            this.txbVisiteurAjoutRdvClient = new System.Windows.Forms.TextBox();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -566,12 +566,12 @@
             // 
             // gbAjouterVisite
             // 
+            this.gbAjouterVisite.Controls.Add(this.txbVisiteurAjoutRdvClient);
             this.gbAjouterVisite.Controls.Add(this.lblSeparateurHeures);
             this.gbAjouterVisite.Controls.Add(this.txbMinutesRdv);
             this.gbAjouterVisite.Controls.Add(this.txbHeuresRDV);
             this.gbAjouterVisite.Controls.Add(this.lblHeureRdv);
             this.gbAjouterVisite.Controls.Add(this.dateRdvClient);
-            this.gbAjouterVisite.Controls.Add(this.cbxVisiteurAjoutRdvClient);
             this.gbAjouterVisite.Controls.Add(this.lblVisiteurRdv);
             this.gbAjouterVisite.Controls.Add(this.btnAjouterRdv);
             this.gbAjouterVisite.Controls.Add(this.lblDate);
@@ -620,14 +620,6 @@
             this.dateRdvClient.Name = "dateRdvClient";
             this.dateRdvClient.Size = new System.Drawing.Size(200, 20);
             this.dateRdvClient.TabIndex = 5;
-            // 
-            // cbxVisiteurAjoutRdvClient
-            // 
-            this.cbxVisiteurAjoutRdvClient.FormattingEnabled = true;
-            this.cbxVisiteurAjoutRdvClient.Location = new System.Drawing.Point(87, 48);
-            this.cbxVisiteurAjoutRdvClient.Name = "cbxVisiteurAjoutRdvClient";
-            this.cbxVisiteurAjoutRdvClient.Size = new System.Drawing.Size(200, 21);
-            this.cbxVisiteurAjoutRdvClient.TabIndex = 4;
             // 
             // lblVisiteurRdv
             // 
@@ -721,16 +713,32 @@
             this.gbsClient.Controls.Add(this.lblCodeClient);
             this.gbsClient.Controls.Add(this.lblAdresseClient);
             this.gbsClient.Controls.Add(this.lblRaisonClient);
-            this.gbsClient.Location = new System.Drawing.Point(6, 22);
+            this.gbsClient.Location = new System.Drawing.Point(6, 6);
             this.gbsClient.Name = "gbsClient";
-            this.gbsClient.Size = new System.Drawing.Size(311, 352);
+            this.gbsClient.Size = new System.Drawing.Size(311, 368);
             this.gbsClient.TabIndex = 24;
             this.gbsClient.TabStop = false;
             this.gbsClient.Text = "Client";
             // 
+            // txbTelephoneClient
+            // 
+            this.txbTelephoneClient.Location = new System.Drawing.Point(98, 328);
+            this.txbTelephoneClient.Name = "txbTelephoneClient";
+            this.txbTelephoneClient.Size = new System.Drawing.Size(134, 20);
+            this.txbTelephoneClient.TabIndex = 30;
+            // 
+            // lblTelephoneClient
+            // 
+            this.lblTelephoneClient.AutoSize = true;
+            this.lblTelephoneClient.Location = new System.Drawing.Point(9, 331);
+            this.lblTelephoneClient.Name = "lblTelephoneClient";
+            this.lblTelephoneClient.Size = new System.Drawing.Size(64, 13);
+            this.lblTelephoneClient.TabIndex = 29;
+            this.lblTelephoneClient.Text = "Téléphone :";
+            // 
             // txbPrenomClient
             // 
-            this.txbPrenomClient.Location = new System.Drawing.Point(90, 58);
+            this.txbPrenomClient.Location = new System.Drawing.Point(97, 58);
             this.txbPrenomClient.Name = "txbPrenomClient";
             this.txbPrenomClient.Size = new System.Drawing.Size(134, 20);
             this.txbPrenomClient.TabIndex = 28;
@@ -738,7 +746,7 @@
             // lblPrenomClient
             // 
             this.lblPrenomClient.AutoSize = true;
-            this.lblPrenomClient.Location = new System.Drawing.Point(16, 61);
+            this.lblPrenomClient.Location = new System.Drawing.Point(25, 61);
             this.lblPrenomClient.Name = "lblPrenomClient";
             this.lblPrenomClient.Size = new System.Drawing.Size(49, 13);
             this.lblPrenomClient.TabIndex = 27;
@@ -746,7 +754,7 @@
             // 
             // txbVilleClient
             // 
-            this.txbVilleClient.Location = new System.Drawing.Point(90, 233);
+            this.txbVilleClient.Location = new System.Drawing.Point(98, 231);
             this.txbVilleClient.Name = "txbVilleClient";
             this.txbVilleClient.Size = new System.Drawing.Size(136, 20);
             this.txbVilleClient.TabIndex = 26;
@@ -754,7 +762,7 @@
             // txbVille
             // 
             this.txbVille.AutoSize = true;
-            this.txbVille.Location = new System.Drawing.Point(28, 235);
+            this.txbVille.Location = new System.Drawing.Point(41, 234);
             this.txbVille.Name = "txbVille";
             this.txbVille.Size = new System.Drawing.Size(32, 13);
             this.txbVille.TabIndex = 25;
@@ -763,7 +771,7 @@
             // lblCpClient
             // 
             this.lblCpClient.AutoSize = true;
-            this.lblCpClient.Location = new System.Drawing.Point(28, 200);
+            this.lblCpClient.Location = new System.Drawing.Point(47, 198);
             this.lblCpClient.Name = "lblCpClient";
             this.lblCpClient.Size = new System.Drawing.Size(26, 13);
             this.lblCpClient.TabIndex = 24;
@@ -771,7 +779,7 @@
             // 
             // txbCpClient
             // 
-            this.txbCpClient.Location = new System.Drawing.Point(90, 198);
+            this.txbCpClient.Location = new System.Drawing.Point(98, 198);
             this.txbCpClient.Name = "txbCpClient";
             this.txbCpClient.Size = new System.Drawing.Size(134, 20);
             this.txbCpClient.TabIndex = 23;
@@ -779,7 +787,7 @@
             // cbxNomClient
             // 
             this.cbxNomClient.FormattingEnabled = true;
-            this.cbxNomClient.Location = new System.Drawing.Point(88, 24);
+            this.cbxNomClient.Location = new System.Drawing.Point(97, 24);
             this.cbxNomClient.Name = "cbxNomClient";
             this.cbxNomClient.Size = new System.Drawing.Size(136, 21);
             this.cbxNomClient.TabIndex = 0;
@@ -787,7 +795,7 @@
             // 
             // txbCodeClient
             // 
-            this.txbCodeClient.Location = new System.Drawing.Point(88, 93);
+            this.txbCodeClient.Location = new System.Drawing.Point(96, 93);
             this.txbCodeClient.Name = "txbCodeClient";
             this.txbCodeClient.Size = new System.Drawing.Size(136, 20);
             this.txbCodeClient.TabIndex = 1;
@@ -795,21 +803,21 @@
             // cbxRaisonClient
             // 
             this.cbxRaisonClient.FormattingEnabled = true;
-            this.cbxRaisonClient.Location = new System.Drawing.Point(88, 128);
+            this.cbxRaisonClient.Location = new System.Drawing.Point(96, 128);
             this.cbxRaisonClient.Name = "cbxRaisonClient";
             this.cbxRaisonClient.Size = new System.Drawing.Size(136, 21);
             this.cbxRaisonClient.TabIndex = 20;
             // 
             // txbAdresseClient
             // 
-            this.txbAdresseClient.Location = new System.Drawing.Point(90, 162);
+            this.txbAdresseClient.Location = new System.Drawing.Point(98, 163);
             this.txbAdresseClient.Name = "txbAdresseClient";
             this.txbAdresseClient.Size = new System.Drawing.Size(136, 20);
             this.txbAdresseClient.TabIndex = 6;
             // 
             // txbTypeClient
             // 
-            this.txbTypeClient.Location = new System.Drawing.Point(90, 262);
+            this.txbTypeClient.Location = new System.Drawing.Point(98, 265);
             this.txbTypeClient.Name = "txbTypeClient";
             this.txbTypeClient.Size = new System.Drawing.Size(136, 20);
             this.txbTypeClient.TabIndex = 5;
@@ -817,7 +825,7 @@
             // lblMailClient
             // 
             this.lblMailClient.AutoSize = true;
-            this.lblMailClient.Location = new System.Drawing.Point(28, 297);
+            this.lblMailClient.Location = new System.Drawing.Point(41, 303);
             this.lblMailClient.Name = "lblMailClient";
             this.lblMailClient.Size = new System.Drawing.Size(32, 13);
             this.lblMailClient.TabIndex = 15;
@@ -825,7 +833,7 @@
             // 
             // txbMailClient
             // 
-            this.txbMailClient.Location = new System.Drawing.Point(90, 292);
+            this.txbMailClient.Location = new System.Drawing.Point(98, 296);
             this.txbMailClient.Name = "txbMailClient";
             this.txbMailClient.Size = new System.Drawing.Size(136, 20);
             this.txbMailClient.TabIndex = 8;
@@ -833,7 +841,7 @@
             // lblNomClient
             // 
             this.lblNomClient.AutoSize = true;
-            this.lblNomClient.Location = new System.Drawing.Point(25, 27);
+            this.lblNomClient.Location = new System.Drawing.Point(38, 27);
             this.lblNomClient.Name = "lblNomClient";
             this.lblNomClient.Size = new System.Drawing.Size(35, 13);
             this.lblNomClient.TabIndex = 9;
@@ -842,7 +850,7 @@
             // lblTypeClient
             // 
             this.lblTypeClient.AutoSize = true;
-            this.lblTypeClient.Location = new System.Drawing.Point(28, 264);
+            this.lblTypeClient.Location = new System.Drawing.Point(36, 268);
             this.lblTypeClient.Name = "lblTypeClient";
             this.lblTypeClient.Size = new System.Drawing.Size(37, 13);
             this.lblTypeClient.TabIndex = 13;
@@ -851,7 +859,7 @@
             // lblCodeClient
             // 
             this.lblCodeClient.AutoSize = true;
-            this.lblCodeClient.Location = new System.Drawing.Point(12, 94);
+            this.lblCodeClient.Location = new System.Drawing.Point(15, 94);
             this.lblCodeClient.Name = "lblCodeClient";
             this.lblCodeClient.Size = new System.Drawing.Size(59, 13);
             this.lblCodeClient.TabIndex = 10;
@@ -860,7 +868,7 @@
             // lblAdresseClient
             // 
             this.lblAdresseClient.AutoSize = true;
-            this.lblAdresseClient.Location = new System.Drawing.Point(20, 166);
+            this.lblAdresseClient.Location = new System.Drawing.Point(23, 166);
             this.lblAdresseClient.Name = "lblAdresseClient";
             this.lblAdresseClient.Size = new System.Drawing.Size(51, 13);
             this.lblAdresseClient.TabIndex = 12;
@@ -869,11 +877,11 @@
             // lblRaisonClient
             // 
             this.lblRaisonClient.AutoSize = true;
-            this.lblRaisonClient.Location = new System.Drawing.Point(19, 131);
+            this.lblRaisonClient.Location = new System.Drawing.Point(3, 131);
             this.lblRaisonClient.Name = "lblRaisonClient";
-            this.lblRaisonClient.Size = new System.Drawing.Size(46, 13);
+            this.lblRaisonClient.Size = new System.Drawing.Size(82, 13);
             this.lblRaisonClient.TabIndex = 11;
-            this.lblRaisonClient.Text = "Raison :";
+            this.lblRaisonClient.Text = "Raison sociale :";
             // 
             // btnAjouterClient
             // 
@@ -881,7 +889,7 @@
             this.btnAjouterClient.Name = "btnAjouterClient";
             this.btnAjouterClient.Size = new System.Drawing.Size(83, 43);
             this.btnAjouterClient.TabIndex = 18;
-            this.btnAjouterClient.Text = "Ajouter";
+            this.btnAjouterClient.Text = "Créer un client";
             this.btnAjouterClient.UseVisualStyleBackColor = true;
             this.btnAjouterClient.Click += new System.EventHandler(this.btnAjouterClient_Click);
             // 
@@ -1159,27 +1167,18 @@
             this.txtNumeroCommande.Size = new System.Drawing.Size(121, 20);
             this.txtNumeroCommande.TabIndex = 0;
             // 
-            // lblTelephoneClient
+            // txbVisiteurAjoutRdvClient
             // 
-            this.lblTelephoneClient.AutoSize = true;
-            this.lblTelephoneClient.Location = new System.Drawing.Point(12, 326);
-            this.lblTelephoneClient.Name = "lblTelephoneClient";
-            this.lblTelephoneClient.Size = new System.Drawing.Size(64, 13);
-            this.lblTelephoneClient.TabIndex = 29;
-            this.lblTelephoneClient.Text = "Téléphone :";
-            // 
-            // txbTelephoneClient
-            // 
-            this.txbTelephoneClient.Location = new System.Drawing.Point(90, 323);
-            this.txbTelephoneClient.Name = "txbTelephoneClient";
-            this.txbTelephoneClient.Size = new System.Drawing.Size(134, 20);
-            this.txbTelephoneClient.TabIndex = 30;
+            this.txbVisiteurAjoutRdvClient.Location = new System.Drawing.Point(87, 48);
+            this.txbVisiteurAjoutRdvClient.Name = "txbVisiteurAjoutRdvClient";
+            this.txbVisiteurAjoutRdvClient.Size = new System.Drawing.Size(200, 20);
+            this.txbVisiteurAjoutRdvClient.TabIndex = 31;
             // 
             // FormGsb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 481);
+            this.ClientSize = new System.Drawing.Size(843, 482);
             this.Controls.Add(this.tabMenuPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1269,7 +1268,6 @@
         private System.Windows.Forms.Label lblVisiteurRdv;
         private System.Windows.Forms.Button btnSupprimerClient;
         private System.Windows.Forms.Button btnModifierClient;
-        private System.Windows.Forms.ComboBox cbxVisiteurAjoutRdvClient;
         private System.Windows.Forms.Button btnAjouterClient;
         private System.Windows.Forms.Button BtnModifierEtatCommande;
         private System.Windows.Forms.ComboBox CbxEtatCommande;
@@ -1325,6 +1323,7 @@
         private System.Windows.Forms.Label lblHeureRdv;
         private System.Windows.Forms.TextBox txbTelephoneClient;
         private System.Windows.Forms.Label lblTelephoneClient;
+        private System.Windows.Forms.TextBox txbVisiteurAjoutRdvClient;
     }
 }
 

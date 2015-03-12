@@ -5,12 +5,12 @@ using System.Text;
 
 namespace ppeGsbCSharp
 {
-    class Rdv
+    class Visite
     {
         Client client;
         DateTime date;
 
-        public Rdv(Client unClient, DateTime uneDate){
+        public Visite(Client unClient, DateTime uneDate){
             client = unClient;
             date = uneDate;
         }
