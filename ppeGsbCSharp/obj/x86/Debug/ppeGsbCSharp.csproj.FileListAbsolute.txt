@@ -38,4 +38,3 @@ E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.cspr
 E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
 E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
 E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.formCreerClient.resources
-E:\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache

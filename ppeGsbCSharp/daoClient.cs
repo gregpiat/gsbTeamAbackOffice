@@ -26,14 +26,15 @@ namespace ppeGsbCSharp
                 while (recupClientsDR.Read())
                 {
                     Client unClient = new Client(recupClientsDR.GetInt32(0),
-                                                 recupClientsDR.GetString(1), 
-                                                 recupClientsDR.GetString(2),
-                                                 recupClientsDR.GetString(3), 
-                                                 recupClientsDR.GetString(4),
-                                                 recupClientsDR.GetString(5), 
-                                                 recupClientsDR.GetString(6),
-                                                 recupClientsDR.GetString(7),
-                                                 recupClientsDR.GetInt32(8));
+                                                 recupClientsDR.GetString(1).Trim(), 
+                                                 recupClientsDR.GetString(2).Trim(),
+                                                 recupClientsDR.GetString(3).Trim(), 
+                                                 recupClientsDR.GetString(4).Trim(),
+                                                 recupClientsDR.GetString(5).Trim(),
+                                                 recupClientsDR.GetString(6).Trim(),
+                                                 recupClientsDR.GetString(7).Trim(),
+                                                 recupClientsDR.GetInt32(8),
+                                                 recupClientsDR.GetString(9).Trim());
                     tousLesClients.Add(unClient);
                 }
             }
@@ -47,7 +48,7 @@ namespace ppeGsbCSharp
 
 
         public static void modifierClient(int unId, String unNom, String unPrenom, String uneRaison,
-            String uneAdresse, String unCp, String uneVille, int unType, String unMail)
+            String uneAdresse, String unCp, String uneVille, int unType, String unMail, String unTelephone)
         {
             try
             {
@@ -64,8 +65,9 @@ namespace ppeGsbCSharp
                     ", dbo.personneClient.raisonSocial =" + uneRaison + 
                     ", dbo.personneClient.ville =" + uneVille + 
                     ", dbo.personneClient.adresse =" + uneAdresse + 
-                    ", dbo.personneClient.cp =" + unCp + 
-                    ", dbo.personneClient.email = " + unMail + 
+                    ", dbo.personneClient.cp =" + unCp +
+                    ", dbo.personneClient.email = " + unMail +
+                    ", dbo.personneClient.telephone = " + unTelephone + 
                     ", dbo.personneClient.idTypeProfessionel =" + unType +
                     " WHERE dbo.personneClient.idClient =" + unId + ";";
 
@@ -83,7 +85,7 @@ namespace ppeGsbCSharp
 
         // MODIFIER LA STRUTURE DE LA BASE POUR AJOUTER LES CHAMPS MANQUANTS
         public static void ajouterClient(int unId, String unNom, String unPrenom, String uneRaison,
-            String uneAdresse, String unCp, String uneVille, int unType, String unMail)
+            String uneAdresse, String unCp, String uneVille, int unType, String unMail, String unTelephone)
         {
             try
             { 
@@ -95,7 +97,7 @@ namespace ppeGsbCSharp
                 unMail = "\'" + unMail + "\'";
                 unCp = "\'" + unCp + "\'";
 
-                String requete = "INSERT INTO dbo.personneClient(dbo.idClient, dbo.personneClient.nom, dbo.personneClient.prenom, dbo.personneClient.raisonSocial, dbo.personneClient.ville, dbo.personneClient.adresse, dbo.personneClient.cp, dbo.personneClient.email, dbo.personneClient.idTypeProfessionel) VALUES("
+                String requete = "INSERT INTO dbo.personneClient(dbo.idClient, dbo.personneClient.nom, dbo.personneClient.prenom, dbo.personneClient.raisonSocial, dbo.personneClient.ville, dbo.personneClient.adresse, dbo.personneClient.cp, dbo.personneClient.email, dbo.personneClient.idTypeProfessionel, dbo.personneClient.telephone) VALUES("
                     + unId + ", "
                     + unNom + ", "
                     + unPrenom + ", " 

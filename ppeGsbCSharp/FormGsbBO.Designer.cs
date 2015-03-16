@@ -70,6 +70,7 @@
             this.gpbAgendaClient = new System.Windows.Forms.GroupBox();
             this.gpbRdvClient = new System.Windows.Forms.GroupBox();
             this.gbAjouterVisite = new System.Windows.Forms.GroupBox();
+            this.txbVisiteurAjoutRdvClient = new System.Windows.Forms.TextBox();
             this.lblSeparateurHeures = new System.Windows.Forms.Label();
             this.txbMinutesRdv = new System.Windows.Forms.TextBox();
             this.txbHeuresRDV = new System.Windows.Forms.TextBox();
@@ -134,7 +135,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxtQuantiteCommande = new System.Windows.Forms.TextBox();
             this.txtNumeroCommande = new System.Windows.Forms.TextBox();
-            this.txbVisiteurAjoutRdvClient = new System.Windows.Forms.TextBox();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -582,6 +582,13 @@
             this.gbAjouterVisite.TabStop = false;
             this.gbAjouterVisite.Text = "Ajouter visite";
             // 
+            // txbVisiteurAjoutRdvClient
+            // 
+            this.txbVisiteurAjoutRdvClient.Location = new System.Drawing.Point(87, 48);
+            this.txbVisiteurAjoutRdvClient.Name = "txbVisiteurAjoutRdvClient";
+            this.txbVisiteurAjoutRdvClient.Size = new System.Drawing.Size(200, 20);
+            this.txbVisiteurAjoutRdvClient.TabIndex = 31;
+            // 
             // lblSeparateurHeures
             // 
             this.lblSeparateurHeures.AutoSize = true;
@@ -791,6 +798,8 @@
             this.cbxNomClient.Name = "cbxNomClient";
             this.cbxNomClient.Size = new System.Drawing.Size(136, 21);
             this.cbxNomClient.TabIndex = 0;
+            this.cbxNomClient.SelectedIndexChanged += new System.EventHandler(this.cbxNomClient_SelectedIndexChanged);
+            this.cbxNomClient.RightToLeftChanged += new System.EventHandler(this.cbxNomClient_RightToLeftChanged);
             this.cbxNomClient.TextChanged += new System.EventHandler(this.cbxNomClient_TextChanged);
             // 
             // txbCodeClient
@@ -1166,13 +1175,6 @@
             this.txtNumeroCommande.Name = "txtNumeroCommande";
             this.txtNumeroCommande.Size = new System.Drawing.Size(121, 20);
             this.txtNumeroCommande.TabIndex = 0;
-            // 
-            // txbVisiteurAjoutRdvClient
-            // 
-            this.txbVisiteurAjoutRdvClient.Location = new System.Drawing.Point(87, 48);
-            this.txbVisiteurAjoutRdvClient.Name = "txbVisiteurAjoutRdvClient";
-            this.txbVisiteurAjoutRdvClient.Size = new System.Drawing.Size(200, 20);
-            this.txbVisiteurAjoutRdvClient.TabIndex = 31;
             // 
             // FormGsb
             // 

@@ -106,7 +106,7 @@ namespace ppeGsbCSharp
                 // FINIR L'AJOUT
                 try
                 {
-                    daoClient.modifierClient(int.Parse(txbCodeClient.Text), cbxNomClient.Text, txbPrenomClient.Text, cbxRaisonClient.Text, txbAdresseClient.Text, txbCpClient.Text, txbVilleClient.Text, 1, txbMailClient.Text);
+                    daoClient.modifierClient(int.Parse(txbCodeClient.Text), cbxNomClient.Text, txbPrenomClient.Text, cbxRaisonClient.Text, txbAdresseClient.Text, txbCpClient.Text, txbVilleClient.Text, 1, txbMailClient.Text, txbTelephoneClient.Text);
                 }
                 catch (Exception ex)
                 {
@@ -131,30 +131,37 @@ namespace ppeGsbCSharp
             #region Ajout du nom des clients à la collection de la combobox Client
             for (int i = 0; i < lesClients.Count(); i++)
             {
-                cbxNomClient.Items.Add(lesClients[i].Nom.ToString());
+                cbxNomClient.Items.Add(lesClients[i].Nom.ToString().Trim());
             }
             #endregion
         }
 
         private void btnAjouterRdv_Click(object sender, EventArgs e)
         {
-            if (cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && txbVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != "")
-            {
-                dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+          //  if (cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && txbVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != "")
+            //{
+              //  dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
 
+                // Création du client qui correspond au client courant du formulaire
+                //Client monClient = trouverClient(int.Parse(txbCodeClient.Text));
 
-                Client monClient = trouverClient(int.Parse(txbCodeClient.Text));
-                Visite maVisite = new Visite(monClient, dateRdvClient.Text, txbHeuresRDV.Text, rtbRdvClient.Text);
-                monClient.ajouterVisite(maVisite);
-                monClient.LesVisites.Add(maVisite);
-                MessageBox.Show(monClient.Nom);
-                MessageBox.Show(monClient.LesVisites[0].Date);
-            }
-            else
-            {
-                MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
-            }
-        }
+                // Création de la visite avec les informations du formulaire et ajout à l'ArrayList lesVisites du client
+                //Visite maVisite = new Visite(monClient, dateRdvClient.Text, txbHeuresRDV.Text, rtbRdvClient.Text);
+                //monClient.ajouterVisite(maVisite);
+                //monClient.LesVisites.Add(maVisite);
+
+            //    MessageBox.Show(monClient.Nom);
+            //    for (int i = 0; i < monClient.LesVisites.Count(); ++i)
+            //    {
+            //
+            //    }
+            //        MessageBox.Show(monClient.LesVisites[0].Heure);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
+            //}
+       }
 
         private void btnAjouterClient_Click(object sender, EventArgs e)
         {
@@ -189,16 +196,26 @@ namespace ppeGsbCSharp
 
         private Client trouverClient(int unId)
         {
-            Client clientVide = new Client(-1, "vide", "vide", "vide", "vide", "vide", "vide", "vide", 0);
+            Client clientVide = new Client(-1, "vide", "vide", "vide", "vide", "vide", "vide", "vide", 0,"0000000000");
             for (int i = 0; i < lesClients.Count(); ++i)
             {
                 if (lesClients[i].Id == unId)
                 {
-                    Client monClient = new Client(unId, lesClients[i].Nom, lesClients[i].Prenom, lesClients[i].RaisonSociale, lesClients[i].Ville, lesClients[i].Adresse, lesClients[i].Cp, lesClients[i].Email, lesClients[i].IdTypeProfessionnel);
+                    Client monClient = new Client(unId, lesClients[i].Nom, lesClients[i].Prenom, lesClients[i].RaisonSociale, lesClients[i].Ville, lesClients[i].Adresse, lesClients[i].Cp, lesClients[i].Email, lesClients[i].IdTypeProfessionnel, lesClients[i].Telephone);
                     return monClient;
                 }
             }
             return clientVide;
+        }
+
+        private void cbxNomClient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxNomClient_RightToLeftChanged(object sender, EventArgs e)
+        {
+
         }
 
 

@@ -16,7 +16,7 @@ namespace ppeGsbCSharp
         private String adresse;
         private String cp;
         private String email;
-        //private String tel;
+        private String telephone;
         private int idTypeProfessionnel;
 
 
@@ -26,7 +26,7 @@ namespace ppeGsbCSharp
 
 
         public Client(int unId, String unNom, String unPrenom, String uneRaisonSociale, String uneVille, String uneAdresse, 
-                                                                    String unCp, String unEmail, int unIdTypeProfessionnel)
+                                                                    String unCp, String unEmail, int unIdTypeProfessionnel, String unTelephone)
         {
             id = unId;
             nom = unNom;
@@ -36,7 +36,7 @@ namespace ppeGsbCSharp
             adresse = uneAdresse;
             cp = unCp;
             email = unEmail;
-            //tel = unTel;
+            telephone = unTelephone;
             idTypeProfessionnel = unIdTypeProfessionnel;
             lesVisites = new ArrayList();
         }
@@ -101,10 +101,16 @@ namespace ppeGsbCSharp
             set { idTypeProfessionnel = value; }
         }
 
-        public ArrayList LesVisites
+        public  ArrayList LesVisites
         {
             get { return LesVisites; }
             set { LesVisites = value; }
+        }
+
+        public String Telephone
+        {
+            get { return telephone; }
+            set { telephone = value; }
         }
         #endregion
     }
