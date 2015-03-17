@@ -67,8 +67,8 @@ namespace ppeGsbCSharp
                     ", dbo.personneClient.adresse =" + uneAdresse + 
                     ", dbo.personneClient.cp =" + unCp +
                     ", dbo.personneClient.email = " + unMail +
-                    ", dbo.personneClient.telephone = " + unTelephone + 
                     ", dbo.personneClient.idTypeProfessionel =" + unType +
+                    ", dbo.personneClient.telephone = " + unTelephone + 
                     " WHERE dbo.personneClient.idClient =" + unId + ";";
 
                 daoFactory monDaoFactory = new daoFactory();
@@ -106,7 +106,8 @@ namespace ppeGsbCSharp
                     + uneAdresse + ", "
                     + unCp + ", " 
                     + unMail + ", " 
-                    + unType +");";
+                    + unType +", "
+                    + unTelephone +");";
 
                 daoFactory monDaoFactory = new daoFactory();
                 monDaoFactory.OuvrirConnexion();

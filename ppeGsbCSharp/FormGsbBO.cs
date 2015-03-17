@@ -83,6 +83,7 @@ namespace ppeGsbCSharp
                     txbVilleClient.Text = leClient.Ville.ToString();
                     txbTypeClient.Text = monDaoClientTXB.trouverNomProfessionParId(leClient.IdTypeProfessionnel);
                     txbMailClient.Text = leClient.Email.ToString();
+                    txbTelephoneClient.Text = leClient.Telephone.ToString();
                     /////////////////////////////////////
                     /////////////////////////////////////
                     /////////////////////////////////////
@@ -214,6 +215,11 @@ namespace ppeGsbCSharp
         }
 
         private void cbxNomClient_RightToLeftChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
