@@ -110,36 +110,40 @@
             this.tabCommandes = new System.Windows.Forms.TabPage();
             this.tabCommandesA = new System.Windows.Forms.TabControl();
             this.tabCommandesAfficher = new System.Windows.Forms.TabPage();
-            this.GrbCommandeAffiche = new System.Windows.Forms.GroupBox();
+            this.GrbModificationEtat = new System.Windows.Forms.GroupBox();
             this.BtnModifierEtatCommande = new System.Windows.Forms.Button();
             this.CbxEtatCommande = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.LblDateCommandeAffiche = new System.Windows.Forms.Label();
-            this.LblDateCommade = new System.Windows.Forms.Label();
-            this.tabCommandesAjouter = new System.Windows.Forms.TabPage();
-            this.GrbCommandeAjout = new System.Windows.Forms.GroupBox();
-            this.lblClientAjoutCommande = new System.Windows.Forms.Label();
-            this.cbxClientAjoutCommande = new System.Windows.Forms.ComboBox();
-            this.CbxProduitCommande = new System.Windows.Forms.ComboBox();
-            this.BtnAjoutCommande = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TxtQuantiteCommande = new System.Windows.Forms.TextBox();
-            this.txtNumeroCommande = new System.Windows.Forms.TextBox();
             this.GrbAfficheProduit = new System.Windows.Forms.GroupBox();
-            this.CbxNumeroCommande = new System.Windows.Forms.ComboBox();
-            this.LblNumeroCommande = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.GrbSelectionCommande = new System.Windows.Forms.GroupBox();
             this.DgvListeCommande = new System.Windows.Forms.DataGridView();
             this.Produit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label12 = new System.Windows.Forms.Label();
+            this.GrbSelectionCommande = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LblNumeroCommande = new System.Windows.Forms.Label();
+            this.CbxNumeroCommande = new System.Windows.Forms.ComboBox();
+            this.GrbCommandeAffiche = new System.Windows.Forms.GroupBox();
             this.LblClientCommandeAffiche = new System.Windows.Forms.Label();
-            this.GrbModificationEtat = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.LblDateCommandeAffiche = new System.Windows.Forms.Label();
+            this.LblDateCommade = new System.Windows.Forms.Label();
+            this.tabCommandesAjouter = new System.Windows.Forms.TabPage();
+            this.grbCommandeAjoutProduit = new System.Windows.Forms.GroupBox();
             this.btnAjoutCommandeLigneProduit = new System.Windows.Forms.Button();
+            this.CbxProduitCommande = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtQuantiteCommande = new System.Windows.Forms.TextBox();
+            this.GrbCommandeAjout = new System.Windows.Forms.GroupBox();
+            this.lblClientAjoutCommande = new System.Windows.Forms.Label();
+            this.txtNumeroCommande = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbxClientCommandeAjout = new System.Windows.Forms.ComboBox();
+            this.BtnAjoutCommande = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.LesProduitsAjouter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LesProduitsAjouterQuantite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrbLesProduitsAjouter = new System.Windows.Forms.GroupBox();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -155,14 +159,16 @@
             this.tabCommandes.SuspendLayout();
             this.tabCommandesA.SuspendLayout();
             this.tabCommandesAfficher.SuspendLayout();
+            this.GrbModificationEtat.SuspendLayout();
+            this.GrbAfficheProduit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListeCommande)).BeginInit();
+            this.GrbSelectionCommande.SuspendLayout();
             this.GrbCommandeAffiche.SuspendLayout();
             this.tabCommandesAjouter.SuspendLayout();
+            this.grbCommandeAjoutProduit.SuspendLayout();
             this.GrbCommandeAjout.SuspendLayout();
-            this.GrbAfficheProduit.SuspendLayout();
-            this.GrbSelectionCommande.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListeCommande)).BeginInit();
-            this.GrbModificationEtat.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.GrbLesProduitsAjouter.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenuPrincipal
@@ -191,9 +197,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 6);
+            this.richTextBox1.Location = new System.Drawing.Point(152, 125);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(833, 443);
+            this.richTextBox1.Size = new System.Drawing.Size(511, 135);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "Bonjour et bienvenue sur l\'application GSB !\n ";
             // 
@@ -946,18 +952,18 @@
             this.tabCommandesAfficher.Text = "Afficher";
             this.tabCommandesAfficher.UseVisualStyleBackColor = true;
             // 
-            // GrbCommandeAffiche
+            // GrbModificationEtat
             // 
-            this.GrbCommandeAffiche.Controls.Add(this.LblClientCommandeAffiche);
-            this.GrbCommandeAffiche.Controls.Add(this.label12);
-            this.GrbCommandeAffiche.Controls.Add(this.LblDateCommandeAffiche);
-            this.GrbCommandeAffiche.Controls.Add(this.LblDateCommade);
-            this.GrbCommandeAffiche.Location = new System.Drawing.Point(25, 96);
-            this.GrbCommandeAffiche.Name = "GrbCommandeAffiche";
-            this.GrbCommandeAffiche.Size = new System.Drawing.Size(436, 105);
-            this.GrbCommandeAffiche.TabIndex = 11;
-            this.GrbCommandeAffiche.TabStop = false;
-            this.GrbCommandeAffiche.Text = "Commande";
+            this.GrbModificationEtat.Controls.Add(this.BtnModifierEtatCommande);
+            this.GrbModificationEtat.Controls.Add(this.CbxEtatCommande);
+            this.GrbModificationEtat.Controls.Add(this.label8);
+            this.GrbModificationEtat.Location = new System.Drawing.Point(25, 226);
+            this.GrbModificationEtat.Name = "GrbModificationEtat";
+            this.GrbModificationEtat.Size = new System.Drawing.Size(436, 80);
+            this.GrbModificationEtat.TabIndex = 13;
+            this.GrbModificationEtat.TabStop = false;
+            this.GrbModificationEtat.Text = "Modification de l\'état";
+            this.GrbModificationEtat.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // BtnModifierEtatCommande
             // 
@@ -985,125 +991,6 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Etat :";
             // 
-            // LblDateCommandeAffiche
-            // 
-            this.LblDateCommandeAffiche.AutoSize = true;
-            this.LblDateCommandeAffiche.Location = new System.Drawing.Point(106, 36);
-            this.LblDateCommandeAffiche.Name = "LblDateCommandeAffiche";
-            this.LblDateCommandeAffiche.Size = new System.Drawing.Size(0, 13);
-            this.LblDateCommandeAffiche.TabIndex = 3;
-            // 
-            // LblDateCommade
-            // 
-            this.LblDateCommade.AutoSize = true;
-            this.LblDateCommade.Location = new System.Drawing.Point(9, 36);
-            this.LblDateCommade.Name = "LblDateCommade";
-            this.LblDateCommade.Size = new System.Drawing.Size(36, 13);
-            this.LblDateCommade.TabIndex = 2;
-            this.LblDateCommade.Text = "Date :";
-            // 
-            // tabCommandesAjouter
-            // 
-            this.tabCommandesAjouter.Controls.Add(this.groupBox1);
-            this.tabCommandesAjouter.Controls.Add(this.GrbCommandeAjout);
-            this.tabCommandesAjouter.Controls.Add(this.BtnAjoutCommande);
-            this.tabCommandesAjouter.Location = new System.Drawing.Point(4, 22);
-            this.tabCommandesAjouter.Name = "tabCommandesAjouter";
-            this.tabCommandesAjouter.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCommandesAjouter.Size = new System.Drawing.Size(831, 435);
-            this.tabCommandesAjouter.TabIndex = 1;
-            this.tabCommandesAjouter.Text = "Ajouter";
-            this.tabCommandesAjouter.UseVisualStyleBackColor = true;
-            // 
-            // GrbCommandeAjout
-            // 
-            this.GrbCommandeAjout.Controls.Add(this.lblClientAjoutCommande);
-            this.GrbCommandeAjout.Controls.Add(this.txtNumeroCommande);
-            this.GrbCommandeAjout.Controls.Add(this.label5);
-            this.GrbCommandeAjout.Controls.Add(this.cbxClientAjoutCommande);
-            this.GrbCommandeAjout.Location = new System.Drawing.Point(18, 16);
-            this.GrbCommandeAjout.Name = "GrbCommandeAjout";
-            this.GrbCommandeAjout.Size = new System.Drawing.Size(488, 110);
-            this.GrbCommandeAjout.TabIndex = 15;
-            this.GrbCommandeAjout.TabStop = false;
-            this.GrbCommandeAjout.Text = "Ajout Commande";
-            // 
-            // lblClientAjoutCommande
-            // 
-            this.lblClientAjoutCommande.AutoSize = true;
-            this.lblClientAjoutCommande.Location = new System.Drawing.Point(16, 39);
-            this.lblClientAjoutCommande.Name = "lblClientAjoutCommande";
-            this.lblClientAjoutCommande.Size = new System.Drawing.Size(39, 13);
-            this.lblClientAjoutCommande.TabIndex = 16;
-            this.lblClientAjoutCommande.Text = "Client :";
-            // 
-            // cbxClientAjoutCommande
-            // 
-            this.cbxClientAjoutCommande.FormattingEnabled = true;
-            this.cbxClientAjoutCommande.Location = new System.Drawing.Point(97, 31);
-            this.cbxClientAjoutCommande.Name = "cbxClientAjoutCommande";
-            this.cbxClientAjoutCommande.Size = new System.Drawing.Size(121, 21);
-            this.cbxClientAjoutCommande.TabIndex = 15;
-            // 
-            // CbxProduitCommande
-            // 
-            this.CbxProduitCommande.FormattingEnabled = true;
-            this.CbxProduitCommande.Location = new System.Drawing.Point(95, 30);
-            this.CbxProduitCommande.Name = "CbxProduitCommande";
-            this.CbxProduitCommande.Size = new System.Drawing.Size(121, 21);
-            this.CbxProduitCommande.TabIndex = 14;
-            // 
-            // BtnAjoutCommande
-            // 
-            this.BtnAjoutCommande.Location = new System.Drawing.Point(666, 367);
-            this.BtnAjoutCommande.Name = "BtnAjoutCommande";
-            this.BtnAjoutCommande.Size = new System.Drawing.Size(121, 23);
-            this.BtnAjoutCommande.TabIndex = 13;
-            this.BtnAjoutCommande.Text = "Ajouter Commande";
-            this.BtnAjoutCommande.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(263, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Quantité :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Produit :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 67);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Numero : ";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // TxtQuantiteCommande
-            // 
-            this.TxtQuantiteCommande.Location = new System.Drawing.Point(336, 31);
-            this.TxtQuantiteCommande.Name = "TxtQuantiteCommande";
-            this.TxtQuantiteCommande.Size = new System.Drawing.Size(121, 20);
-            this.TxtQuantiteCommande.TabIndex = 4;
-            // 
-            // txtNumeroCommande
-            // 
-            this.txtNumeroCommande.Location = new System.Drawing.Point(97, 67);
-            this.txtNumeroCommande.Name = "txtNumeroCommande";
-            this.txtNumeroCommande.Size = new System.Drawing.Size(121, 20);
-            this.txtNumeroCommande.TabIndex = 0;
-            // 
             // GrbAfficheProduit
             // 
             this.GrbAfficheProduit.Controls.Add(this.DgvListeCommande);
@@ -1113,44 +1000,6 @@
             this.GrbAfficheProduit.TabIndex = 12;
             this.GrbAfficheProduit.TabStop = false;
             this.GrbAfficheProduit.Text = "Les produits";
-            // 
-            // CbxNumeroCommande
-            // 
-            this.CbxNumeroCommande.FormattingEnabled = true;
-            this.CbxNumeroCommande.Location = new System.Drawing.Point(110, 35);
-            this.CbxNumeroCommande.Name = "CbxNumeroCommande";
-            this.CbxNumeroCommande.Size = new System.Drawing.Size(121, 21);
-            this.CbxNumeroCommande.TabIndex = 12;
-            // 
-            // LblNumeroCommande
-            // 
-            this.LblNumeroCommande.AutoSize = true;
-            this.LblNumeroCommande.Location = new System.Drawing.Point(10, 38);
-            this.LblNumeroCommande.Name = "LblNumeroCommande";
-            this.LblNumeroCommande.Size = new System.Drawing.Size(53, 13);
-            this.LblNumeroCommande.TabIndex = 13;
-            this.LblNumeroCommande.Text = "Numero : ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Sélèctionner le numéro de la commande";
-            // 
-            // GrbSelectionCommande
-            // 
-            this.GrbSelectionCommande.Controls.Add(this.label1);
-            this.GrbSelectionCommande.Controls.Add(this.LblNumeroCommande);
-            this.GrbSelectionCommande.Controls.Add(this.CbxNumeroCommande);
-            this.GrbSelectionCommande.Location = new System.Drawing.Point(25, 10);
-            this.GrbSelectionCommande.Name = "GrbSelectionCommande";
-            this.GrbSelectionCommande.Size = new System.Drawing.Size(435, 76);
-            this.GrbSelectionCommande.TabIndex = 15;
-            this.GrbSelectionCommande.TabStop = false;
-            this.GrbSelectionCommande.Text = "Sélèction Commande";
             // 
             // DgvListeCommande
             // 
@@ -1173,14 +1022,56 @@
             this.Quantite.HeaderText = "Quantite";
             this.Quantite.Name = "Quantite";
             // 
-            // label12
+            // GrbSelectionCommande
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 74);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Client :";
+            this.GrbSelectionCommande.Controls.Add(this.label1);
+            this.GrbSelectionCommande.Controls.Add(this.LblNumeroCommande);
+            this.GrbSelectionCommande.Controls.Add(this.CbxNumeroCommande);
+            this.GrbSelectionCommande.Location = new System.Drawing.Point(25, 10);
+            this.GrbSelectionCommande.Name = "GrbSelectionCommande";
+            this.GrbSelectionCommande.Size = new System.Drawing.Size(435, 76);
+            this.GrbSelectionCommande.TabIndex = 15;
+            this.GrbSelectionCommande.TabStop = false;
+            this.GrbSelectionCommande.Text = "Sélèction Commande";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Sélèctionner le numéro de la commande";
+            // 
+            // LblNumeroCommande
+            // 
+            this.LblNumeroCommande.AutoSize = true;
+            this.LblNumeroCommande.Location = new System.Drawing.Point(10, 38);
+            this.LblNumeroCommande.Name = "LblNumeroCommande";
+            this.LblNumeroCommande.Size = new System.Drawing.Size(53, 13);
+            this.LblNumeroCommande.TabIndex = 13;
+            this.LblNumeroCommande.Text = "Numero : ";
+            // 
+            // CbxNumeroCommande
+            // 
+            this.CbxNumeroCommande.FormattingEnabled = true;
+            this.CbxNumeroCommande.Location = new System.Drawing.Point(110, 35);
+            this.CbxNumeroCommande.Name = "CbxNumeroCommande";
+            this.CbxNumeroCommande.Size = new System.Drawing.Size(121, 21);
+            this.CbxNumeroCommande.TabIndex = 12;
+            // 
+            // GrbCommandeAffiche
+            // 
+            this.GrbCommandeAffiche.Controls.Add(this.LblClientCommandeAffiche);
+            this.GrbCommandeAffiche.Controls.Add(this.label12);
+            this.GrbCommandeAffiche.Controls.Add(this.LblDateCommandeAffiche);
+            this.GrbCommandeAffiche.Controls.Add(this.LblDateCommade);
+            this.GrbCommandeAffiche.Location = new System.Drawing.Point(25, 96);
+            this.GrbCommandeAffiche.Name = "GrbCommandeAffiche";
+            this.GrbCommandeAffiche.Size = new System.Drawing.Size(436, 105);
+            this.GrbCommandeAffiche.TabIndex = 11;
+            this.GrbCommandeAffiche.TabStop = false;
+            this.GrbCommandeAffiche.Text = "Commande";
             // 
             // LblClientCommandeAffiche
             // 
@@ -1190,32 +1081,59 @@
             this.LblClientCommandeAffiche.Size = new System.Drawing.Size(0, 13);
             this.LblClientCommandeAffiche.TabIndex = 12;
             // 
-            // GrbModificationEtat
+            // label12
             // 
-            this.GrbModificationEtat.Controls.Add(this.BtnModifierEtatCommande);
-            this.GrbModificationEtat.Controls.Add(this.CbxEtatCommande);
-            this.GrbModificationEtat.Controls.Add(this.label8);
-            this.GrbModificationEtat.Location = new System.Drawing.Point(25, 226);
-            this.GrbModificationEtat.Name = "GrbModificationEtat";
-            this.GrbModificationEtat.Size = new System.Drawing.Size(436, 80);
-            this.GrbModificationEtat.TabIndex = 13;
-            this.GrbModificationEtat.TabStop = false;
-            this.GrbModificationEtat.Text = "Modification de l\'état";
-            this.GrbModificationEtat.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(11, 74);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Client :";
             // 
-            // groupBox1
+            // LblDateCommandeAffiche
             // 
-            this.groupBox1.Controls.Add(this.btnAjoutCommandeLigneProduit);
-            this.groupBox1.Controls.Add(this.CbxProduitCommande);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.TxtQuantiteCommande);
-            this.groupBox1.Location = new System.Drawing.Point(18, 142);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(488, 110);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ajout Commande";
+            this.LblDateCommandeAffiche.AutoSize = true;
+            this.LblDateCommandeAffiche.Location = new System.Drawing.Point(106, 36);
+            this.LblDateCommandeAffiche.Name = "LblDateCommandeAffiche";
+            this.LblDateCommandeAffiche.Size = new System.Drawing.Size(0, 13);
+            this.LblDateCommandeAffiche.TabIndex = 3;
+            // 
+            // LblDateCommade
+            // 
+            this.LblDateCommade.AutoSize = true;
+            this.LblDateCommade.Location = new System.Drawing.Point(9, 36);
+            this.LblDateCommade.Name = "LblDateCommade";
+            this.LblDateCommade.Size = new System.Drawing.Size(36, 13);
+            this.LblDateCommade.TabIndex = 2;
+            this.LblDateCommade.Text = "Date :";
+            // 
+            // tabCommandesAjouter
+            // 
+            this.tabCommandesAjouter.Controls.Add(this.GrbLesProduitsAjouter);
+            this.tabCommandesAjouter.Controls.Add(this.grbCommandeAjoutProduit);
+            this.tabCommandesAjouter.Controls.Add(this.GrbCommandeAjout);
+            this.tabCommandesAjouter.Controls.Add(this.BtnAjoutCommande);
+            this.tabCommandesAjouter.Location = new System.Drawing.Point(4, 22);
+            this.tabCommandesAjouter.Name = "tabCommandesAjouter";
+            this.tabCommandesAjouter.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCommandesAjouter.Size = new System.Drawing.Size(831, 435);
+            this.tabCommandesAjouter.TabIndex = 1;
+            this.tabCommandesAjouter.Text = "Ajouter";
+            this.tabCommandesAjouter.UseVisualStyleBackColor = true;
+            // 
+            // grbCommandeAjoutProduit
+            // 
+            this.grbCommandeAjoutProduit.Controls.Add(this.btnAjoutCommandeLigneProduit);
+            this.grbCommandeAjoutProduit.Controls.Add(this.CbxProduitCommande);
+            this.grbCommandeAjoutProduit.Controls.Add(this.label3);
+            this.grbCommandeAjoutProduit.Controls.Add(this.label2);
+            this.grbCommandeAjoutProduit.Controls.Add(this.TxtQuantiteCommande);
+            this.grbCommandeAjoutProduit.Location = new System.Drawing.Point(18, 142);
+            this.grbCommandeAjoutProduit.Name = "grbCommandeAjoutProduit";
+            this.grbCommandeAjoutProduit.Size = new System.Drawing.Size(488, 110);
+            this.grbCommandeAjoutProduit.TabIndex = 17;
+            this.grbCommandeAjoutProduit.TabStop = false;
+            this.grbCommandeAjoutProduit.Text = "Ajout des produits";
             // 
             // btnAjoutCommandeLigneProduit
             // 
@@ -1225,6 +1143,126 @@
             this.btnAjoutCommandeLigneProduit.TabIndex = 18;
             this.btnAjoutCommandeLigneProduit.Text = "Ajouter produit";
             this.btnAjoutCommandeLigneProduit.UseVisualStyleBackColor = true;
+            // 
+            // CbxProduitCommande
+            // 
+            this.CbxProduitCommande.FormattingEnabled = true;
+            this.CbxProduitCommande.Location = new System.Drawing.Point(95, 30);
+            this.CbxProduitCommande.Name = "CbxProduitCommande";
+            this.CbxProduitCommande.Size = new System.Drawing.Size(121, 21);
+            this.CbxProduitCommande.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Produit :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(263, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Quantité :";
+            // 
+            // TxtQuantiteCommande
+            // 
+            this.TxtQuantiteCommande.Location = new System.Drawing.Point(336, 31);
+            this.TxtQuantiteCommande.Name = "TxtQuantiteCommande";
+            this.TxtQuantiteCommande.Size = new System.Drawing.Size(121, 20);
+            this.TxtQuantiteCommande.TabIndex = 4;
+            // 
+            // GrbCommandeAjout
+            // 
+            this.GrbCommandeAjout.Controls.Add(this.lblClientAjoutCommande);
+            this.GrbCommandeAjout.Controls.Add(this.txtNumeroCommande);
+            this.GrbCommandeAjout.Controls.Add(this.label5);
+            this.GrbCommandeAjout.Controls.Add(this.cbxClientCommandeAjout);
+            this.GrbCommandeAjout.Location = new System.Drawing.Point(18, 16);
+            this.GrbCommandeAjout.Name = "GrbCommandeAjout";
+            this.GrbCommandeAjout.Size = new System.Drawing.Size(488, 110);
+            this.GrbCommandeAjout.TabIndex = 15;
+            this.GrbCommandeAjout.TabStop = false;
+            this.GrbCommandeAjout.Text = "Ajout Commande";
+            // 
+            // lblClientAjoutCommande
+            // 
+            this.lblClientAjoutCommande.AutoSize = true;
+            this.lblClientAjoutCommande.Location = new System.Drawing.Point(16, 39);
+            this.lblClientAjoutCommande.Name = "lblClientAjoutCommande";
+            this.lblClientAjoutCommande.Size = new System.Drawing.Size(39, 13);
+            this.lblClientAjoutCommande.TabIndex = 16;
+            this.lblClientAjoutCommande.Text = "Client :";
+            // 
+            // txtNumeroCommande
+            // 
+            this.txtNumeroCommande.Location = new System.Drawing.Point(97, 67);
+            this.txtNumeroCommande.Name = "txtNumeroCommande";
+            this.txtNumeroCommande.Size = new System.Drawing.Size(121, 20);
+            this.txtNumeroCommande.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Numero : ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // cbxClientCommandeAjout
+            // 
+            this.cbxClientCommandeAjout.FormattingEnabled = true;
+            this.cbxClientCommandeAjout.Location = new System.Drawing.Point(97, 31);
+            this.cbxClientCommandeAjout.Name = "cbxClientCommandeAjout";
+            this.cbxClientCommandeAjout.Size = new System.Drawing.Size(121, 21);
+            this.cbxClientCommandeAjout.TabIndex = 15;
+            // 
+            // BtnAjoutCommande
+            // 
+            this.BtnAjoutCommande.Location = new System.Drawing.Point(573, 327);
+            this.BtnAjoutCommande.Name = "BtnAjoutCommande";
+            this.BtnAjoutCommande.Size = new System.Drawing.Size(193, 74);
+            this.BtnAjoutCommande.TabIndex = 13;
+            this.BtnAjoutCommande.Text = "Ajouter Commande";
+            this.BtnAjoutCommande.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LesProduitsAjouter,
+            this.LesProduitsAjouterQuantite});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(283, 239);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // LesProduitsAjouter
+            // 
+            this.LesProduitsAjouter.HeaderText = "Produits";
+            this.LesProduitsAjouter.Name = "LesProduitsAjouter";
+            // 
+            // LesProduitsAjouterQuantite
+            // 
+            this.LesProduitsAjouterQuantite.HeaderText = "Quantite";
+            this.LesProduitsAjouterQuantite.Name = "LesProduitsAjouterQuantite";
+            // 
+            // GrbLesProduitsAjouter
+            // 
+            this.GrbLesProduitsAjouter.Controls.Add(this.dataGridView1);
+            this.GrbLesProduitsAjouter.Location = new System.Drawing.Point(512, 16);
+            this.GrbLesProduitsAjouter.Name = "GrbLesProduitsAjouter";
+            this.GrbLesProduitsAjouter.Size = new System.Drawing.Size(295, 264);
+            this.GrbLesProduitsAjouter.TabIndex = 18;
+            this.GrbLesProduitsAjouter.TabStop = false;
+            this.GrbLesProduitsAjouter.Text = "Les produits ajoutés";
             // 
             // FormGsb
             // 
@@ -1257,19 +1295,21 @@
             this.tabCommandes.ResumeLayout(false);
             this.tabCommandesA.ResumeLayout(false);
             this.tabCommandesAfficher.ResumeLayout(false);
+            this.GrbModificationEtat.ResumeLayout(false);
+            this.GrbModificationEtat.PerformLayout();
+            this.GrbAfficheProduit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListeCommande)).EndInit();
+            this.GrbSelectionCommande.ResumeLayout(false);
+            this.GrbSelectionCommande.PerformLayout();
             this.GrbCommandeAffiche.ResumeLayout(false);
             this.GrbCommandeAffiche.PerformLayout();
             this.tabCommandesAjouter.ResumeLayout(false);
+            this.grbCommandeAjoutProduit.ResumeLayout(false);
+            this.grbCommandeAjoutProduit.PerformLayout();
             this.GrbCommandeAjout.ResumeLayout(false);
             this.GrbCommandeAjout.PerformLayout();
-            this.GrbAfficheProduit.ResumeLayout(false);
-            this.GrbSelectionCommande.ResumeLayout(false);
-            this.GrbSelectionCommande.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListeCommande)).EndInit();
-            this.GrbModificationEtat.ResumeLayout(false);
-            this.GrbModificationEtat.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.GrbLesProduitsAjouter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1355,7 +1395,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateRdvClient;
-        private System.Windows.Forms.ComboBox cbxClientAjoutCommande;
+        private System.Windows.Forms.ComboBox cbxClientCommandeAjout;
         private System.Windows.Forms.Label lblClientAjoutCommande;
         private System.Windows.Forms.TextBox txbCpClient;
         private System.Windows.Forms.Label lblCpClient;
@@ -1385,8 +1425,12 @@
         private System.Windows.Forms.Label LblClientCommandeAffiche;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox GrbModificationEtat;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbCommandeAjoutProduit;
         private System.Windows.Forms.Button btnAjoutCommandeLigneProduit;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox GrbLesProduitsAjouter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouterQuantite;
     }
 }
 
