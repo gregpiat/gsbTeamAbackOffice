@@ -47,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="Commande.cs" />
+    <Compile Include="commandeListe.cs" />
     <Compile Include="daoClient.cs" />
+    <Compile Include="DAOCommande.cs" />
     <Compile Include="daoFactory.cs" />
     <Compile Include="daoProduit.cs" />
     <Compile Include="daoVisiteur.cs" />

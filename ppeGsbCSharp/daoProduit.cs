@@ -18,7 +18,27 @@ namespace ppeGsbCSharp
         String desIncompatibilites;
         String desInteractions;
         decimal unPrixHT;
+        public static List<Produit> listeProduit()
+        {
+            daoFactory p = new daoFactory();
+            p.OuvrirConnexion();
+            string req = "SELECT * FROM medicament";
+            List<Produit> resultat = new List<Produit>();
+            // récupération des données de la requête
 
+            SqlDataReader dr = p.execSql(req);
+
+            // passage des données dans le vecteur
+
+            while (dr.Read())
+            {
+                Produit r = new Produit(dr.GetInt32(1),
+                    dr.GetString(3));
+                resultat.Add(r);
+            }
+            p.CloseConnection();
+            return resultat;
+        }
         public List<Produit> recupererLesProduits()
         {
             

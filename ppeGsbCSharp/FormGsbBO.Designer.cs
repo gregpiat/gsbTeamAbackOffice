@@ -128,6 +128,10 @@
             this.LblDateCommandeAffiche = new System.Windows.Forms.Label();
             this.LblDateCommade = new System.Windows.Forms.Label();
             this.tabCommandesAjouter = new System.Windows.Forms.TabPage();
+            this.GrbLesProduitsAjouter = new System.Windows.Forms.GroupBox();
+            this.DgvCommandeLesProduitAjouter = new System.Windows.Forms.DataGridView();
+            this.LesProduitsAjouter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LesProduitsAjouterQuantite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbCommandeAjoutProduit = new System.Windows.Forms.GroupBox();
             this.btnAjoutCommandeLigneProduit = new System.Windows.Forms.Button();
             this.CbxProduitCommande = new System.Windows.Forms.ComboBox();
@@ -138,12 +142,8 @@
             this.lblClientAjoutCommande = new System.Windows.Forms.Label();
             this.txtNumeroCommande = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbxClientCommandeAjout = new System.Windows.Forms.ComboBox();
+            this.CbxClientCommandeAjout = new System.Windows.Forms.ComboBox();
             this.BtnAjoutCommande = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.LesProduitsAjouter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LesProduitsAjouterQuantite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrbLesProduitsAjouter = new System.Windows.Forms.GroupBox();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -165,10 +165,10 @@
             this.GrbSelectionCommande.SuspendLayout();
             this.GrbCommandeAffiche.SuspendLayout();
             this.tabCommandesAjouter.SuspendLayout();
+            this.GrbLesProduitsAjouter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCommandeLesProduitAjouter)).BeginInit();
             this.grbCommandeAjoutProduit.SuspendLayout();
             this.GrbCommandeAjout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.GrbLesProduitsAjouter.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenuPrincipal
@@ -927,6 +927,7 @@
             this.tabCommandes.TabIndex = 3;
             this.tabCommandes.Text = "Commandes";
             this.tabCommandes.UseVisualStyleBackColor = true;
+            this.tabCommandes.Enter += new System.EventHandler(this.tabCommandes_Enter);
             // 
             // tabCommandesA
             // 
@@ -973,6 +974,7 @@
             this.BtnModifierEtatCommande.TabIndex = 10;
             this.BtnModifierEtatCommande.Text = "Modifier état";
             this.BtnModifierEtatCommande.UseVisualStyleBackColor = true;
+            this.BtnModifierEtatCommande.Click += new System.EventHandler(this.BtnModifierEtatCommande_Click);
             // 
             // CbxEtatCommande
             // 
@@ -1059,6 +1061,7 @@
             this.CbxNumeroCommande.Name = "CbxNumeroCommande";
             this.CbxNumeroCommande.Size = new System.Drawing.Size(121, 21);
             this.CbxNumeroCommande.TabIndex = 12;
+            this.CbxNumeroCommande.SelectedIndexChanged += new System.EventHandler(this.CbxNumeroCommande_SelectedIndexChanged_1);
             // 
             // GrbCommandeAffiche
             // 
@@ -1121,6 +1124,37 @@
             this.tabCommandesAjouter.Text = "Ajouter";
             this.tabCommandesAjouter.UseVisualStyleBackColor = true;
             // 
+            // GrbLesProduitsAjouter
+            // 
+            this.GrbLesProduitsAjouter.Controls.Add(this.DgvCommandeLesProduitAjouter);
+            this.GrbLesProduitsAjouter.Location = new System.Drawing.Point(512, 16);
+            this.GrbLesProduitsAjouter.Name = "GrbLesProduitsAjouter";
+            this.GrbLesProduitsAjouter.Size = new System.Drawing.Size(295, 264);
+            this.GrbLesProduitsAjouter.TabIndex = 18;
+            this.GrbLesProduitsAjouter.TabStop = false;
+            this.GrbLesProduitsAjouter.Text = "Les produits ajoutés";
+            // 
+            // DgvCommandeLesProduitAjouter
+            // 
+            this.DgvCommandeLesProduitAjouter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCommandeLesProduitAjouter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LesProduitsAjouter,
+            this.LesProduitsAjouterQuantite});
+            this.DgvCommandeLesProduitAjouter.Location = new System.Drawing.Point(6, 19);
+            this.DgvCommandeLesProduitAjouter.Name = "DgvCommandeLesProduitAjouter";
+            this.DgvCommandeLesProduitAjouter.Size = new System.Drawing.Size(283, 239);
+            this.DgvCommandeLesProduitAjouter.TabIndex = 18;
+            // 
+            // LesProduitsAjouter
+            // 
+            this.LesProduitsAjouter.HeaderText = "Produits";
+            this.LesProduitsAjouter.Name = "LesProduitsAjouter";
+            // 
+            // LesProduitsAjouterQuantite
+            // 
+            this.LesProduitsAjouterQuantite.HeaderText = "Quantite";
+            this.LesProduitsAjouterQuantite.Name = "LesProduitsAjouterQuantite";
+            // 
             // grbCommandeAjoutProduit
             // 
             this.grbCommandeAjoutProduit.Controls.Add(this.btnAjoutCommandeLigneProduit);
@@ -1143,6 +1177,7 @@
             this.btnAjoutCommandeLigneProduit.TabIndex = 18;
             this.btnAjoutCommandeLigneProduit.Text = "Ajouter produit";
             this.btnAjoutCommandeLigneProduit.UseVisualStyleBackColor = true;
+            this.btnAjoutCommandeLigneProduit.Click += new System.EventHandler(this.btnAjoutCommandeLigneProduit_Click_1);
             // 
             // CbxProduitCommande
             // 
@@ -1176,13 +1211,15 @@
             this.TxtQuantiteCommande.Name = "TxtQuantiteCommande";
             this.TxtQuantiteCommande.Size = new System.Drawing.Size(121, 20);
             this.TxtQuantiteCommande.TabIndex = 4;
+            this.TxtQuantiteCommande.TextChanged += new System.EventHandler(this.TxtQuantiteCommande_TextChanged_1);
+            this.TxtQuantiteCommande.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantiteCommande_KeyPress_1);
             // 
             // GrbCommandeAjout
             // 
             this.GrbCommandeAjout.Controls.Add(this.lblClientAjoutCommande);
             this.GrbCommandeAjout.Controls.Add(this.txtNumeroCommande);
             this.GrbCommandeAjout.Controls.Add(this.label5);
-            this.GrbCommandeAjout.Controls.Add(this.cbxClientCommandeAjout);
+            this.GrbCommandeAjout.Controls.Add(this.CbxClientCommandeAjout);
             this.GrbCommandeAjout.Location = new System.Drawing.Point(18, 16);
             this.GrbCommandeAjout.Name = "GrbCommandeAjout";
             this.GrbCommandeAjout.Size = new System.Drawing.Size(488, 110);
@@ -1205,6 +1242,7 @@
             this.txtNumeroCommande.Name = "txtNumeroCommande";
             this.txtNumeroCommande.Size = new System.Drawing.Size(121, 20);
             this.txtNumeroCommande.TabIndex = 0;
+            this.txtNumeroCommande.TextChanged += new System.EventHandler(this.txtNumeroCommande_TextChanged_1);
             // 
             // label5
             // 
@@ -1216,13 +1254,13 @@
             this.label5.Text = "Numero : ";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // cbxClientCommandeAjout
+            // CbxClientCommandeAjout
             // 
-            this.cbxClientCommandeAjout.FormattingEnabled = true;
-            this.cbxClientCommandeAjout.Location = new System.Drawing.Point(97, 31);
-            this.cbxClientCommandeAjout.Name = "cbxClientCommandeAjout";
-            this.cbxClientCommandeAjout.Size = new System.Drawing.Size(121, 21);
-            this.cbxClientCommandeAjout.TabIndex = 15;
+            this.CbxClientCommandeAjout.FormattingEnabled = true;
+            this.CbxClientCommandeAjout.Location = new System.Drawing.Point(97, 31);
+            this.CbxClientCommandeAjout.Name = "CbxClientCommandeAjout";
+            this.CbxClientCommandeAjout.Size = new System.Drawing.Size(121, 21);
+            this.CbxClientCommandeAjout.TabIndex = 15;
             // 
             // BtnAjoutCommande
             // 
@@ -1232,37 +1270,7 @@
             this.BtnAjoutCommande.TabIndex = 13;
             this.BtnAjoutCommande.Text = "Ajouter Commande";
             this.BtnAjoutCommande.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.LesProduitsAjouter,
-            this.LesProduitsAjouterQuantite});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(283, 239);
-            this.dataGridView1.TabIndex = 18;
-            // 
-            // LesProduitsAjouter
-            // 
-            this.LesProduitsAjouter.HeaderText = "Produits";
-            this.LesProduitsAjouter.Name = "LesProduitsAjouter";
-            // 
-            // LesProduitsAjouterQuantite
-            // 
-            this.LesProduitsAjouterQuantite.HeaderText = "Quantite";
-            this.LesProduitsAjouterQuantite.Name = "LesProduitsAjouterQuantite";
-            // 
-            // GrbLesProduitsAjouter
-            // 
-            this.GrbLesProduitsAjouter.Controls.Add(this.dataGridView1);
-            this.GrbLesProduitsAjouter.Location = new System.Drawing.Point(512, 16);
-            this.GrbLesProduitsAjouter.Name = "GrbLesProduitsAjouter";
-            this.GrbLesProduitsAjouter.Size = new System.Drawing.Size(295, 264);
-            this.GrbLesProduitsAjouter.TabIndex = 18;
-            this.GrbLesProduitsAjouter.TabStop = false;
-            this.GrbLesProduitsAjouter.Text = "Les produits ajoutés";
+            this.BtnAjoutCommande.Click += new System.EventHandler(this.BtnAjoutCommande_Click_1);
             // 
             // FormGsb
             // 
@@ -1304,12 +1312,12 @@
             this.GrbCommandeAffiche.ResumeLayout(false);
             this.GrbCommandeAffiche.PerformLayout();
             this.tabCommandesAjouter.ResumeLayout(false);
+            this.GrbLesProduitsAjouter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCommandeLesProduitAjouter)).EndInit();
             this.grbCommandeAjoutProduit.ResumeLayout(false);
             this.grbCommandeAjoutProduit.PerformLayout();
             this.GrbCommandeAjout.ResumeLayout(false);
             this.GrbCommandeAjout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.GrbLesProduitsAjouter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1395,7 +1403,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateRdvClient;
-        private System.Windows.Forms.ComboBox cbxClientCommandeAjout;
+        private System.Windows.Forms.ComboBox CbxClientCommandeAjout;
         private System.Windows.Forms.Label lblClientAjoutCommande;
         private System.Windows.Forms.TextBox txbCpClient;
         private System.Windows.Forms.Label lblCpClient;
@@ -1427,7 +1435,7 @@
         private System.Windows.Forms.GroupBox GrbModificationEtat;
         private System.Windows.Forms.GroupBox grbCommandeAjoutProduit;
         private System.Windows.Forms.Button btnAjoutCommandeLigneProduit;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvCommandeLesProduitAjouter;
         private System.Windows.Forms.GroupBox GrbLesProduitsAjouter;
         private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouter;
         private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouterQuantite;

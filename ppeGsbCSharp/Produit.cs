@@ -15,7 +15,11 @@ namespace ppeGsbCSharp
         private String interactions;
         private decimal prixHT;
         private decimal dosage;
-
+        public Produit(int unNum, string unNom)
+        {
+            num = unNum;
+            nom = unNom;
+        }
         public Produit(int unNum, String unNom, String desEffets, String desIndications, String desInteractions,
                             decimal unPrixHT)
         {
