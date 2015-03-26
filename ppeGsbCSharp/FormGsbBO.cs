@@ -33,7 +33,7 @@ namespace ppeGsbCSharp
         {
             CbxEtatCommande.Enabled = false;
             BtnModifierEtatCommande.Enabled = false;
-            //BtnAjoutCommande.Enabled = false;
+            BtnAjoutCommande.Enabled = false;
         }
         //Procedure reinitialise les commandes
         public void reefrechComboBox()
@@ -237,16 +237,19 @@ namespace ppeGsbCSharp
                 }
                 MessageBox.Show("Insertion éffèctué");
                 reefrechComboBox();
+                BtnAjoutCommande.Enabled = false;
             }
         }
         //ajouter le produit dans le dataGridView, afin de pouvoir passer une commande
         private void btnAjoutCommandeLigneProduit_Click_1(object sender, EventArgs e)
         {
+            
             Boolean verifSaisi = verificationDeSaisi();
             if (verifSaisi == false)
             {
                 if (CbxProduitCommande.Text != "" && TxtQuantiteCommande.Text != "")
                 {
+                    BtnAjoutCommande.Enabled = true;
                     int indiceProduit = CbxProduitCommande.SelectedIndex;
                     Produit leProduit = (Produit)unProduit[indiceProduit];
                     DgvCommandeLesProduitAjouter.Rows.Add(leProduit.getNom(), TxtQuantiteCommande.Text);
