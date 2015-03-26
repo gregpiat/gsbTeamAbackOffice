@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGsb));
             this.tabMenuPrincipal = new System.Windows.Forms.TabControl();
             this.tabAccueil = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.lblExplicationsAppplication = new System.Windows.Forms.Label();
             this.tabProduits = new System.Windows.Forms.TabPage();
             this.tabMenuProduits = new System.Windows.Forms.TabControl();
@@ -128,6 +127,10 @@
             this.LblDateCommandeAffiche = new System.Windows.Forms.Label();
             this.LblDateCommade = new System.Windows.Forms.Label();
             this.tabCommandesAjouter = new System.Windows.Forms.TabPage();
+            this.GrbLesProduitsAjouter = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.LesProduitsAjouter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LesProduitsAjouterQuantite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbCommandeAjoutProduit = new System.Windows.Forms.GroupBox();
             this.btnAjoutCommandeLigneProduit = new System.Windows.Forms.Button();
             this.CbxProduitCommande = new System.Windows.Forms.ComboBox();
@@ -140,10 +143,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbxClientCommandeAjout = new System.Windows.Forms.ComboBox();
             this.BtnAjoutCommande = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.LesProduitsAjouter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LesProduitsAjouterQuantite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrbLesProduitsAjouter = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCreePar = new System.Windows.Forms.Label();
+            this.lblNomsCreePar = new System.Windows.Forms.Label();
+            this.lblTitreAccueil = new System.Windows.Forms.Label();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -165,10 +168,11 @@
             this.GrbSelectionCommande.SuspendLayout();
             this.GrbCommandeAffiche.SuspendLayout();
             this.tabCommandesAjouter.SuspendLayout();
+            this.GrbLesProduitsAjouter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbCommandeAjoutProduit.SuspendLayout();
             this.GrbCommandeAjout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.GrbLesProduitsAjouter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMenuPrincipal
@@ -185,7 +189,10 @@
             // 
             // tabAccueil
             // 
-            this.tabAccueil.Controls.Add(this.richTextBox1);
+            this.tabAccueil.Controls.Add(this.lblTitreAccueil);
+            this.tabAccueil.Controls.Add(this.lblNomsCreePar);
+            this.tabAccueil.Controls.Add(this.lblCreePar);
+            this.tabAccueil.Controls.Add(this.pictureBox1);
             this.tabAccueil.Controls.Add(this.lblExplicationsAppplication);
             this.tabAccueil.Location = new System.Drawing.Point(4, 22);
             this.tabAccueil.Name = "tabAccueil";
@@ -194,14 +201,6 @@
             this.tabAccueil.TabIndex = 0;
             this.tabAccueil.Text = "Accueil";
             this.tabAccueil.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(152, 125);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(511, 135);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "Bonjour et bienvenue sur l\'application GSB !\n ";
             // 
             // lblExplicationsAppplication
             // 
@@ -1121,6 +1120,37 @@
             this.tabCommandesAjouter.Text = "Ajouter";
             this.tabCommandesAjouter.UseVisualStyleBackColor = true;
             // 
+            // GrbLesProduitsAjouter
+            // 
+            this.GrbLesProduitsAjouter.Controls.Add(this.dataGridView1);
+            this.GrbLesProduitsAjouter.Location = new System.Drawing.Point(512, 16);
+            this.GrbLesProduitsAjouter.Name = "GrbLesProduitsAjouter";
+            this.GrbLesProduitsAjouter.Size = new System.Drawing.Size(295, 264);
+            this.GrbLesProduitsAjouter.TabIndex = 18;
+            this.GrbLesProduitsAjouter.TabStop = false;
+            this.GrbLesProduitsAjouter.Text = "Les produits ajoutés";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LesProduitsAjouter,
+            this.LesProduitsAjouterQuantite});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(283, 239);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // LesProduitsAjouter
+            // 
+            this.LesProduitsAjouter.HeaderText = "Produits";
+            this.LesProduitsAjouter.Name = "LesProduitsAjouter";
+            // 
+            // LesProduitsAjouterQuantite
+            // 
+            this.LesProduitsAjouterQuantite.HeaderText = "Quantite";
+            this.LesProduitsAjouterQuantite.Name = "LesProduitsAjouterQuantite";
+            // 
             // grbCommandeAjoutProduit
             // 
             this.grbCommandeAjoutProduit.Controls.Add(this.btnAjoutCommandeLigneProduit);
@@ -1233,36 +1263,45 @@
             this.BtnAjoutCommande.Text = "Ajouter Commande";
             this.BtnAjoutCommande.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // pictureBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.LesProduitsAjouter,
-            this.LesProduitsAjouterQuantite});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(283, 239);
-            this.dataGridView1.TabIndex = 18;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(140, 91);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(561, 252);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
-            // LesProduitsAjouter
+            // lblCreePar
             // 
-            this.LesProduitsAjouter.HeaderText = "Produits";
-            this.LesProduitsAjouter.Name = "LesProduitsAjouter";
+            this.lblCreePar.AutoSize = true;
+            this.lblCreePar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreePar.Location = new System.Drawing.Point(421, 439);
+            this.lblCreePar.Name = "lblCreePar";
+            this.lblCreePar.Size = new System.Drawing.Size(104, 13);
+            this.lblCreePar.TabIndex = 4;
+            this.lblCreePar.Text = "Créé par la Team A :";
             // 
-            // LesProduitsAjouterQuantite
+            // lblNomsCreePar
             // 
-            this.LesProduitsAjouterQuantite.HeaderText = "Quantite";
-            this.LesProduitsAjouterQuantite.Name = "LesProduitsAjouterQuantite";
+            this.lblNomsCreePar.AutoSize = true;
+            this.lblNomsCreePar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomsCreePar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblNomsCreePar.Location = new System.Drawing.Point(525, 439);
+            this.lblNomsCreePar.Name = "lblNomsCreePar";
+            this.lblNomsCreePar.Size = new System.Drawing.Size(300, 13);
+            this.lblNomsCreePar.TabIndex = 5;
+            this.lblNomsCreePar.Text = " Grégoire PIAT, Florent FULMAR, Adrien LETEXIER";
             // 
-            // GrbLesProduitsAjouter
+            // lblTitreAccueil
             // 
-            this.GrbLesProduitsAjouter.Controls.Add(this.dataGridView1);
-            this.GrbLesProduitsAjouter.Location = new System.Drawing.Point(512, 16);
-            this.GrbLesProduitsAjouter.Name = "GrbLesProduitsAjouter";
-            this.GrbLesProduitsAjouter.Size = new System.Drawing.Size(295, 264);
-            this.GrbLesProduitsAjouter.TabIndex = 18;
-            this.GrbLesProduitsAjouter.TabStop = false;
-            this.GrbLesProduitsAjouter.Text = "Les produits ajoutés";
+            this.lblTitreAccueil.AutoSize = true;
+            this.lblTitreAccueil.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitreAccueil.Location = new System.Drawing.Point(170, 35);
+            this.lblTitreAccueil.Name = "lblTitreAccueil";
+            this.lblTitreAccueil.Size = new System.Drawing.Size(501, 42);
+            this.lblTitreAccueil.TabIndex = 6;
+            this.lblTitreAccueil.Text = "Application Back Office GSB ";
             // 
             // FormGsb
             // 
@@ -1304,12 +1343,13 @@
             this.GrbCommandeAffiche.ResumeLayout(false);
             this.GrbCommandeAffiche.PerformLayout();
             this.tabCommandesAjouter.ResumeLayout(false);
+            this.GrbLesProduitsAjouter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grbCommandeAjoutProduit.ResumeLayout(false);
             this.grbCommandeAjoutProduit.PerformLayout();
             this.GrbCommandeAjout.ResumeLayout(false);
             this.GrbCommandeAjout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.GrbLesProduitsAjouter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1325,7 +1365,6 @@
         private System.Windows.Forms.TabControl tabMenuProduits;
         private System.Windows.Forms.TabPage tabProduitsConsulter;
         private System.Windows.Forms.TabPage tabProduitsAjouter;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ComboBox cbxRaisonClient;
         private System.Windows.Forms.Label lblMailClient;
         private System.Windows.Forms.Label lblTypeClient;
@@ -1431,6 +1470,10 @@
         private System.Windows.Forms.GroupBox GrbLesProduitsAjouter;
         private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouter;
         private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouterQuantite;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblCreePar;
+        private System.Windows.Forms.Label lblNomsCreePar;
+        private System.Windows.Forms.Label lblTitreAccueil;
     }
 }
 
