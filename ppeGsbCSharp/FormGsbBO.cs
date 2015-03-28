@@ -238,6 +238,8 @@ namespace ppeGsbCSharp
                 MessageBox.Show("Insertion éffèctué");
                 reefrechComboBox();
                 BtnAjoutCommande.Enabled = false;
+                txtNumeroCommande.Enabled = true;
+                CbxClientCommandeAjout.Enabled = true;
             }
         }
         //ajouter le produit dans le dataGridView, afin de pouvoir passer une commande
@@ -250,6 +252,8 @@ namespace ppeGsbCSharp
                 if (CbxProduitCommande.Text != "" && TxtQuantiteCommande.Text != "")
                 {
                     BtnAjoutCommande.Enabled = true;
+                    txtNumeroCommande.Enabled = false;
+                    CbxClientCommandeAjout.Enabled = false;
                     int indiceProduit = CbxProduitCommande.SelectedIndex;
                     Produit leProduit = (Produit)unProduit[indiceProduit];
                     DgvCommandeLesProduitAjouter.Rows.Add(leProduit.getNom(), TxtQuantiteCommande.Text);
