@@ -144,6 +144,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.CbxClientCommandeAjout = new System.Windows.Forms.ComboBox();
             this.BtnAjoutCommande = new System.Windows.Forms.Button();
+            this.lblNumeroCommadeUtiliser = new System.Windows.Forms.Label();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -1216,6 +1217,7 @@
             // 
             // GrbCommandeAjout
             // 
+            this.GrbCommandeAjout.Controls.Add(this.lblNumeroCommadeUtiliser);
             this.GrbCommandeAjout.Controls.Add(this.lblClientAjoutCommande);
             this.GrbCommandeAjout.Controls.Add(this.txtNumeroCommande);
             this.GrbCommandeAjout.Controls.Add(this.label5);
@@ -1271,6 +1273,14 @@
             this.BtnAjoutCommande.Text = "Ajouter Commande";
             this.BtnAjoutCommande.UseVisualStyleBackColor = true;
             this.BtnAjoutCommande.Click += new System.EventHandler(this.BtnAjoutCommande_Click_1);
+            // 
+            // lblNumeroCommadeUtiliser
+            // 
+            this.lblNumeroCommadeUtiliser.AutoSize = true;
+            this.lblNumeroCommadeUtiliser.Location = new System.Drawing.Point(237, 70);
+            this.lblNumeroCommadeUtiliser.Name = "lblNumeroCommadeUtiliser";
+            this.lblNumeroCommadeUtiliser.Size = new System.Drawing.Size(0, 13);
+            this.lblNumeroCommadeUtiliser.TabIndex = 17;
             // 
             // FormGsb
             // 
@@ -1439,6 +1449,7 @@
         private System.Windows.Forms.GroupBox GrbLesProduitsAjouter;
         private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouter;
         private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouterQuantite;
+        private System.Windows.Forms.Label lblNumeroCommadeUtiliser;
     }
 }
 

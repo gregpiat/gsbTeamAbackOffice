@@ -200,10 +200,19 @@ namespace ppeGsbCSharp
             base.OnKeyPress(e);
         }
         //Premiere verification du numero de Commande signalant l'utilisateur de l'utilisation
-        //d'un numero de commande existant, si il existe, un message box indicant
+        //d'un numero de commande existant, si il existe, un label indicant
         //que le numero de commande existe déjà sinon, la textbox laisse faire l'utilisateur
         private void txtNumeroCommande_TextChanged_1(object sender, EventArgs e)
         {
+            if (txtNumeroCommande.Text != "")
+            {
+                lblNumeroCommadeUtiliser.ForeColor = System.Drawing.Color.Green;
+                lblNumeroCommadeUtiliser.Text = "Numero de commande disponible !";
+            }
+            else
+            {
+                lblNumeroCommadeUtiliser.Text = "";
+            }
             for (int i = 0; i < uneCommande.Count; i++)
             {
                 Commande laCommande = (Commande)uneCommande[i];
@@ -211,7 +220,8 @@ namespace ppeGsbCSharp
                 {
                     if (txtNumeroCommande.Text == laCommande.getNum())
                     {
-                        MessageBox.Show("Attention, il est possible que le Numero de commande est déjà existante, veuiller changer");
+                        lblNumeroCommadeUtiliser.ForeColor = System.Drawing.Color.Red;
+                        lblNumeroCommadeUtiliser.Text="Le numero de commande est déjà existante !";
                     }
                 }
             }
@@ -514,6 +524,7 @@ namespace ppeGsbCSharp
         }
 
         #endregion
+
 
 
 
