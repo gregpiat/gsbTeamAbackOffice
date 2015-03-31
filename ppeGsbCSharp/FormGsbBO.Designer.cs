@@ -147,6 +147,7 @@
             this.lblCreePar = new System.Windows.Forms.Label();
             this.lblNomsCreePar = new System.Windows.Forms.Label();
             this.lblTitreAccueil = new System.Windows.Forms.Label();
+            this.rtbDescriptionApplication = new System.Windows.Forms.RichTextBox();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             this.tabProduits.SuspendLayout();
@@ -189,6 +190,7 @@
             // 
             // tabAccueil
             // 
+            this.tabAccueil.Controls.Add(this.rtbDescriptionApplication);
             this.tabAccueil.Controls.Add(this.lblTitreAccueil);
             this.tabAccueil.Controls.Add(this.lblNomsCreePar);
             this.tabAccueil.Controls.Add(this.lblCreePar);
@@ -1303,6 +1305,14 @@
             this.lblTitreAccueil.TabIndex = 6;
             this.lblTitreAccueil.Text = "Application Back Office GSB ";
             // 
+            // rtbDescriptionApplication
+            // 
+            this.rtbDescriptionApplication.Location = new System.Drawing.Point(20, 354);
+            this.rtbDescriptionApplication.Name = "rtbDescriptionApplication";
+            this.rtbDescriptionApplication.Size = new System.Drawing.Size(100, 96);
+            this.rtbDescriptionApplication.TabIndex = 8;
+            this.rtbDescriptionApplication.Text = resources.GetString("rtbDescriptionApplication.Text");
+            // 
             // FormGsb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1474,6 +1484,7 @@
         private System.Windows.Forms.Label lblCreePar;
         private System.Windows.Forms.Label lblNomsCreePar;
         private System.Windows.Forms.Label lblTitreAccueil;
+        private System.Windows.Forms.RichTextBox rtbDescriptionApplication;
     }
 }
 
