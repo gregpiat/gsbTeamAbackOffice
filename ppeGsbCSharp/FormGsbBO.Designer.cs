@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGsb));
             this.tabMenuPrincipal = new System.Windows.Forms.TabControl();
             this.tabAccueil = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.lblExplicationsAppplication = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabProduits = new System.Windows.Forms.TabPage();
             this.tabMenuProduits = new System.Windows.Forms.TabControl();
             this.tabProduitsConsulter = new System.Windows.Forms.TabPage();
@@ -139,14 +139,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TxtQuantiteCommande = new System.Windows.Forms.TextBox();
             this.GrbCommandeAjout = new System.Windows.Forms.GroupBox();
+            this.lblNumeroCommadeUtiliser = new System.Windows.Forms.Label();
             this.lblClientAjoutCommande = new System.Windows.Forms.Label();
             this.txtNumeroCommande = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CbxClientCommandeAjout = new System.Windows.Forms.ComboBox();
             this.BtnAjoutCommande = new System.Windows.Forms.Button();
-            this.lblNumeroCommadeUtiliser = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblNomsTeam = new System.Windows.Forms.Label();
+            this.lblDescriptionAppli = new System.Windows.Forms.Label();
+            this.lblTitreAppli = new System.Windows.Forms.Label();
+            this.lblNomsMembresTeamA = new System.Windows.Forms.Label();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabProduits.SuspendLayout();
             this.tabMenuProduits.SuspendLayout();
             this.tabProduitsConsulter.SuspendLayout();
@@ -170,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvCommandeLesProduitAjouter)).BeginInit();
             this.grbCommandeAjoutProduit.SuspendLayout();
             this.GrbCommandeAjout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMenuPrincipal
@@ -186,8 +193,11 @@
             // 
             // tabAccueil
             // 
-            this.tabAccueil.Controls.Add(this.richTextBox1);
-            this.tabAccueil.Controls.Add(this.lblExplicationsAppplication);
+            this.tabAccueil.Controls.Add(this.lblNomsMembresTeamA);
+            this.tabAccueil.Controls.Add(this.lblTitreAppli);
+            this.tabAccueil.Controls.Add(this.lblDescriptionAppli);
+            this.tabAccueil.Controls.Add(this.lblNomsTeam);
+            this.tabAccueil.Controls.Add(this.pictureBox1);
             this.tabAccueil.Location = new System.Drawing.Point(4, 22);
             this.tabAccueil.Name = "tabAccueil";
             this.tabAccueil.Padding = new System.Windows.Forms.Padding(3);
@@ -196,21 +206,14 @@
             this.tabAccueil.Text = "Accueil";
             this.tabAccueil.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // pictureBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(152, 125);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(511, 135);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "Bonjour et bienvenue sur l\'application GSB !\n ";
-            // 
-            // lblExplicationsAppplication
-            // 
-            this.lblExplicationsAppplication.AutoSize = true;
-            this.lblExplicationsAppplication.Location = new System.Drawing.Point(285, 128);
-            this.lblExplicationsAppplication.Name = "lblExplicationsAppplication";
-            this.lblExplicationsAppplication.Size = new System.Drawing.Size(0, 13);
-            this.lblExplicationsAppplication.TabIndex = 0;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(95, 89);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(618, 280);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // tabProduits
             // 
@@ -1229,6 +1232,14 @@
             this.GrbCommandeAjout.TabStop = false;
             this.GrbCommandeAjout.Text = "Ajout Commande";
             // 
+            // lblNumeroCommadeUtiliser
+            // 
+            this.lblNumeroCommadeUtiliser.AutoSize = true;
+            this.lblNumeroCommadeUtiliser.Location = new System.Drawing.Point(237, 70);
+            this.lblNumeroCommadeUtiliser.Name = "lblNumeroCommadeUtiliser";
+            this.lblNumeroCommadeUtiliser.Size = new System.Drawing.Size(0, 13);
+            this.lblNumeroCommadeUtiliser.TabIndex = 17;
+            // 
             // lblClientAjoutCommande
             // 
             this.lblClientAjoutCommande.AutoSize = true;
@@ -1274,13 +1285,44 @@
             this.BtnAjoutCommande.UseVisualStyleBackColor = true;
             this.BtnAjoutCommande.Click += new System.EventHandler(this.BtnAjoutCommande_Click_1);
             // 
-            // lblNumeroCommadeUtiliser
+            // lblNomsTeam
             // 
-            this.lblNumeroCommadeUtiliser.AutoSize = true;
-            this.lblNumeroCommadeUtiliser.Location = new System.Drawing.Point(237, 70);
-            this.lblNumeroCommadeUtiliser.Name = "lblNumeroCommadeUtiliser";
-            this.lblNumeroCommadeUtiliser.Size = new System.Drawing.Size(0, 13);
-            this.lblNumeroCommadeUtiliser.TabIndex = 17;
+            this.lblNomsTeam.AutoSize = true;
+            this.lblNomsTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomsTeam.Location = new System.Drawing.Point(477, 438);
+            this.lblNomsTeam.Name = "lblNomsTeam";
+            this.lblNomsTeam.Size = new System.Drawing.Size(58, 13);
+            this.lblNomsTeam.TabIndex = 1;
+            this.lblNomsTeam.Text = "Team A :";
+            // 
+            // lblDescriptionAppli
+            // 
+            this.lblDescriptionAppli.AutoSize = true;
+            this.lblDescriptionAppli.Location = new System.Drawing.Point(6, 433);
+            this.lblDescriptionAppli.Name = "lblDescriptionAppli";
+            this.lblDescriptionAppli.Size = new System.Drawing.Size(133, 13);
+            this.lblDescriptionAppli.TabIndex = 2;
+            this.lblDescriptionAppli.Text = "Description de l\'application";
+            // 
+            // lblTitreAppli
+            // 
+            this.lblTitreAppli.AutoSize = true;
+            this.lblTitreAppli.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitreAppli.Location = new System.Drawing.Point(201, 35);
+            this.lblTitreAppli.Name = "lblTitreAppli";
+            this.lblTitreAppli.Size = new System.Drawing.Size(394, 33);
+            this.lblTitreAppli.TabIndex = 3;
+            this.lblTitreAppli.Text = "Back Office commercial GSB";
+            // 
+            // lblNomsMembresTeamA
+            // 
+            this.lblNomsMembresTeamA.AutoSize = true;
+            this.lblNomsMembresTeamA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomsMembresTeamA.Location = new System.Drawing.Point(536, 438);
+            this.lblNomsMembresTeamA.Name = "lblNomsMembresTeamA";
+            this.lblNomsMembresTeamA.Size = new System.Drawing.Size(300, 13);
+            this.lblNomsMembresTeamA.TabIndex = 4;
+            this.lblNomsMembresTeamA.Text = "Grégoire PIAT, Florent FULMAR, Adrien LE TEXIER";
             // 
             // FormGsb
             // 
@@ -1296,6 +1338,7 @@
             this.tabMenuPrincipal.ResumeLayout(false);
             this.tabAccueil.ResumeLayout(false);
             this.tabAccueil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabProduits.ResumeLayout(false);
             this.tabMenuProduits.ResumeLayout(false);
             this.tabProduitsConsulter.ResumeLayout(false);
@@ -1328,6 +1371,7 @@
             this.grbCommandeAjoutProduit.PerformLayout();
             this.GrbCommandeAjout.ResumeLayout(false);
             this.GrbCommandeAjout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1339,11 +1383,9 @@
         private System.Windows.Forms.TabPage tabProduits;
         private System.Windows.Forms.TabPage tabClients;
         private System.Windows.Forms.TabPage tabCommandes;
-        private System.Windows.Forms.Label lblExplicationsAppplication;
         private System.Windows.Forms.TabControl tabMenuProduits;
         private System.Windows.Forms.TabPage tabProduitsConsulter;
         private System.Windows.Forms.TabPage tabProduitsAjouter;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ComboBox cbxRaisonClient;
         private System.Windows.Forms.Label lblMailClient;
         private System.Windows.Forms.Label lblTypeClient;
@@ -1450,6 +1492,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouter;
         private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouterQuantite;
         private System.Windows.Forms.Label lblNumeroCommadeUtiliser;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label lblNomsMembresTeamA;
+        private System.Windows.Forms.Label lblTitreAppli;
+        private System.Windows.Forms.Label lblDescriptionAppli;
+        private System.Windows.Forms.Label lblNomsTeam;
     }
 }
 
