@@ -43,5 +43,9 @@ namespace ppeGsbCSharp
                 MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
             }
         }
+
+        private void formCreerClient_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

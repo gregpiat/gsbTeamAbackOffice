@@ -418,6 +418,8 @@ namespace ppeGsbCSharp
             {
                 MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
             }
+            rechargerLesClients();
+
         }
 
         public void chargerLesClients()
@@ -434,6 +436,13 @@ namespace ppeGsbCSharp
                 cbxNomClient.Items.Add(lesClients[i].Nom.ToString().Trim());
             }
             #endregion
+        }
+
+        public void rechargerLesClients()
+        {
+            lesClients.Clear();
+            cbxNomClient.Items.Clear();
+            chargerLesClients();
         }
 
         private void btnAjouterRdv_Click(object sender, EventArgs e)
@@ -491,7 +500,7 @@ namespace ppeGsbCSharp
             {
                 MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
             }
-
+            rechargerLesClients();
         }
 
         private Client trouverClient(int unId)
