@@ -65,3 +65,4 @@ E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x8
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache

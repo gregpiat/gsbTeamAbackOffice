@@ -44,7 +44,10 @@ namespace ppeGsbCSharp
         public void ajouterVisite(Visite uneVisite){
             lesVisites.Add(uneVisite);
         }
-
+        public void ajouteVisite(Visite uneVisite)
+        {
+            lesVisites.Add(uneVisite);
+        }
 
         #region Getters et setters
         public int Id

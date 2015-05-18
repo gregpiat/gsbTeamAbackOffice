@@ -338,6 +338,8 @@ namespace ppeGsbCSharp
         private void FormGsb_Load(object sender, EventArgs e)
         {
             MessageBox.Show(DateTime.Now.ToString());
+            Client monClient = trouverClientParId(60);
+            MessageBox.Show(monClient.Nom);
             txbCodeClient.Enabled = false;
 
             // dans private void FormGsb_Load(object sender, EventArgs e)
@@ -451,8 +453,11 @@ namespace ppeGsbCSharp
             //{
             dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
             daoClient monDaoClient = new daoClient();
+            
             monDaoClient.ajouterVisite(int.Parse(txbCodeClient.ToString()), DateTime.Now.ToString(), rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
-
+            Client leClient = trouverClientParId(int.Parse(txbCodeClient.Text));
+            Visite laVisite = new Visite(leClient.Id, dateRdvClient.Text,rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
+            leClient.ajouterVisite(laVisite);
 
             // Création du client qui correspond au client courant du formulaire
                 //Client monClient = trouverClient(int.Parse(txbCodeClient.Text));
@@ -537,7 +542,21 @@ namespace ppeGsbCSharp
 
         #endregion
 
-
+        /////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////
+         public Client trouverClientParId(int unId)
+        {
+            Client monClient = new Client(0, null, null, null, null, null, null, null, 0000000000, null);
+            for (int i = 0; i < lesClients.Count(); ++i)
+            {
+                if (lesClients[i].Id == unId)
+                {
+                   monClient = lesClients[i];
+                }
+            }
+            return monClient;
+        }
 
 
 

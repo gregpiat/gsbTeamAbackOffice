@@ -7,15 +7,13 @@ namespace ppeGsbCSharp
 {
     class Visite
     {
-        int id;
         int idClient;
         String date;
         String compteRendu;
         String createur;
         
 
-        public Visite(int unId, int unIdClient, String uneDate, String unCompteRendu, String unCreateur){
-            id = unId;
+        public Visite(int unIdClient, String uneDate, String unCompteRendu, String unCreateur){
             idClient = unIdClient;
             date = uneDate;
             compteRendu = unCompteRendu;
