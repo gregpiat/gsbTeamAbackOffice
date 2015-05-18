@@ -449,7 +449,10 @@ namespace ppeGsbCSharp
         {
             //if (cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && txbVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != "")
             //{
-              dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+            dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+            daoClient monDaoClient = new daoClient();
+            monDaoClient.ajouterVisite(int.Parse(txbCodeClient.ToString()), DateTime.Now, DateTime.Now, rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
+
 
             // Création du client qui correspond au client courant du formulaire
                 //Client monClient = trouverClient(int.Parse(txbCodeClient.Text));

@@ -30,7 +30,7 @@ namespace ppeGsbCSharp
                 // FINIR L'AJOUT
                 try
                 {
-                    daoClient.ajouterClient(/*60, */txbNomClientAjout.Text, txbPrenomClientAjout.Text, cbxRaisonClientAjout.Text, txbAdresseAjout.Text, txbCpClientAjout.Text, txbVilleClientAjout.Text, 1, txbMailClientAjout.Text, txbTelephoneClientAjout.Text);
+                    daoClient.ajouterClient(txbNomClientAjout.Text, txbPrenomClientAjout.Text, cbxRaisonClientAjout.Text, txbAdresseAjout.Text, txbCpClientAjout.Text, txbVilleClientAjout.Text, 1, txbMailClientAjout.Text, txbTelephoneClientAjout.Text);
                 }
                 catch (Exception ex)
                 {
