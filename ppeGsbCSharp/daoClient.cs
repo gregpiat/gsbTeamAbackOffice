@@ -84,7 +84,7 @@ namespace ppeGsbCSharp
 
 
         // MODIFIER LA STRUTURE DE LA BASE POUR AJOUTER LES CHAMPS MANQUANTS
-        public static void ajouterClient(int unId, String unNom, String unPrenom, String uneRaison,
+        public static void ajouterClient(/*int unId,*/ String unNom, String unPrenom, String uneRaison,
             String uneAdresse, String unCp, String uneVille, int unType, String unMail, String unTelephone)
         {
             try
@@ -97,8 +97,8 @@ namespace ppeGsbCSharp
                 unMail = "\'" + unMail + "\'";
                 unCp = "\'" + unCp + "\'";
 
-                String requete = "INSERT INTO dbo.personneClient(dbo.idClient, dbo.personneClient.nom, dbo.personneClient.prenom, dbo.personneClient.raisonSocial, dbo.personneClient.ville, dbo.personneClient.adresse, dbo.personneClient.cp, dbo.personneClient.email, dbo.personneClient.idTypeProfessionel, dbo.personneClient.telephone) VALUES("
-                    + unId + ", "
+                String requete = "INSERT INTO dbo.personneClient(dbo.personneClient.nom, dbo.personneClient.prenom, dbo.personneClient.raisonSocial, dbo.personneClient.ville, dbo.personneClient.adresse, dbo.personneClient.cp, dbo.personneClient.email, dbo.personneClient.idTypeProfessionel, dbo.personneClient.telephone) VALUES("
+                    /*+ unId + ", "*/
                     + unNom + ", "
                     + unPrenom + ", " 
                     + uneRaison + ", " 

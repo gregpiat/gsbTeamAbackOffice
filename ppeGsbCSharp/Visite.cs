@@ -7,16 +7,21 @@ namespace ppeGsbCSharp
 {
     class Visite
     {
+        int id;
         Client client;
         String date;
-        String compteRendu;
         String heure;
+        String compteRendu;
+        String createur;
+        
 
-        public Visite(Client unClient, String uneDate,String uneHeure, String unCompteRendu){
+        public Visite(int unId, Client unClient, String uneDate,String uneHeure, String unCompteRendu, String unCreateur){
+            id = unId;
             client = unClient;
             date = uneDate;
-            compteRendu = unCompteRendu;
             heure = uneHeure;
+            compteRendu = unCompteRendu;
+            createur = unCreateur;
         }
 
         #region Getters / Setters

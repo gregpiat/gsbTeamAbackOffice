@@ -447,11 +447,11 @@ namespace ppeGsbCSharp
 
         private void btnAjouterRdv_Click(object sender, EventArgs e)
         {
-          //  if (cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && txbVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != "")
+            //if (cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && txbVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != "")
             //{
-              //  dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+              dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
 
-                // Création du client qui correspond au client courant du formulaire
+            // Création du client qui correspond au client courant du formulaire
                 //Client monClient = trouverClient(int.Parse(txbCodeClient.Text));
 
                 // Création de la visite avec les informations du formulaire et ajout à l'ArrayList lesVisites du client
@@ -459,17 +459,17 @@ namespace ppeGsbCSharp
                 //monClient.ajouterVisite(maVisite);
                 //monClient.LesVisites.Add(maVisite);
 
-            //    MessageBox.Show(monClient.Nom);
-            //    for (int i = 0; i < monClient.LesVisites.Count(); ++i)
-            //    {
+                //MessageBox.Show(monClient.Nom);
+              //for (int i = 0; i < monClient.LesVisites.Count(); ++i)
+                //{
             //
-            //    }
-            //        MessageBox.Show(monClient.LesVisites[0].Heure);
+              //  }
+                //    MessageBox.Show(monClient.LesVisites[0].Heure);
             //}
             //else
-            //{
-            //    MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
-            //}
+              // {
+                //   MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
+           // }
        }
 
         private void btnAjouterClient_Click(object sender, EventArgs e)
