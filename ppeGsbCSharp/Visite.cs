@@ -8,33 +8,25 @@ namespace ppeGsbCSharp
     class Visite
     {
         int id;
-        Client client;
+        int idClient;
         String date;
-        String heure;
         String compteRendu;
         String createur;
         
 
-        public Visite(int unId, Client unClient, String uneDate,String uneHeure, String unCompteRendu, String unCreateur){
+        public Visite(int unId, int unIdClient, String uneDate, String unCompteRendu, String unCreateur){
             id = unId;
-            client = unClient;
+            idClient = unIdClient;
             date = uneDate;
-            heure = uneHeure;
             compteRendu = unCompteRendu;
             createur = unCreateur;
         }
 
         #region Getters / Setters
-        internal Client Client
+        internal int Client
         {
-            get { return client; }
-            set { client = value; }
-        }
-
-        public String Date
-        {
-            get { return date; }
-            set { date = value; }
+            get { return idClient; }
+            set { idClient = value; }
         }
 
         public String CompteRendu
@@ -43,10 +35,10 @@ namespace ppeGsbCSharp
             set { compteRendu = value; }
         }
 
-        public String Heure
+        public String Date
         {
-            get { return heure; }
-            set { heure = value; }
+            get { return date; }
+            set { date = value; }
         }
         #endregion
 

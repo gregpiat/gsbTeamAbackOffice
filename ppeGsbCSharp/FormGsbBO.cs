@@ -337,7 +337,7 @@ namespace ppeGsbCSharp
 
         private void FormGsb_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show(DateTime.Now.ToString());
             txbCodeClient.Enabled = false;
 
             // dans private void FormGsb_Load(object sender, EventArgs e)
@@ -451,7 +451,7 @@ namespace ppeGsbCSharp
             //{
             dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
             daoClient monDaoClient = new daoClient();
-            monDaoClient.ajouterVisite(int.Parse(txbCodeClient.ToString()), DateTime.Now, DateTime.Now, rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
+            monDaoClient.ajouterVisite(int.Parse(txbCodeClient.ToString()), DateTime.Now.ToString(), rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
 
 
             // Création du client qui correspond au client courant du formulaire
