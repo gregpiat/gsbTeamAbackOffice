@@ -20,12 +20,15 @@ namespace ppeGsbCSharp
         private int idTypeProfessionnel;
 
 
-        private ArrayList lesVisites;
+        private List<Visite> lesVisites;
 
+        internal List<Visite> LesVisites
+        {
+            get { return lesVisites; }
+            set { lesVisites = value; }
+        }
 
-
-
-        public Client(int unId, String unNom, String unPrenom, String uneRaisonSociale, String uneVille, String uneAdresse, 
+        public Client(int unId, String unNom, String unPrenom, String uneRaisonSociale, String uneVille, String uneAdresse,
                                                                     String unCp, String unEmail, int unIdTypeProfessionnel, String unTelephone)
         {
             id = unId;
@@ -38,15 +41,19 @@ namespace ppeGsbCSharp
             email = unEmail;
             telephone = unTelephone;
             idTypeProfessionnel = unIdTypeProfessionnel;
-            lesVisites = new ArrayList();
+            lesVisites = new List<Visite>();
         }
 
-        public void ajouterVisite(Visite uneVisite){
-            lesVisites.Add(uneVisite);
-        }
-        public void ajouteVisite(Visite uneVisite)
+        public void ajouterVisite(Visite uneVisite)
         {
             lesVisites.Add(uneVisite);
+            daoClient monDaoClient = new daoClient();
+            monDaoClient.ajouterVisiteBD(this.id, uneVisite.Date, uneVisite.CompteRendu, uneVisite.Createur);
+        }
+
+        public void initialiserVisites(List<Visite> lesVisitesAInitialiser)
+        {
+            lesVisites = lesVisitesAInitialiser;
         }
 
         #region Getters et setters
@@ -104,11 +111,7 @@ namespace ppeGsbCSharp
             set { idTypeProfessionnel = value; }
         }
 
-        public  ArrayList LesVisites
-        {
-            get { return LesVisites; }
-            set { LesVisites = value; }
-        }
+
 
         public String Telephone
         {

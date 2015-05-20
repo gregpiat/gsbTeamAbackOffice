@@ -11,9 +11,9 @@ namespace ppeGsbCSharp
         String date;
         String compteRendu;
         String createur;
-        
 
-        public Visite(int unIdClient, String uneDate, String unCompteRendu, String unCreateur){
+        public Visite(int unIdClient, String uneDate, String unCompteRendu, String unCreateur)
+        {
             idClient = unIdClient;
             date = uneDate;
             compteRendu = unCompteRendu;
@@ -39,6 +39,13 @@ namespace ppeGsbCSharp
             set { date = value; }
         }
         #endregion
+
+        public String Createur
+        {
+            get { return createur; }
+            set { createur = value; }
+        }
+
 
     }
 }

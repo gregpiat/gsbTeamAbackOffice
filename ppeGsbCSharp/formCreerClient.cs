@@ -30,7 +30,7 @@ namespace ppeGsbCSharp
                 // FINIR L'AJOUT
                 try
                 {
-                    daoClient.ajouterClient(txbNomClientAjout.Text, txbPrenomClientAjout.Text, cbxRaisonClientAjout.Text, txbAdresseAjout.Text, txbCpClientAjout.Text, txbVilleClientAjout.Text, 1, txbMailClientAjout.Text, txbTelephoneClientAjout.Text);
+                   // daoClient.ajouterClient(60, txbNomClientAjout.Text, txbPrenomClientAjout.Text, cbxRaisonClientAjout.Text, txbAdresseAjout.Text, txbCpClientAjout.Text, txbVilleClientAjout.Text, 1, txbMailClientAjout.Text, txbTelephoneClientAjout.Text);
                 }
                 catch (Exception ex)
                 {
@@ -42,10 +42,6 @@ namespace ppeGsbCSharp
             {
                 MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
             }
-        }
-
-        private void formCreerClient_Load(object sender, EventArgs e)
-        {
         }
     }
 }

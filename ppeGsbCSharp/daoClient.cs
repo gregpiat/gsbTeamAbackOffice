@@ -15,7 +15,7 @@ namespace ppeGsbCSharp
         public List<Client> recupererLesClients()
         {
             List<Client> tousLesClients = new List<Client>();
-            
+
             daoFactory monDaoFactory = new daoFactory();
             monDaoFactory.OuvrirConnexion();
 
@@ -26,9 +26,9 @@ namespace ppeGsbCSharp
                 while (recupClientsDR.Read())
                 {
                     Client unClient = new Client(recupClientsDR.GetInt32(0),
-                                                 recupClientsDR.GetString(1).Trim(), 
+                                                 recupClientsDR.GetString(1).Trim(),
                                                  recupClientsDR.GetString(2).Trim(),
-                                                 recupClientsDR.GetString(3).Trim(), 
+                                                 recupClientsDR.GetString(3).Trim(),
                                                  recupClientsDR.GetString(4).Trim(),
                                                  recupClientsDR.GetString(5).Trim(),
                                                  recupClientsDR.GetString(6).Trim(),
@@ -60,15 +60,15 @@ namespace ppeGsbCSharp
                 unMail = "\'" + unMail + "\'";
                 unCp = "\'" + unCp + "\'";
 
-                String requete = "UPDATE dbo.personneClient SET dbo.personneClient.nom = " + unNom + 
-                    ", dbo.personneClient.prenom =" + unPrenom + 
-                    ", dbo.personneClient.raisonSocial =" + uneRaison + 
-                    ", dbo.personneClient.ville =" + uneVille + 
-                    ", dbo.personneClient.adresse =" + uneAdresse + 
+                String requete = "UPDATE dbo.personneClient SET dbo.personneClient.nom = " + unNom +
+                    ", dbo.personneClient.prenom =" + unPrenom +
+                    ", dbo.personneClient.raisonSocial =" + uneRaison +
+                    ", dbo.personneClient.ville =" + uneVille +
+                    ", dbo.personneClient.adresse =" + uneAdresse +
                     ", dbo.personneClient.cp =" + unCp +
                     ", dbo.personneClient.email = " + unMail +
                     ", dbo.personneClient.idTypeProfessionel =" + unType +
-                    ", dbo.personneClient.telephone = " + unTelephone + 
+                    ", dbo.personneClient.telephone = " + unTelephone +
                     " WHERE dbo.personneClient.idClient =" + unId + ";";
 
                 daoFactory monDaoFactory = new daoFactory();
@@ -88,7 +88,7 @@ namespace ppeGsbCSharp
             String uneAdresse, String unCp, String uneVille, int unType, String unMail, String unTelephone)
         {
             try
-            { 
+            {
                 unNom = "\'" + unNom + "\'";
                 unPrenom = "\'" + unPrenom + "\'";
                 uneRaison = "\'" + uneRaison + "\'";
@@ -100,21 +100,21 @@ namespace ppeGsbCSharp
                 String requete = "INSERT INTO dbo.personneClient(dbo.personneClient.nom, dbo.personneClient.prenom, dbo.personneClient.raisonSocial, dbo.personneClient.ville, dbo.personneClient.adresse, dbo.personneClient.cp, dbo.personneClient.email, dbo.personneClient.idTypeProfessionel, dbo.personneClient.telephone) VALUES("
                     /*+ unId + ", "*/
                     + unNom + ", "
-                    + unPrenom + ", " 
-                    + uneRaison + ", " 
+                    + unPrenom + ", "
+                    + uneRaison + ", "
                     + uneVille + ", "
                     + uneAdresse + ", "
-                    + unCp + ", " 
-                    + unMail + ", " 
-                    + unType +", "
-                    + unTelephone +");";
+                    + unCp + ", "
+                    + unMail + ", "
+                    + unType + ", "
+                    + unTelephone + ");";
 
                 daoFactory monDaoFactory = new daoFactory();
                 monDaoFactory.OuvrirConnexion();
                 SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory.connexionBDD);
                 maSqlCommand.ExecuteReader();
             }
-            catch(SqlException exe)
+            catch (SqlException exe)
             {
                 MessageBox.Show("Erreur rencontrée : " + exe.ToString());
             }
@@ -143,6 +143,34 @@ namespace ppeGsbCSharp
             }
         }
 
+        public List<Visite> recupererLesVisites(int idClient)
+        {
+            List<Visite> lesVisites = new List<Visite>();
+            daoFactory monDaoFactory = new daoFactory();
+            monDaoFactory.OuvrirConnexion();
+
+            SqlCommand maSqlCommand = new SqlCommand("SELECT * FROM dbo.visite WHERE idPersonne = " + idClient + ";", monDaoFactory.connexionBDD);
+            SqlDataReader recupVisitesDR = maSqlCommand.ExecuteReader();
+
+            if (recupVisitesDR.HasRows)
+            {
+                while (recupVisitesDR.Read())
+                {
+                    Visite uneVisite = new Visite(idClient,
+                                                 recupVisitesDR.GetString(2).Trim(),
+                                                 recupVisitesDR.GetString(3).Trim(),
+                                                 recupVisitesDR.GetString(4).Trim()
+                                                 );
+                    lesVisites.Add(uneVisite);
+                    //MessageBox.Show("Bien trouvé" + recupVisitesDR.GetString(2));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Aucune valeur trouvée");
+            }
+            return lesVisites;
+        }
 
         public String trouverNomProfessionParId(int unId)
         {
@@ -151,7 +179,7 @@ namespace ppeGsbCSharp
             daoFactory monDaoFactory = new daoFactory();
             monDaoFactory.OuvrirConnexion();
 
-            SqlCommand maSqlCommand = new SqlCommand("SELECT nom FROM dbo.typeProfessionnel WHERE idTypeProf ="+unId+";", monDaoFactory.connexionBDD);
+            SqlCommand maSqlCommand = new SqlCommand("SELECT nom FROM dbo.typeProfessionnel WHERE idTypeProf =" + unId + ";", monDaoFactory.connexionBDD);
             SqlDataReader recupClientsDR = maSqlCommand.ExecuteReader();
             if (recupClientsDR.HasRows)
             {
@@ -163,7 +191,7 @@ namespace ppeGsbCSharp
             else
             {
                 resultat = "Aucun résultat";
-            }  
+            }
             return resultat;
         }
 
@@ -200,7 +228,7 @@ namespace ppeGsbCSharp
             return toutesLesProfessions;
         }
 
-        public void ajouterVisite(int unIdClient, String uneDate, String unCompteRendu, String unCreateur)
+        public void ajouterVisiteBD(int unIdClient, String uneDate, String unCompteRendu, String unCreateur)
         {
             try
             {
@@ -214,8 +242,6 @@ namespace ppeGsbCSharp
             {
                 MessageBox.Show("Erreur rencontrée lors de l'ajout d'une visite : " + exe.ToString());
             }
-        
-        
         }
     }
 }

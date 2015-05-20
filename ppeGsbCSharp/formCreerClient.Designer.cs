@@ -230,7 +230,6 @@
             this.Controls.Add(this.txbPrenomClientAjout);
             this.Name = "formCreerClient";
             this.Text = "Créer un nouveau client";
-            this.Load += new System.EventHandler(this.formCreerClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

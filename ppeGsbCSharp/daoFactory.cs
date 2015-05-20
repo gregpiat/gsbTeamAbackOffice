@@ -58,7 +58,7 @@ namespace ppeGsbCSharp
                 }
                 return false;
             }
-           
+
         }
 
         //Fermeture de la connexion à la base de données
@@ -84,6 +84,12 @@ namespace ppeGsbCSharp
             SqlDataReader reader = maCommand.ExecuteReader();
             return reader;
 
+        }
+
+        public String testConnection(){
+            System.Net.NetworkInformation.Ping google = new System.Net.NetworkInformation.Ping();
+            System.Net.NetworkInformation.PingReply reply = google.Send("www.google.com");
+            return(reply.Status.ToString());
         }
     }
 }

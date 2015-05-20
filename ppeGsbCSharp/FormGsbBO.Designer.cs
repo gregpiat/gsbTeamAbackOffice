@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGsb));
             this.tabMenuPrincipal = new System.Windows.Forms.TabControl();
             this.tabAccueil = new System.Windows.Forms.TabPage();
@@ -148,6 +149,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.CbxClientCommandeAjout = new System.Windows.Forms.ComboBox();
             this.BtnAjoutCommande = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabMenuPrincipal.SuspendLayout();
             this.tabAccueil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -174,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvCommandeLesProduitAjouter)).BeginInit();
             this.grbCommandeAjoutProduit.SuspendLayout();
             this.GrbCommandeAjout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMenuPrincipal
@@ -1368,6 +1371,7 @@
             this.grbCommandeAjoutProduit.PerformLayout();
             this.GrbCommandeAjout.ResumeLayout(false);
             this.GrbCommandeAjout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1489,6 +1493,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LesProduitsAjouterQuantite;
         private System.Windows.Forms.Label lblNumeroCommadeUtiliser;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Label lblNomsMembresTeamA;
         private System.Windows.Forms.Label lblTitreAppli;
         private System.Windows.Forms.Label lblDescriptionAppli;

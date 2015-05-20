@@ -221,7 +221,7 @@ namespace ppeGsbCSharp
                     if (txtNumeroCommande.Text == laCommande.getNum())
                     {
                         lblNumeroCommadeUtiliser.ForeColor = System.Drawing.Color.Red;
-                        lblNumeroCommadeUtiliser.Text="Le numero de commande est déjà existante !";
+                        lblNumeroCommadeUtiliser.Text = "Le numero de commande est déjà existante !";
                     }
                 }
             }
@@ -255,7 +255,7 @@ namespace ppeGsbCSharp
         //ajouter le produit dans le dataGridView, afin de pouvoir passer une commande
         private void btnAjoutCommandeLigneProduit_Click_1(object sender, EventArgs e)
         {
-            
+
             Boolean verifSaisi = verificationDeSaisi();
             if (verifSaisi == false)
             {
@@ -337,19 +337,17 @@ namespace ppeGsbCSharp
 
         private void FormGsb_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(DateTime.Now.ToString());
-            Client monClient = trouverClientParId(60);
-            MessageBox.Show(monClient.Nom);
+            daoFactory maDaoFactory = new daoFactory();
+            maDaoFactory.testConnection();
+
             txbCodeClient.Enabled = false;
 
-            // dans private void FormGsb_Load(object sender, EventArgs e)
-            //chargerLesProduits();
+
             daoProduit monDaoProduit = new daoProduit();
 
             chargerLesClients();
+
             daoClient monDaoClient = new daoClient();
-            //MessageBox.Show((monDaoClient.trouverNomProfessionParId(1)));
-            //MessageBox.Show((monDaoClient.trouverIdProfessionnelParNomProfession("Cadre").ToString()));
 
             daoVisiteur monDaoVisiteur = new daoVisiteur();
 
@@ -360,11 +358,6 @@ namespace ppeGsbCSharp
             cbxRaisonClient.Items.Add("Chômeur");
             cbxRaisonClient.Items.Add("Chirurgien");
             #endregion
-
-            #region Ajout des visiteurs à la ComboBox Visiteur
-
-            #endregion
-
         }
 
         private void cbxNomClient_TextChanged(object sender, EventArgs e)
@@ -385,9 +378,7 @@ namespace ppeGsbCSharp
                     txbTypeClient.Text = monDaoClientTXB.trouverNomProfessionParId(leClient.IdTypeProfessionnel);
                     txbMailClient.Text = leClient.Email.ToString();
                     txbTelephoneClient.Text = leClient.Telephone.ToString();
-                    /////////////////////////////////////
-                    /////////////////////////////////////
-                    /////////////////////////////////////
+                    chargerDataGridView(leClient.LesVisites);
                 }
             }
         }
@@ -426,11 +417,13 @@ namespace ppeGsbCSharp
 
         public void chargerLesClients()
         {
+            //On crée une liste de clients, qu'on remplie avec les clients récupérées dans la BDD
             #region Création de la liste lesClients contenant les clients de la base de données
             lesClients = new List<Client>();
             daoClient monDaoClient = new daoClient();
             lesClients = monDaoClient.recupererLesClients();
             #endregion
+
 
             #region Ajout du nom des clients à la collection de la combobox Client
             for (int i = 0; i < lesClients.Count(); i++)
@@ -438,6 +431,12 @@ namespace ppeGsbCSharp
                 cbxNomClient.Items.Add(lesClients[i].Nom.ToString().Trim());
             }
             #endregion
+
+            //Pour chaque client, on initialise ses visites avec les visites récupérées dans la ase de données
+            for (int j = 0; j < lesClients.Count(); ++j)
+            {
+                lesClients[j].initialiserVisites(monDaoClient.recupererLesVisites(lesClients[j].Id));
+            }
         }
 
         public void rechargerLesClients()
@@ -453,32 +452,32 @@ namespace ppeGsbCSharp
             //{
             dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
             daoClient monDaoClient = new daoClient();
-            
-            monDaoClient.ajouterVisite(int.Parse(txbCodeClient.ToString()), DateTime.Now.ToString(), rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
-            Client leClient = trouverClientParId(int.Parse(txbCodeClient.Text));
-            Visite laVisite = new Visite(leClient.Id, dateRdvClient.Text,rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
-            leClient.ajouterVisite(laVisite);
+
+           /* monDaoClient.ajouterVisiteBD(int.Parse(txbCodeClient.ToString()), DateTime.Now.ToString(), rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
+           // Client leClient = trouverClientParId(int.Parse(txbCodeClient.Text));
+            Visite laVisite = new Visite(leClient.Id, dateRdvClient.Text, rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
+            leClient.ajouterVisite(laVisite);*/
 
             // Création du client qui correspond au client courant du formulaire
-                //Client monClient = trouverClient(int.Parse(txbCodeClient.Text));
+            //Client monClient = trouverClient(int.Parse(txbCodeClient.Text));
 
-                // Création de la visite avec les informations du formulaire et ajout à l'ArrayList lesVisites du client
-                //Visite maVisite = new Visite(monClient, dateRdvClient.Text, txbHeuresRDV.Text, rtbRdvClient.Text);
-                //monClient.ajouterVisite(maVisite);
-                //monClient.LesVisites.Add(maVisite);
+            // Création de la visite avec les informations du formulaire et ajout à l'ArrayList lesVisites du client
+            //Visite maVisite = new Visite(monClient, dateRdvClient.Text, txbHeuresRDV.Text, rtbRdvClient.Text);
+            //monClient.ajouterVisite(maVisite);
+            //monClient.LesVisites.Add(maVisite);
 
-                //MessageBox.Show(monClient.Nom);
-              //for (int i = 0; i < monClient.LesVisites.Count(); ++i)
-                //{
+            //MessageBox.Show(monClient.Nom);
+            //for (int i = 0; i < monClient.LesVisites.Count(); ++i)
+            //{
             //
-              //  }
-                //    MessageBox.Show(monClient.LesVisites[0].Heure);
+            //  }
+            //    MessageBox.Show(monClient.LesVisites[0].Heure);
             //}
             //else
-              // {
-                //   MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
-           // }
-       }
+            // {
+            //   MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
+            // }
+        }
 
         private void btnAjouterClient_Click(object sender, EventArgs e)
         {
@@ -513,7 +512,7 @@ namespace ppeGsbCSharp
 
         private Client trouverClient(int unId)
         {
-            Client clientVide = new Client(-1, "vide", "vide", "vide", "vide", "vide", "vide", "vide", 0,"0000000000");
+            Client clientVide = new Client(-1, "vide", "vide", "vide", "vide", "vide", "vide", "vide", 0, "0000000000");
             for (int i = 0; i < lesClients.Count(); ++i)
             {
                 if (lesClients[i].Id == unId)
@@ -545,59 +544,70 @@ namespace ppeGsbCSharp
         /////////////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////////////
-         public Client trouverClientParId(int unId)
+       /* public Client trouverClientParId(int unId)
         {
             Client monClient = new Client(0, null, null, null, null, null, null, null, 0000000000, null);
             for (int i = 0; i < lesClients.Count(); ++i)
             {
                 if (lesClients[i].Id == unId)
                 {
-                   monClient = lesClients[i];
+                    monClient = lesClients[i];
                 }
             }
             return monClient;
+        }*/
+
+        private void chargerDataGridView(List<Visite> lesVisitesPourAL)
+        {
+            dgvAgendaClient.Rows.Clear();
+
+            for (int i = 0; i < lesVisitesPourAL.Count(); ++i)
+            {
+                this.dgvAgendaClient.Rows.Add(lesVisitesPourAL[i].Date, "22 mai 2015", lesVisitesPourAL[i].Createur, lesVisitesPourAL[i].CompteRendu);
+               
+
+            }
         }
 
 
-
         //        public void chargerLesProduits()
-//        {
-//            // Création de la liste lesProduits contenant les produits de la bdd
-//            lesProduits = new List<Produit>();
-//            daoProduit monDaoProduit = new daoProduit();
-//            lesProduits = monDaoProduit.recupererLesProduits();
-//
-//            // Ajout du nom des produits à la collection de la combobox Produit
-//            for (int i = 0; i < lesProduits.Count(); i++)
-//            {
-//                try
-//                {
-//  cbxNomProduit.Items.Add(lesProduits[i].getNom().ToString());
-//
-//                }
-//                catch (Exception ex2)
-//                {
-//                    MessageBox.Show("Erreur : " + ex2.ToString());
-//                }
-//              
-//            }
-//        }
+        //        {
+        //            // Création de la liste lesProduits contenant les produits de la bdd
+        //            lesProduits = new List<Produit>();
+        //            daoProduit monDaoProduit = new daoProduit();
+        //            lesProduits = monDaoProduit.recupererLesProduits();
+        //
+        //            // Ajout du nom des produits à la collection de la combobox Produit
+        //            for (int i = 0; i < lesProduits.Count(); i++)
+        //            {
+        //                try
+        //                {
+        //  cbxNomProduit.Items.Add(lesProduits[i].getNom().ToString());
+        //
+        //                }
+        //                catch (Exception ex2)
+        //                {
+        //                    MessageBox.Show("Erreur : " + ex2.ToString());
+        //                }
+        //              
+        //            }
+        //        }
 
-//        public void cbxNomProduit_TextChanged(object sender, EventArgs e)
-//        {
-//            for (int i = 0; i < lesProduits.Count(); i++)
-//            {
-//                daoProduit monDaoProduitTxb = new daoProduit();
-//                if (lesProduits[i].getNom().ToString() == cbxNomProduit.Text)
-//                {
-//                    Produit leProduit = lesProduits[i];
-//                    txbNumProduit.Text = leProduit.getNum().ToString();
-//                    txbPrixProduit.Text = leProduit.getPrixHT().ToString();
-//                    lsbEffets.Text = leProduit.getEffets().ToString();
-//                    lsbInteraction.Text = leProduit.getInteractions().ToString();
-//                    lsbContreIndication.Text = leProduit.getIndications().ToString();
-//                }
-//            }
+        //        public void cbxNomProduit_TextChanged(object sender, EventArgs e)
+        //        {
+        //            for (int i = 0; i < lesProduits.Count(); i++)
+        //            {
+        //                daoProduit monDaoProduitTxb = new daoProduit();
+        //                if (lesProduits[i].getNom().ToString() == cbxNomProduit.Text)
+        //                {
+        //                    Produit leProduit = lesProduits[i];
+        //                    txbNumProduit.Text = leProduit.getNum().ToString();
+        //                    txbPrixProduit.Text = leProduit.getPrixHT().ToString();
+        //                    lsbEffets.Text = leProduit.getEffets().ToString();
+        //                    lsbInteraction.Text = leProduit.getInteractions().ToString();
+        //                    lsbContreIndication.Text = leProduit.getIndications().ToString();
+        //                }
+        //            }
 
     }
 }

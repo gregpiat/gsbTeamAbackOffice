@@ -57,12 +57,47 @@ C:\Users\Grégoire\Downloads\GsbTeamAC--master\GsbTeamAC--master\ppeGsbCSharp\ob
 C:\Users\Grégoire\Downloads\GsbTeamAC--master\GsbTeamAC--master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
 C:\Users\Grégoire\Downloads\GsbTeamAC--master\GsbTeamAC--master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
 C:\Users\Grégoire\Downloads\GsbTeamAC--master\GsbTeamAC--master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+C:\Users\Grégoire\Downloads\gsbTeamAbackOffice-master\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+C:\Users\Grégoire\Downloads\gsbTeamAbackOffice-master\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+C:\Users\Grégoire\Downloads\gsbTeamAbackOffice-master\gsbTeamAbackOffice-master\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+C:\Users\Grégoire\Downloads\gsbTeamAbackOffice-master\gsbTeamAbackOffice-master\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+C:\Users\Grégoire\Downloads\gsbTeamAbackOffice-master\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Grégoire\Downloads\gsbTeamAbackOffice-master\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.formCreerClient.resources
+C:\Users\Grégoire\Downloads\gsbTeamAbackOffice-master\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+C:\Users\Grégoire\Downloads\gsbTeamAbackOffice-master\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+C:\Users\Grégoire\Downloads\gsbTeamAbackOffice-master\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+F:\gsbTeamAbackOffice-master\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+F:\gsbTeamAbackOffice-master\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+F:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.formCreerClient.resources
+F:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+F:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+F:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+F:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+F:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+G:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+G:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+G:\gsbTeamAbackOffice-master\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+G:\gsbTeamAbackOffice-master\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+G:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
+G:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.formCreerClient.resources
+G:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+G:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+G:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+E:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+E:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+E:\gsbTeamAbackOffice-master\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+E:\gsbTeamAbackOffice-master\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+E:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
+E:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.formCreerClient.resources
+E:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+E:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+E:\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.formCreerClient.resources
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
 E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
-E:\Cours\Machines et AUTRES\PPECloneGsbBO\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
