@@ -30,13 +30,14 @@ namespace ppeGsbCSharp
                 // FINIR L'AJOUT
                 try
                 {
-                   // daoClient.ajouterClient(60, txbNomClientAjout.Text, txbPrenomClientAjout.Text, cbxRaisonClientAjout.Text, txbAdresseAjout.Text, txbCpClientAjout.Text, txbVilleClientAjout.Text, 1, txbMailClientAjout.Text, txbTelephoneClientAjout.Text);
+                   daoClient.ajouterClient(txbNomClientAjout.Text, txbPrenomClientAjout.Text, cbxRaisonClientAjout.Text, txbAdresseAjout.Text, txbCpClientAjout.Text, txbVilleClientAjout.Text, 1, txbMailClientAjout.Text, txbTelephoneClientAjout.Text);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erreur lors de la création du client" + ex.ToString());
                 }
                 MessageBox.Show("Création effectuée avec succés");
+                formCreerClient.ActiveForm.Close();
             }
             else
             {

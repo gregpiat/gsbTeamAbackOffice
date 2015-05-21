@@ -98,7 +98,6 @@ namespace ppeGsbCSharp
                 unCp = "\'" + unCp + "\'";
 
                 String requete = "INSERT INTO dbo.personneClient(dbo.personneClient.nom, dbo.personneClient.prenom, dbo.personneClient.raisonSocial, dbo.personneClient.ville, dbo.personneClient.adresse, dbo.personneClient.cp, dbo.personneClient.email, dbo.personneClient.idTypeProfessionel, dbo.personneClient.telephone) VALUES("
-                    /*+ unId + ", "*/
                     + unNom + ", "
                     + unPrenom + ", "
                     + uneRaison + ", "
@@ -162,12 +161,7 @@ namespace ppeGsbCSharp
                                                  recupVisitesDR.GetString(4).Trim()
                                                  );
                     lesVisites.Add(uneVisite);
-                    //MessageBox.Show("Bien trouvé" + recupVisitesDR.GetString(2));
                 }
-            }
-            else
-            {
-                MessageBox.Show("Aucune valeur trouvée");
             }
             return lesVisites;
         }
@@ -232,11 +226,13 @@ namespace ppeGsbCSharp
         {
             try
             {
-                String requete = "INSERT INTO dbo.visite(idPersonne, date, createur, compterendu) VALUES(" + unIdClient + ", " + uneDate + ", " + unCreateur + ", " + unCompteRendu + "); ";
+                
+                String requete = "INSERT INTO dbo.visite(idPersonne, date, createur, compterendu) VALUES(" + unIdClient + ", '" + uneDate + "', '" + unCreateur + "', '" + unCompteRendu + "'); ";
                 daoFactory monDaoFactory = new daoFactory();
                 monDaoFactory.OuvrirConnexion();
                 SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory.connexionBDD);
                 maSqlCommand.ExecuteReader();
+                MessageBox.Show("La visite a bien été ajoutée");
             }
             catch (SqlException exe)
             {

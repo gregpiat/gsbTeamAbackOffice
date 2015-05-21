@@ -25,7 +25,7 @@ namespace ppeGsbCSharp
         {
             // Informations de connexion à la base de données
             serveur = "172.17.21.10";
-            bdd = "TeamA2";
+            bdd = "TeamA_Piat";
             user = "piat";
             mdp = "btssio-2015";
 

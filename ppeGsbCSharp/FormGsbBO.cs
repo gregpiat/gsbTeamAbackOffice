@@ -442,6 +442,7 @@ namespace ppeGsbCSharp
         public void rechargerLesClients()
         {
             lesClients.Clear();
+            //cbxNomClient.SelectedIndex = 0;
             cbxNomClient.Items.Clear();
             chargerLesClients();
         }
@@ -450,13 +451,15 @@ namespace ppeGsbCSharp
         {
             //if (cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && txbVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != "")
             //{
+
             dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
             daoClient monDaoClient = new daoClient();
-
-           /* monDaoClient.ajouterVisiteBD(int.Parse(txbCodeClient.ToString()), DateTime.Now.ToString(), rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
-           // Client leClient = trouverClientParId(int.Parse(txbCodeClient.Text));
-            Visite laVisite = new Visite(leClient.Id, dateRdvClient.Text, rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
-            leClient.ajouterVisite(laVisite);*/
+            
+           monDaoClient.ajouterVisiteBD(int.Parse(txbCodeClient.Text.Trim()), DateTime.Now.ToString(), rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
+           rechargerLesClients();
+           //Client leClient = trouverClientParId(int.Parse(txbCodeClient.Text));
+            //Visite laVisite = new Visite(leClient.Id, dateRdvClient.Text, rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
+            //leClient.ajouterVisite(laVisite);
 
             // Création du client qui correspond au client courant du formulaire
             //Client monClient = trouverClient(int.Parse(txbCodeClient.Text));
@@ -481,9 +484,9 @@ namespace ppeGsbCSharp
 
         private void btnAjouterClient_Click(object sender, EventArgs e)
         {
-
             Form instanceFormCreerClient = new formCreerClient();
             instanceFormCreerClient.ShowDialog();
+            rechargerLesClients();
         }
 
         private void btnSupprimerClient_Click(object sender, EventArgs e)
@@ -544,7 +547,7 @@ namespace ppeGsbCSharp
         /////////////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////////////
-       /* public Client trouverClientParId(int unId)
+       /*public Client trouverClientParId(int unId)
         {
             Client monClient = new Client(0, null, null, null, null, null, null, null, 0000000000, null);
             for (int i = 0; i < lesClients.Count(); ++i)
