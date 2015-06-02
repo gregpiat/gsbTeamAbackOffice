@@ -1333,6 +1333,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormGsb";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Application GSB";
             this.Load += new System.EventHandler(this.FormGsb_Load);
             this.tabMenuPrincipal.ResumeLayout(false);

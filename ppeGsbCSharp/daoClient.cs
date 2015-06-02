@@ -158,7 +158,8 @@ namespace ppeGsbCSharp
                     Visite uneVisite = new Visite(idClient,
                                                  recupVisitesDR.GetString(2).Trim(),
                                                  recupVisitesDR.GetString(3).Trim(),
-                                                 recupVisitesDR.GetString(4).Trim()
+                                                 recupVisitesDR.GetString(4).Trim(),
+                                                 recupVisitesDR.GetString(5).Trim()
                                                  );
                     lesVisites.Add(uneVisite);
                 }
@@ -222,12 +223,12 @@ namespace ppeGsbCSharp
             return toutesLesProfessions;
         }
 
-        public void ajouterVisiteBD(int unIdClient, String uneDate, String unCompteRendu, String unCreateur)
+        public void ajouterVisiteBD(int unIdClient, String uneDate, String unCreateur, String unCompteRendu, String uneHeure)
         {
             try
             {
-                
-                String requete = "INSERT INTO dbo.visite(idPersonne, date, createur, compterendu) VALUES(" + unIdClient + ", '" + uneDate + "', '" + unCreateur + "', '" + unCompteRendu + "'); ";
+
+                String requete = "INSERT INTO dbo.visite(idPersonne, date, createur, compterendu, heure) VALUES(" + unIdClient + ", '" + uneDate + "', '" + unCreateur + "', '" + unCompteRendu + "','" + uneHeure + "'); ";
                 daoFactory monDaoFactory = new daoFactory();
                 monDaoFactory.OuvrirConnexion();
                 SqlCommand maSqlCommand = new SqlCommand(requete, monDaoFactory.connexionBDD);

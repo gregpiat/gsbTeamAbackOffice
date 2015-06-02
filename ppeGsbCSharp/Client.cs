@@ -48,7 +48,7 @@ namespace ppeGsbCSharp
         {
             lesVisites.Add(uneVisite);
             daoClient monDaoClient = new daoClient();
-            monDaoClient.ajouterVisiteBD(this.id, uneVisite.Date, uneVisite.CompteRendu, uneVisite.Createur);
+            monDaoClient.ajouterVisiteBD(this.id, uneVisite.Date, uneVisite.Createur, uneVisite.CompteRendu, uneVisite.Heure);
         }
 
         public void initialiserVisites(List<Visite> lesVisitesAInitialiser)

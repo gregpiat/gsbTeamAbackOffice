@@ -11,13 +11,15 @@ namespace ppeGsbCSharp
         String date;
         String compteRendu;
         String createur;
+        String heure;
 
-        public Visite(int unIdClient, String uneDate, String unCompteRendu, String unCreateur)
+        public Visite(int unIdClient, String uneDate, String unCompteRendu, String unCreateur, String uneHeure)
         {
             idClient = unIdClient;
             date = uneDate;
             compteRendu = unCompteRendu;
             createur = unCreateur;
+            heure = uneHeure;
         }
 
         #region Getters / Setters
@@ -45,7 +47,11 @@ namespace ppeGsbCSharp
             get { return createur; }
             set { createur = value; }
         }
-
+        public String Heure
+        {
+            get { return heure; }
+            set { heure = value; }
+        }
 
     }
 }

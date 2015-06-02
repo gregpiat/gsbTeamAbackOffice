@@ -432,7 +432,7 @@ namespace ppeGsbCSharp
             }
             #endregion
 
-            //Pour chaque client, on initialise ses visites avec les visites récupérées dans la ase de données
+            //Pour chaque client, on initialise ses visites avec les visites récupérées dans la base de données
             for (int j = 0; j < lesClients.Count(); ++j)
             {
                 lesClients[j].initialiserVisites(monDaoClient.recupererLesVisites(lesClients[j].Id));
@@ -449,37 +449,12 @@ namespace ppeGsbCSharp
 
         private void btnAjouterRdv_Click(object sender, EventArgs e)
         {
-            //if (cbxNomClient.Text != "" && dateRdvClient.Text != "" && txbMinutesRdv.Text != "" && txbVisiteurAjoutRdvClient.Text != "" && rtbRdvClient.Text != "")
-            //{
-
-            dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+            dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text,txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
             daoClient monDaoClient = new daoClient();
-            
-           monDaoClient.ajouterVisiteBD(int.Parse(txbCodeClient.Text.Trim()), DateTime.Now.ToString(), rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
+
+            monDaoClient.ajouterVisiteBD(int.Parse(txbCodeClient.Text.Trim()), dateRdvClient.Text.ToString(), txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text, txbHeuresRDV.Text +":" + txbMinutesRdv.Text);
            rechargerLesClients();
-           //Client leClient = trouverClientParId(int.Parse(txbCodeClient.Text));
-            //Visite laVisite = new Visite(leClient.Id, dateRdvClient.Text, rtbRdvClient.Text, txbVisiteurAjoutRdvClient.Text);
-            //leClient.ajouterVisite(laVisite);
 
-            // Création du client qui correspond au client courant du formulaire
-            //Client monClient = trouverClient(int.Parse(txbCodeClient.Text));
-
-            // Création de la visite avec les informations du formulaire et ajout à l'ArrayList lesVisites du client
-            //Visite maVisite = new Visite(monClient, dateRdvClient.Text, txbHeuresRDV.Text, rtbRdvClient.Text);
-            //monClient.ajouterVisite(maVisite);
-            //monClient.LesVisites.Add(maVisite);
-
-            //MessageBox.Show(monClient.Nom);
-            //for (int i = 0; i < monClient.LesVisites.Count(); ++i)
-            //{
-            //
-            //  }
-            //    MessageBox.Show(monClient.LesVisites[0].Heure);
-            //}
-            //else
-            // {
-            //   MessageBox.Show("Veuillez remplir tous les champs du rendes-vous");
-            // }
         }
 
         private void btnAjouterClient_Click(object sender, EventArgs e)
@@ -566,8 +541,7 @@ namespace ppeGsbCSharp
 
             for (int i = 0; i < lesVisitesPourAL.Count(); ++i)
             {
-                this.dgvAgendaClient.Rows.Add(lesVisitesPourAL[i].Date, "22 mai 2015", lesVisitesPourAL[i].Createur, lesVisitesPourAL[i].CompteRendu);
-               
+                this.dgvAgendaClient.Rows.Add(lesVisitesPourAL[i].Date, lesVisitesPourAL[i].Heure, lesVisitesPourAL[i].CompteRendu, lesVisitesPourAL[i].Createur);               
 
             }
         }
