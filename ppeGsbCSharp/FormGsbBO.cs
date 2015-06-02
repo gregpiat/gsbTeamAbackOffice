@@ -455,10 +455,13 @@ namespace ppeGsbCSharp
 
         private void btnAjouterRdv_Click(object sender, EventArgs e)
         {
-            dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text,txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+            String compteRendu = rtbRdvClient.Text.Replace("'", "''");
+            String visiteur = txbVisiteurAjoutRdvClient.Text.Replace("'", "''");
+
+            dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
             daoClient monDaoClient = new daoClient();
 
-            monDaoClient.ajouterVisiteBD(int.Parse(txbCodeClient.Text.Trim()), dateRdvClient.Text.ToString(), txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text, txbHeuresRDV.Text +":" + txbMinutesRdv.Text);
+            monDaoClient.ajouterVisiteBD(int.Parse(txbCodeClient.Text.Trim()), dateRdvClient.Text.ToString(), visiteur, compteRendu, txbHeuresRDV.Text +":" + txbMinutesRdv.Text);
            rechargerLesClients();
 
         }

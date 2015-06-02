@@ -109,3 +109,12 @@ C:\Users\Grégoire\Dropbox\Gsb team A C\gsbTeamAbackOffice-master\ppeGsbCSharp\o
 C:\Users\Grégoire\Dropbox\Gsb team A C\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
 C:\Users\Grégoire\Dropbox\Gsb team A C\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
 C:\Users\Grégoire\Dropbox\Gsb team A C\gsbTeamAbackOffice-master\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+E:\Cours\gsbTeamAbackOffice-master\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+E:\Cours\gsbTeamAbackOffice-master\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+E:\Cours\gsbTeamAbackOffice-master\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+E:\Cours\gsbTeamAbackOffice-master\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+E:\Cours\gsbTeamAbackOffice-master\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
+E:\Cours\gsbTeamAbackOffice-master\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.formCreerClient.resources
+E:\Cours\gsbTeamAbackOffice-master\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+E:\Cours\gsbTeamAbackOffice-master\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+E:\Cours\gsbTeamAbackOffice-master\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
