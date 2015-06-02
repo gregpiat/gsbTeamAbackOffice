@@ -54,49 +54,54 @@
             this.txbPrenomClientAjout.Location = new System.Drawing.Point(91, 78);
             this.txbPrenomClientAjout.Name = "txbPrenomClientAjout";
             this.txbPrenomClientAjout.Size = new System.Drawing.Size(134, 20);
-            this.txbPrenomClientAjout.TabIndex = 29;
+            this.txbPrenomClientAjout.TabIndex = 1;
             // 
             // txbTelephoneClientAjout
             // 
             this.txbTelephoneClientAjout.Location = new System.Drawing.Point(91, 331);
+            this.txbTelephoneClientAjout.MaxLength = 10;
             this.txbTelephoneClientAjout.Name = "txbTelephoneClientAjout";
             this.txbTelephoneClientAjout.Size = new System.Drawing.Size(134, 20);
-            this.txbTelephoneClientAjout.TabIndex = 30;
+            this.txbTelephoneClientAjout.TabIndex = 8;
+            this.txbTelephoneClientAjout.TextChanged += new System.EventHandler(this.txbTelephoneClientAjout_TextChanged);
+            this.txbTelephoneClientAjout.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelephoneClientAjout_KeyPress);
             // 
             // txbMailClientAjout
             // 
             this.txbMailClientAjout.Location = new System.Drawing.Point(91, 295);
             this.txbMailClientAjout.Name = "txbMailClientAjout";
             this.txbMailClientAjout.Size = new System.Drawing.Size(134, 20);
-            this.txbMailClientAjout.TabIndex = 31;
+            this.txbMailClientAjout.TabIndex = 7;
             // 
             // txbAdresseAjout
             // 
             this.txbAdresseAjout.Location = new System.Drawing.Point(91, 151);
             this.txbAdresseAjout.Name = "txbAdresseAjout";
             this.txbAdresseAjout.Size = new System.Drawing.Size(134, 20);
-            this.txbAdresseAjout.TabIndex = 32;
+            this.txbAdresseAjout.TabIndex = 3;
             // 
             // txbCpClientAjout
             // 
             this.txbCpClientAjout.Location = new System.Drawing.Point(91, 187);
+            this.txbCpClientAjout.MaxLength = 5;
             this.txbCpClientAjout.Name = "txbCpClientAjout";
             this.txbCpClientAjout.Size = new System.Drawing.Size(134, 20);
-            this.txbCpClientAjout.TabIndex = 33;
+            this.txbCpClientAjout.TabIndex = 4;
+            this.txbCpClientAjout.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCpClientAjout_KeyPress);
             // 
             // txbVilleClientAjout
             // 
             this.txbVilleClientAjout.Location = new System.Drawing.Point(91, 223);
             this.txbVilleClientAjout.Name = "txbVilleClientAjout";
             this.txbVilleClientAjout.Size = new System.Drawing.Size(134, 20);
-            this.txbVilleClientAjout.TabIndex = 34;
+            this.txbVilleClientAjout.TabIndex = 5;
             // 
             // txbTypeClientAjout
             // 
             this.txbTypeClientAjout.Location = new System.Drawing.Point(91, 259);
             this.txbTypeClientAjout.Name = "txbTypeClientAjout";
             this.txbTypeClientAjout.Size = new System.Drawing.Size(134, 20);
-            this.txbTypeClientAjout.TabIndex = 35;
+            this.txbTypeClientAjout.TabIndex = 6;
             // 
             // cbxRaisonClientAjout
             // 
@@ -104,7 +109,7 @@
             this.cbxRaisonClientAjout.Location = new System.Drawing.Point(91, 114);
             this.cbxRaisonClientAjout.Name = "cbxRaisonClientAjout";
             this.cbxRaisonClientAjout.Size = new System.Drawing.Size(136, 21);
-            this.cbxRaisonClientAjout.TabIndex = 36;
+            this.cbxRaisonClientAjout.TabIndex = 2;
             // 
             // lblNomClient
             // 
@@ -192,7 +197,7 @@
             this.btnAjouterClient.Location = new System.Drawing.Point(100, 361);
             this.btnAjouterClient.Name = "btnAjouterClient";
             this.btnAjouterClient.Size = new System.Drawing.Size(83, 43);
-            this.btnAjouterClient.TabIndex = 46;
+            this.btnAjouterClient.TabIndex = 9;
             this.btnAjouterClient.Text = "Créer un client";
             this.btnAjouterClient.UseVisualStyleBackColor = true;
             this.btnAjouterClient.Click += new System.EventHandler(this.btnAjouterClient_Click);
@@ -202,7 +207,7 @@
             this.txbNomClientAjout.Location = new System.Drawing.Point(93, 41);
             this.txbNomClientAjout.Name = "txbNomClientAjout";
             this.txbNomClientAjout.Size = new System.Drawing.Size(134, 20);
-            this.txbNomClientAjout.TabIndex = 47;
+            this.txbNomClientAjout.TabIndex = 0;
             // 
             // formCreerClient
             // 

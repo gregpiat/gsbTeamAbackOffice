@@ -50,5 +50,32 @@ namespace ppeGsbCSharp
                 MessageBox.Show("L'un des champs n'a pas été rempli correctement et la création ne peut donc pas être effectuée. Veuillez réessayer.");
             }
         }
+
+        private void txbCpClientAjout_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+
+            // Vérifie si l'utilisateur entre un numérique ou un char. Si char --> Bloque la saisie
+            if (e.KeyChar != (char)8 && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbTelephoneClientAjout_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbTelephoneClientAjout_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+
+            // Vérifie si l'utilisateur entre un numérique ou un char. Si char --> Bloque la saisie
+            if (e.KeyChar != (char)8 && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

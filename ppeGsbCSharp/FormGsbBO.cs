@@ -455,14 +455,23 @@ namespace ppeGsbCSharp
 
         private void btnAjouterRdv_Click(object sender, EventArgs e)
         {
-            String compteRendu = rtbRdvClient.Text.Replace("'", "''");
-            String visiteur = txbVisiteurAjoutRdvClient.Text.Replace("'", "''");
+            if (int.Parse(txbHeuresRDV.Text) <= 24 && int.Parse(txbMinutesRdv.Text) <= 60)
+            {
+                String compteRendu = rtbRdvClient.Text.Replace("'", "''");
+                String visiteur = txbVisiteurAjoutRdvClient.Text.Replace("'", "''");
 
-            dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
-            daoClient monDaoClient = new daoClient();
+                dgvAgendaClient.Rows.Add(dateRdvClient.Text, txbHeuresRDV.Text + ":" + txbMinutesRdv.Text, txbVisiteurAjoutRdvClient.Text, rtbRdvClient.Text);
+                daoClient monDaoClient = new daoClient();
 
-            monDaoClient.ajouterVisiteBD(int.Parse(txbCodeClient.Text.Trim()), dateRdvClient.Text.ToString(), visiteur, compteRendu, txbHeuresRDV.Text +":" + txbMinutesRdv.Text);
-           rechargerLesClients();
+                monDaoClient.ajouterVisiteBD(int.Parse(txbCodeClient.Text.Trim()), dateRdvClient.Text.ToString(), visiteur, compteRendu, txbHeuresRDV.Text +":" + txbMinutesRdv.Text);
+                rechargerLesClients();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez vérifier le couple heures / minutes");
+            }
+
+
 
         }
 
@@ -562,6 +571,61 @@ namespace ppeGsbCSharp
         private void txbAdresseClient_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txbCpClient_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+
+            // Vérifie si l'utilisateur entre un numérique ou un char. Si char --> Bloque la saisie
+            if (e.KeyChar != (char)8 && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txbTelephoneClient_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbTelephoneClient_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+
+            // Vérifie si l'utilisateur entre un numérique ou un char. Si char --> Bloque la saisie
+            if (e.KeyChar != (char)8 && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbHeuresRDV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbHeuresRDV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+
+            // Vérifie si l'utilisateur entre un numérique ou un char. Si char --> Bloque la saisie
+            if (e.KeyChar != (char)8 && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbMinutesRdv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+
+            // Vérifie si l'utilisateur entre un numérique ou un char. Si char --> Bloque la saisie
+            if (e.KeyChar != (char)8 && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
 
