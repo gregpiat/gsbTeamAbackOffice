@@ -881,6 +881,7 @@
             this.txbAdresseClient.Name = "txbAdresseClient";
             this.txbAdresseClient.Size = new System.Drawing.Size(136, 20);
             this.txbAdresseClient.TabIndex = 6;
+            this.txbAdresseClient.TextChanged += new System.EventHandler(this.txbAdresseClient_TextChanged);
             // 
             // txbTypeClient
             // 

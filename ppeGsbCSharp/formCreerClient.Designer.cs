@@ -229,6 +229,7 @@
             this.Controls.Add(this.txbTelephoneClientAjout);
             this.Controls.Add(this.txbPrenomClientAjout);
             this.Name = "formCreerClient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Créer un nouveau client";
             this.ResumeLayout(false);
             this.PerformLayout();

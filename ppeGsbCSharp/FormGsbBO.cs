@@ -396,10 +396,16 @@ namespace ppeGsbCSharp
             && txbTypeClient.Text != ""
             && txbMailClient.Text != "")
             {
+                String nomClient = cbxNomClient.Text.Replace("'", "''");
+                String prenomClient = txbPrenomClient.Text.Replace("'", "''");
+                String adresse = txbAdresseClient.Text.Replace("'", "''");
+                String ville = txbVilleClient.Text.Replace("'", "''");
+                String mail = txbMailClient.Text.Replace("'", "''");
+
                 // FINIR L'AJOUT
                 try
                 {
-                    daoClient.modifierClient(int.Parse(txbCodeClient.Text), cbxNomClient.Text, txbPrenomClient.Text, cbxRaisonClient.Text, txbAdresseClient.Text, txbCpClient.Text, txbVilleClient.Text, 1, txbMailClient.Text, txbTelephoneClient.Text);
+                    daoClient.modifierClient(int.Parse(txbCodeClient.Text), nomClient, prenomClient, cbxRaisonClient.Text, adresse, txbCpClient.Text, ville, 1, mail, txbTelephoneClient.Text);
                 }
                 catch (Exception ex)
                 {
@@ -470,10 +476,14 @@ namespace ppeGsbCSharp
             && txbPrenomClient.Text != ""
             && txbCodeClient.Text != "")
             {
+                String nomClient = cbxNomClient.Text.Replace("'", "''");
+                String prenomClient = txbPrenomClient.Text.Replace("'", "''");
+
+
                 // FINIR LA SUPPRESSION
                 try
                 {
-                    daoClient.supprimerClient(int.Parse(txbCodeClient.Text), cbxNomClient.Text, txbPrenomClient.Text);
+                    daoClient.supprimerClient(int.Parse(txbCodeClient.Text), nomClient, prenomClient);
                 }
                 catch (Exception ex)
                 {
@@ -544,6 +554,11 @@ namespace ppeGsbCSharp
                 this.dgvAgendaClient.Rows.Add(lesVisitesPourAL[i].Date, lesVisitesPourAL[i].Heure, lesVisitesPourAL[i].CompteRendu, lesVisitesPourAL[i].Createur);               
 
             }
+        }
+
+        private void txbAdresseClient_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

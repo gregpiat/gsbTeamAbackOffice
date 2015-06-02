@@ -27,10 +27,16 @@ namespace ppeGsbCSharp
             && txbTypeClientAjout.Text != ""
             && txbMailClientAjout.Text != "")
             {
+                String nomClient = txbNomClientAjout.Text.Replace("'", "''");
+                String prenomClient = txbPrenomClientAjout.Text.Replace("'", "''");
+                String adresse = txbAdresseAjout.Text.Replace("'", "''");
+                String ville = txbVilleClientAjout.Text.Replace("'", "''");
+                String mail = txbMailClientAjout.Text.Replace("'", "''");
+
                 // FINIR L'AJOUT
                 try
                 {
-                   daoClient.ajouterClient(txbNomClientAjout.Text, txbPrenomClientAjout.Text, cbxRaisonClientAjout.Text, txbAdresseAjout.Text, txbCpClientAjout.Text, txbVilleClientAjout.Text, 1, txbMailClientAjout.Text, txbTelephoneClientAjout.Text);
+                    daoClient.ajouterClient(nomClient, prenomClient, cbxRaisonClientAjout.Text, adresse, txbCpClientAjout.Text, ville, 1, mail, txbTelephoneClientAjout.Text);
                 }
                 catch (Exception ex)
                 {
