@@ -19,7 +19,7 @@ namespace ppeGsbCSharp
             daoFactory monDaoFactory = new daoFactory();
             monDaoFactory.OuvrirConnexion();
 
-            SqlCommand maSqlCommand = new SqlCommand("SELECT * FROM dbo.personneClient WHERE supprime='false';", monDaoFactory.connexionBDD);
+            SqlCommand maSqlCommand = new SqlCommand("SELECT * FROM dbo.personneClient WHERE supprime='False';", monDaoFactory.connexionBDD);
             SqlDataReader recupClientsDR = maSqlCommand.ExecuteReader();
             if (recupClientsDR.HasRows)
             {
@@ -107,7 +107,7 @@ namespace ppeGsbCSharp
                     + unMail + ", "
                     + unType + ", "
                     + unTelephone +", "
-                    + "False);";
+                    + "'False');";
 
                 daoFactory monDaoFactory = new daoFactory();
                 monDaoFactory.OuvrirConnexion();

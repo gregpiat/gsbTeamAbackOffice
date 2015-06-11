@@ -127,3 +127,12 @@ C:\Users\Grégoire\Documents\Visual Studio 2013\Projects\gsbTeamAbackOffice\ppeG
 C:\Users\Grégoire\Documents\Visual Studio 2013\Projects\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
 C:\Users\Grégoire\Documents\Visual Studio 2013\Projects\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
 C:\Users\Grégoire\Documents\Visual Studio 2013\Projects\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
+C:\Users\slam\Desktop\gsbTeamABackOffice\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.exe
+C:\Users\slam\Desktop\gsbTeamABackOffice\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.pdb
+C:\Users\slam\Desktop\gsbTeamABackOffice\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.exe
+C:\Users\slam\Desktop\gsbTeamABackOffice\gsbTeamAbackOffice\ppeGsbCSharp\bin\Debug\ppeGsbCSharp.pdb
+C:\Users\slam\Desktop\gsbTeamABackOffice\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csprojResolveAssemblyReference.cache
+C:\Users\slam\Desktop\gsbTeamABackOffice\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.formCreerClient.resources
+C:\Users\slam\Desktop\gsbTeamABackOffice\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.FormGsb.resources
+C:\Users\slam\Desktop\gsbTeamABackOffice\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.Properties.Resources.resources
+C:\Users\slam\Desktop\gsbTeamABackOffice\gsbTeamAbackOffice\ppeGsbCSharp\obj\x86\Debug\ppeGsbCSharp.csproj.GenerateResource.Cache
