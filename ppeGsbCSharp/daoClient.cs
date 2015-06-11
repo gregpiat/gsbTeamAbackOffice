@@ -19,7 +19,7 @@ namespace ppeGsbCSharp
             daoFactory monDaoFactory = new daoFactory();
             monDaoFactory.OuvrirConnexion();
 
-            SqlCommand maSqlCommand = new SqlCommand("SELECT * FROM dbo.personneClient;", monDaoFactory.connexionBDD);
+            SqlCommand maSqlCommand = new SqlCommand("SELECT * FROM dbo.personneClient WHERE supprime='false';", monDaoFactory.connexionBDD);
             SqlDataReader recupClientsDR = maSqlCommand.ExecuteReader();
             if (recupClientsDR.HasRows)
             {
@@ -97,7 +97,7 @@ namespace ppeGsbCSharp
                 unMail = "\'" + unMail + "\'";
                 unCp = "\'" + unCp + "\'";
 
-                String requete = "INSERT INTO dbo.personneClient(dbo.personneClient.nom, dbo.personneClient.prenom, dbo.personneClient.raisonSocial, dbo.personneClient.ville, dbo.personneClient.adresse, dbo.personneClient.cp, dbo.personneClient.email, dbo.personneClient.idTypeProfessionel, dbo.personneClient.telephone) VALUES("
+                String requete = "INSERT INTO dbo.personneClient(dbo.personneClient.nom, dbo.personneClient.prenom, dbo.personneClient.raisonSocial, dbo.personneClient.ville, dbo.personneClient.adresse, dbo.personneClient.cp, dbo.personneClient.email, dbo.personneClient.idTypeProfessionel, dbo.personneClient.telephone, dbo.personneClient.supprime) VALUES("
                     + unNom + ", "
                     + unPrenom + ", "
                     + uneRaison + ", "
@@ -106,7 +106,8 @@ namespace ppeGsbCSharp
                     + unCp + ", "
                     + unMail + ", "
                     + unType + ", "
-                    + unTelephone + ");";
+                    + unTelephone +", "
+                    + "False);";
 
                 daoFactory monDaoFactory = new daoFactory();
                 monDaoFactory.OuvrirConnexion();
@@ -129,7 +130,8 @@ namespace ppeGsbCSharp
                 unNom = "\'" + unNom + "\'";
                 unPrenom = "\'" + unPrenom + "\'";
 
-                String requete = "DELETE FROM dbo.personneClient WHERE idClient = " + unId + " AND nom = " + unNom + " AND prenom = " + unPrenom + ";";
+                //String requete = "DELETE FROM dbo.personneClient WHERE idClient = " + unId + " AND nom = " + unNom + " AND prenom = " + unPrenom + ";";
+                String requete = "UPDATE dbo.personneClient SET supprime = 'True' WHERE idClient =" + unId + " AND nom = " + unNom + " AND prenom = " + unPrenom + ";";
 
                 daoFactory monDaoFactory = new daoFactory();
                 monDaoFactory.OuvrirConnexion();
